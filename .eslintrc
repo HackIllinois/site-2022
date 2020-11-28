@@ -13,7 +13,6 @@
     "react/require-default-props": "off",
     "linebreak-style": "off",
     "no-param-reassign": "off",
-    "react/prop-types": "off",
     "max-len": "off"
   }
 }

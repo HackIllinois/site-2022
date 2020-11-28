@@ -1,13 +1,14 @@
 export type MethodType = 'GET' | 'POST' | 'PUT' | 'DELETE';
 export type FileType = 'resume' | 'photo' | 'blobstore';
+
 export type RegistrationType = {
   firstName: string;
   lastName: string;
   timezone: string;
   email: string;
   location: string;
-  gender: string | null;
-  race: Array<any>; // NOTE: ignore the nullable part; race will always be a (non-null) array
+  gender?: string;
+  race: string[];
   degreePursued:
   | 'ASSOCIATES'
   | 'BACHELORS'
@@ -21,28 +22,26 @@ export type RegistrationType = {
   programmingYears: number;
   programmingAbility: number;
   hasInternship: boolean;
-  resumeFilename: string | null;
+  resumeFilename?: string;
 };
+
+export interface RegistrationTypeWithId extends RegistrationType {
+  id: string;
+}
 
 export interface EventType {
   name: string;
   description: string;
   startTime: number;
   endTime: number;
-  locations: [
-    {
-      description: string;
-      tags: string[];
-      latitude: number;
-      longitude: number;
-    },
-  ];
-  sponsor: string;
+  locations: {
+    description: string;
+    tags: string[];
+    latitude: number;
+    longitude: number;
+  }[];
+  sponsor?: string;
   eventType: string;
-}
-
-export interface EventResType extends EventType {
-  id: string;
 }
 
 export type DayType = {
@@ -54,6 +53,20 @@ export type DayType = {
 };
 
 export type WeekType = {
-  index?: number;
   date: Date;
+  index?: number;
+};
+
+export type PrizeType = {
+  name: string;
+  description: string;
+  sponsor: string;
+};
+
+export type MentorTimeslotType = {
+  id: number;
+  text: string;
+  email: string;
+  start_date: string;
+  end_date: string;
 };

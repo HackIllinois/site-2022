@@ -11,15 +11,13 @@
 ]
 */
 
-import { DayType, EventType, WeekType } from './types';
+import { DayType, EventType, WeekType } from 'util/types';
 
-export const sortEventsIntoDays = (events: EventType[]) => {
+export const sortEventsIntoDays = (events: EventType[]): DayType[] => {
   // separate events by day into a map like so {"2/28/2019": [], "3/1/2019": [], ...}
   const eventsByDay: Map<string, EventType[]> = new Map();
   events.forEach((event) => {
-    const dateString = new Date(event.startTime * 1000).toLocaleDateString(
-      'en-US',
-    );
+    const dateString = new Date(event.startTime * 1000).toLocaleDateString('en-US');
     const eventsOnDay = eventsByDay.get(dateString);
     if (eventsOnDay) {
       eventsOnDay.push(event);
@@ -62,11 +60,10 @@ const addDays = (date: Date, days: number): Date => {
 
 // Returns a 2d array in following format
 // [[{ date: Date, index?: Number  }, ...], ...]
-// if index is specified, then that date was part of the dates provided as a parameter
-
-export const getSurroundingWeeks = (startDate: Date, numDays: number) => {
+// if index is specified, then that date was part of the range of dates provided as parameters
+export const getSurroundingWeeks = (startDate: Date, numDays: number): WeekType[][] => {
   if (startDate && numDays >= 1) {
-    const weeks: [WeekType[]] = [[]];
+    const weeks: WeekType[][] = [[]];
     let currentWeek = weeks[0];
 
     // Add all the days preceding startDate in the week of startDate

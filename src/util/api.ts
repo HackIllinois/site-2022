@@ -1,20 +1,12 @@
-import { MethodType, FileType, RegistrationType, EventResType } from './types';
+import { MethodType, FileType, RegistrationType, RegistrationTypeWithId, PrizeType, MentorTimeslotType, EventType } from 'util/types';
 
 const API = 'https://api.hackillinois.org';
-export const isAuthenticated = () => sessionStorage.getItem('token');
 
-function request(method: MethodType, endpoint: string, body?: any) {
-  const getSessionToken = (): string => {
-    const token = isAuthenticated();
-    if (token === null) {
-      throw new Error('token is null');
-    }
-    return token;
-  };
+function request(method: MethodType, endpoint: string, body?: unknown) {
   return fetch(API + endpoint, {
     method,
     headers: {
-      Authorization: getSessionToken(),
+      Authorization: sessionStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
@@ -30,7 +22,9 @@ function request(method: MethodType, endpoint: string, body?: any) {
     });
 }
 
-export function authenticate(to: string) {
+export const isAuthenticated = (): string|null => sessionStorage.getItem('token');
+
+export function authenticate(to: string): void {
   if (process.env.REACT_APP_TOKEN) {
     sessionStorage.setItem('token', process.env.REACT_APP_TOKEN);
   } else {
@@ -39,19 +33,12 @@ export function authenticate(to: string) {
   window.location.replace(to);
 }
 
-export function getToken(code: string | string[] | null) {
+export function getToken(code: string): Promise<string> {
   return request('POST', '/auth/code/github/', { code }).then((res) => res.token);
 }
 
-type GetRolesResType = {
-  id: string;
-  roles: string[];
-};
-
-export function getRoles() {
-  return request('GET', '/auth/roles/').then(
-    (res) => (res as GetRolesResType).roles,
-  );
+export function getRoles(): Promise<string[]> {
+  return request('GET', '/auth/roles/').then((res) => res.roles);
 }
 
 export function getRolesSync(): string[] {
@@ -67,16 +54,12 @@ export function getRolesSync(): string[] {
   return [];
 }
 
-export function getRegistration(role: string): Promise<EventResType> {
+export function getRegistration(role: string): Promise<RegistrationTypeWithId> {
   return request('GET', `/registration/${role}/`);
 }
 
 // this function does not have a return type because different roles have different response types
-export function register(
-  isEditing: boolean,
-  role: string,
-  registration: RegistrationType,
-) {
+export function register(isEditing: boolean, role: string, registration: RegistrationType): Promise<RegistrationTypeWithId> {
   const method = isEditing ? 'PUT' : 'POST';
   return request(method, `/registration/${role}/`, registration);
 }
@@ -95,7 +78,7 @@ export function rsvp(isEditing: boolean, registration: RegistrationType): Promis
   return request(method, '/rsvp/', registration);
 }
 
-export function uploadFile(file: File, type: FileType) {
+export function uploadFile(file: File, type: FileType): Promise<unknown> {
   return request('GET', `/upload/${type}/upload/`)
     .then((res) => fetch(res[type], {
       method: 'PUT',
@@ -122,7 +105,7 @@ export function getQR():Promise<GetQrResType> {
   return request('GET', '/user/qr/');
 }
 
-export function getPrizes() {
+export function getPrizes(): Promise<PrizeType[]> {
   return request('GET', '/upload/blobstore/prizes/').then((res) => res.data);
 }
 
@@ -130,29 +113,19 @@ type RefreshTokenResType = {
   token: string;
 };
 export function refreshToken(): Promise<void> {
-  return request('GET', '/auth/token/refresh/').then((res:RefreshTokenResType) => sessionStorage.setItem('token', res.token));
+  return request('GET', '/auth/token/refresh/')
+    .then((res:RefreshTokenResType) => sessionStorage.setItem('token', res.token));
 }
 
-export function getMentorTimeslots() {
-  return request('GET', '/upload/blobstore/mentor-timeslots/').then(
-    (res) => res.data,
-  );
+export function getMentorTimeslots(): Promise<MentorTimeslotType[]> {
+  return request('GET', '/upload/blobstore/mentor-timeslots/').then((res) => res.data);
 }
 
-export function setMentorTimeslots(data: Record<string, string>) {
-  return request('PUT', '/upload/blobstore/', {
-    id: 'mentor-timeslots',
-    data,
-  })
-    .then((res: Response) => res.json())
-    .then((res: any) => res.data)
-    .catch((err: Error) => console.log(err));
+export function setMentorTimeslots(data: MentorTimeslotType[]): Promise<MentorTimeslotType[]> {
+  return request('PUT', '/upload/blobstore/', { id: 'mentor-timeslots', data })
+    .then((res) => res.data);
 }
 
-type GetEventsResType = {
-  events: EventResType[]
-};
-
-export function getEvents() {
-  return request('GET', '/event/').then((res: GetEventsResType) => res.events);
+export function getEvents(): Promise<EventType[]> {
+  return request('GET', '/event/').then((res) => res.events);
 }
