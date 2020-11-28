@@ -17,8 +17,8 @@ function request(method: MethodType, endpoint: string, body?: unknown) {
       }
       throw new Error('response status code not 200');
     })
-    .catch((err: Error) => {
-      console.error(err.message);
+    .catch(() => {
+      // TODO: maybe send the error message to google analytics?
     });
 }
 
@@ -91,8 +91,8 @@ export function uploadFile(file: File, type: FileType): Promise<unknown> {
       }
       throw new Error('response did not have status 200');
     })
-    .catch((err: Error) => {
-      console.error(err);
+    .catch(() => {
+      // TODO: maybe send the error message to google analytics?
     });
 }
 
