@@ -26,7 +26,10 @@ const Section1: React.FC = () => (
     <div className={styles.wind} style={{ backgroundImage: `url(${WIND})` }} />
     <div className={styles.campers} style={{ backgroundImage: `url(${CAMPERS})` }} />
     <div className={styles.logo} style={{ backgroundImage: `url(${LOGO})` }} />
-    <div className={styles.landingText}>REKINDLING CONNECTIONS</div>
+    <div className={styles.landingText}>
+      <div className={styles.title}>REKINDLING CONNECTIONS</div>
+      <div className={styles.date}>April 9 - April 12</div>
+    </div>
     <div className={styles.moonReflection} style={{ backgroundImage: `url(${MOON_REFLECTION})` }} />
     <div className={styles.mobileTrees} style={{ backgroundImage: `url(${MOBILE_TREES})` }} />
     <div className={styles.logoMobile} style={{ backgroundImage: `url(${LOGO_MOBILE})` }} />

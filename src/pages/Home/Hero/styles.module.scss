@@ -46,7 +46,7 @@
     z-index: 10;
 
     @media (max-width: 768px) {
-      top: 35%;
+      top: 37%;
       left: 8%;
     }
 
@@ -222,23 +222,41 @@
     width: 40%;
 
     z-index: 25;
-
-    font-size: calc(20px + 2vw);
-    line-height: calc(1.2*(20px + 2vw));
-    font-weight: 600;
-
     color: white;
 
+    .title {
+      font-size: calc(20px + 2vw);
+      line-height: calc(1.2*(20px + 2vw));
+      font-weight: 600;
+
+      @media (max-width: 768px) {
+        font-size: calc(20px + 3.5vw);
+        line-height: calc(1.2*(20px + 4vw));
+        text-align: center;
+      }
+    }
+
+    .date {
+      margin-top: 7px;
+      margin-left: 3px;
+      
+      font-size: calc(14px + .5vw);
+      font-weight: 600;
+      
+      @media (max-width: 768px) {
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+
     @media (max-width: 768px) {
-      font-size: calc(20px + 3.5vw);
-      line-height: calc(1.2*(20px + 4vw));
-      text-align: center;
       width: 80%;
 
       top: 22.5%;
       left: 50%;
       transform: translate(-50%, 0);
     }
+
   }
 
   .moonReflection {
