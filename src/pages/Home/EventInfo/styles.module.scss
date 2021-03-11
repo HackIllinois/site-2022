@@ -1,0 +1,141 @@
+
+.eventInfo {
+  $tablet-width: 1024px; // we have some flexibility with this breakpoint, so maybe want to play around with it
+  $mobile-width: 650px; // same for this
+  position: relative;
+  margin-top: -23px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-top: -1px;
+  }
+
+  @media (max-width: $mobile-width) {
+    background-color: #2C9C98;
+  }
+
+  .campfire {
+    -webkit-user-drag: none;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    width: 90%;
+    max-width: 1500px;
+
+    &.desktop {
+      display: initial;
+    }
+    
+    @media screen and (max-width: $tablet-width) {
+      &.tablet {
+        display: initial;
+      }
+      &.desktop, &.mobile {
+        display: none;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      &.mobile {
+        display: initial;
+      }
+      &.tablet, &.desktop {
+        display: none;
+      }
+    }
+  }
+
+  .blob {
+    --space: 60px; // extra space above and below the blob
+    display: none;
+    position: absolute;
+    top: var(--space);
+    height: calc(100% - 2*var(--space));
+    width: 100%;
+    max-width: 1260px;
+
+    @media (max-width: $tablet-width) {
+      display: initial;
+    }
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  .textContainer {
+    position: relative;
+    z-index: 1;
+
+    color: white;
+    font-size: 0.85em;
+
+    margin: 200px 0 100px 7%; // min(10%, 180px);
+    padding-bottom: 1px;
+    width: 55%;
+    max-width: 800px;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 130px;
+      width: 86%;
+      max-width: none;
+      margin-bottom: 135px;
+    }
+    
+    @media (max-width: 900px) {
+      font-size: .8em;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-top: 55vw;
+    }
+
+    @media (max-width: 500px) {
+      font-size: .75em;
+    }
+
+    @media (min-width: 1700px) {
+      max-width: 900px;
+      margin-left: 0;
+      left: 50%;
+      transform: translateX(-80%);
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 1.5em;
+      margin-bottom: 0;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.125em;
+      line-height: 1.5em;
+      margin-top: 10px;
+
+      @media (max-width: $tablet-width) {
+        &.one {
+          width: 70%;
+        }
+
+        &.two {
+          width: 80%;
+        }
+
+        &.three {
+          width: 92%;
+        }
+      }
+
+      @media (max-width: $mobile-width) {
+        &.one, &.two, &.three {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
