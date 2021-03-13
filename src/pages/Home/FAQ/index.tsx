@@ -24,7 +24,7 @@ const FAQ = (): JSX.Element => {
 
         <h4>How do applications work?</h4>
         <p>
-          There is no application! Just register <a href="/registration">here</a> and we will send you more information about our event - everyone is accepted! Registration is open until the end of the event. In order to join our Discord server and submit a project, you will need to register! You must be 18+ to register.
+          There is no application! Just register <a href="/register">here</a> and we will send you more information about our event - everyone is accepted! Registration is open until the end of the event. In order to join our Discord server and submit a project, you will need to register! You must be 18+ to register.
         </p>
 
         <h4>Where can I go for more information?</h4>

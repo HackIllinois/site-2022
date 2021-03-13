@@ -105,16 +105,31 @@
     }
 
     h2 {
+      display: flex;
+      align-items: center;
       font-weight: 600;
       font-size: 1.5em;
       margin-bottom: 0;
       margin-top: 20px;
+
+      img {
+        width: 28px;
+        margin-right: 5px;
+      }
     }
 
     p {
       font-size: 1.125em;
       line-height: 1.5em;
       margin-top: 10px;
+
+      a {
+        color: inherit;
+
+        &.noUnderline {
+          text-decoration: none;
+        }
+      }
 
       @media (max-width: $tablet-breakpoint) {
         &.one {
