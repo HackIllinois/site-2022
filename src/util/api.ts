@@ -25,6 +25,7 @@ export function authenticate(to: string): void {
   if (process.env.REACT_APP_TOKEN) {
     sessionStorage.setItem('token', process.env.REACT_APP_TOKEN);
   } else {
+    to = `${process.env.REACT_APP_URL}/auth/?to=${to}`;
     to = `${API}/auth/github/?redirect_uri=${to}`;
   }
   window.location.replace(to);
