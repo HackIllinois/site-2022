@@ -1,0 +1,14 @@
+
+@mixin registration-floating-screen {
+  @media (max-width: 700px) {
+    @content;
+  }
+  
+  @media (min-height: 800px) and (max-width: 785px) {
+    @content;
+  }
+
+  @media (min-height: 900px) and (max-width: 835px) {
+    @content;
+  }
+}

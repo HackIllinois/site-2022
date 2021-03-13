@@ -1,5 +1,10 @@
 {
-  "extends": ["react-app", "react-app/jest", "plugin:@typescript-eslint/recommended", "airbnb-typescript"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -7,6 +12,13 @@
     "object-curly-newline": "off",
     "react/require-default-props": "off",
     "linebreak-style": "off",
-    "max-len": "off"
+    "no-param-reassign": "off",
+    "max-len": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "assert": "either"
+    }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/button-has-type": "off"
   }
 }

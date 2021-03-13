@@ -1,0 +1,15 @@
+.home {
+  background: #286574;
+  position: relative;
+  overflow: hidden;
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 175vh;
+    left: 0;
+    height: 7675px;
+    background: linear-gradient(180deg, #286574 0%, #1E2E55 38.02%);
+  }
+}
