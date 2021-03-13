@@ -1,0 +1,175 @@
+@import 'common.scss';
+
+.screen {
+  --field-margin: 40px;
+  font-size: 0.85em;
+  position: relative;
+  flex: 1;
+
+  @media (max-height: 740px) {
+    margin-top: -15px;
+  }
+
+  @include registration-floating-screen {
+    margin-top: -10px;
+    font-size: 0.8em;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 500;
+
+    @media screen and (max-height: 700px) {
+      margin-bottom: -20px;
+    }
+
+    @include registration-floating-screen {
+      margin-bottom: -5px;
+    }
+  }
+  
+  .text {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    margin-top: 25px;
+
+    a {
+      font-weight: 600;
+      color: #46959F;
+      text-decoration: none;
+    }
+  }
+}
+
+.welcome {
+  .text {
+    margin-right: 15px;
+  }
+
+  @media (max-height: 720px) {
+    margin-bottom: 10px;
+  }
+  
+  .scrollbox { // using !important to override react-custom-scrollbars
+    overflow: hidden !important;
+    @media (max-height: 720px) {
+      overflow: scroll !important;
+    }
+  }
+
+  .text {
+    @media (max-height: 900px) {
+      font-size: 1.125em;
+    }
+
+    @media (max-height: 740px) {
+      margin-top: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 40px;
+
+    @media (max-height: 780px) {
+      margin-bottom: max(calc(-740px + 100vh), 20px);
+    }
+  }
+}
+
+.personalInfo, .education, .experience {
+  @media (min-height: 800px) {
+    width: 85%;
+  }
+
+  @include registration-floating-screen {
+    width: auto;
+  }
+}
+
+.raceDemographics {
+  // using !important to override react-custom-scrollbars
+  overflow: visible !important;
+  .scrollbox {
+    overflow: visible !important;
+  }
+  .horizontalScrollbar {
+    display: none;
+  }
+  @include registration-floating-screen {
+    overflow: hidden !important;
+    .scrollbox {
+      overflow: scroll !important;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .checkboxes {
+    width: 60%;
+    @include registration-floating-screen {
+      width: auto;
+    }
+  }
+
+  .note {
+    position: absolute;
+    width: 44%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    b{
+      font-weight: 600;
+    }
+
+    @media (max-height: 700px) {
+      right: -25px;
+    }
+
+    @media (min-height: 800px) {
+      right: 20px;
+    }
+
+    @include registration-floating-screen {
+      position: static;
+      width: auto;
+      transform: none;
+    }
+  }
+
+  @media (max-height: 860px) {
+    .checkboxes {
+      font-size: .9em;
+      --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
+    }
+  }
+}
+
+.finish {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .logo {
+    display: block;
+    height: 50%;
+
+    img {
+      height: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .text {
+    text-align: center;
+  }
+}

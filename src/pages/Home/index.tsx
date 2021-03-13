@@ -2,9 +2,9 @@ import React from 'react';
 
 import Hero from './Hero';
 import EventInfo from './EventInfo';
+import FAQ from './FAQ';
 
 import styles from './styles.module.scss';
-import FAQ from './FAQ';
 
 const Home: React.FC = () => (
   <div className={styles.home}>

@@ -1,4 +1,4 @@
-import { MethodType, FileType, RegistrationType, RegistrationTypeWithId, PrizeType, MentorTimeslotType, EventType } from 'util/types';
+import { MethodType, FileType, RegistrationType, RegistrationTypeWithId, PrizeType, MentorTimeslotType, EventType, RegistrationRole } from 'util/types';
 
 const API = 'https://api.hackillinois.org';
 
@@ -16,9 +16,6 @@ function request(method: MethodType, endpoint: string, body?: unknown) {
         return res.json();
       }
       throw new Error('response status code not 200');
-    })
-    .catch(() => {
-      // TODO: maybe send the error message to google analytics?
     });
 }
 
@@ -54,12 +51,12 @@ export function getRolesSync(): string[] {
   return [];
 }
 
-export function getRegistration(role: string): Promise<RegistrationTypeWithId> {
+export function getRegistration(role: RegistrationRole): Promise<RegistrationTypeWithId> {
   return request('GET', `/registration/${role}/`);
 }
 
 // this function does not have a return type because different roles have different response types
-export function register(isEditing: boolean, role: string, registration: RegistrationType): Promise<RegistrationTypeWithId> {
+export function register(isEditing: boolean, role: RegistrationRole, registration: RegistrationType): Promise<RegistrationTypeWithId> {
   const method = isEditing ? 'PUT' : 'POST';
   return request(method, `/registration/${role}/`, registration);
 }
@@ -90,9 +87,6 @@ export function uploadFile(file: File, type: FileType): Promise<unknown> {
         return res;
       }
       throw new Error('response did not have status 200');
-    })
-    .catch(() => {
-      // TODO: maybe send the error message to google analytics?
     });
 }
 

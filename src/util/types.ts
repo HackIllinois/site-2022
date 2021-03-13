@@ -29,6 +29,8 @@ export interface RegistrationTypeWithId extends RegistrationType {
   id: string;
 }
 
+export type RegistrationRole = 'attendee' | 'mentor';
+
 export interface EventType {
   name: string;
   description: string;
