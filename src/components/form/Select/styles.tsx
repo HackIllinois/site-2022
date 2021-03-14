@@ -27,6 +27,13 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
   input: (base) => ({
     ...base,
     fontWeight: 500,
+    fontFamily: 'Montserrat',
+    width: '100%',
+    '& > div, & > div > input': {
+      fontWeight: 'inherit',
+      fontFamily: 'inherit',
+      width: '100% !important',
+    },
   }),
   singleValue: (base) => ({
     ...base,
@@ -101,6 +108,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
       margin: 5,
       backgroundColor: shouldColor ? menuHighlightColor : menuBackgroundColor,
       color: shouldColor ? 'white' : 'black',
+      fontSize: '.95em',
     };
 
     if (state.isDisabled) {
@@ -109,6 +117,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
         cursor: 'default',
         color: '#444444',
         fontWeight: 600,
+        fontSize: '.85em',
       };
     }
     return style;

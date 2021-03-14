@@ -44,7 +44,7 @@ const Select = ({ name, options = [], creatable, isMulti = false, className, ...
 
   if (creatable) {
     options = [{
-      label: 'Note: You can type if none of the available options match',
+      label: 'Note: You can type a custom option if none of these options match',
       value: null,
       isDisabled: true,
     } as OptionType].concat(options);

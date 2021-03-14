@@ -35,11 +35,16 @@ const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, F
 const submitPageIndex = pages.length - 2;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
-  const { name, race: possibleRace, ...registration } = data;
+  const { name, gender: possibleGender, race: possibleRace, ...registration } = data;
   const [firstName, ...remainingWords] = name.split(' ');
   const lastName = remainingWords.join(' ') || ' ';
+
+  // For gender and race, we default to 'Prefer Not to Answer' if user doesn't select anything so that
+  // when they come back to edit registration, they'll see the prefer not to answer option selected
+  const gender = possibleGender || 'Prefer Not to Answer';
   const race = possibleRace.length === 0 ? ['Prefer Not to Answer'] : possibleRace;
-  return { ...registration, firstName, lastName, race };
+
+  return { ...registration, firstName, lastName, gender, race };
 };
 
 const convertFromAPI = (registration: RegistrationType): RegistrationSchema => {

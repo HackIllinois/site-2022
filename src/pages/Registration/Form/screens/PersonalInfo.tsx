@@ -24,8 +24,8 @@ const genderOptions = [
 const PersonalInfo = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.personalInfo)}>
     <h1 className={styles.title}>Personal Information</h1>
-    <Input className={styles.input} name="name" placeholder="Name" />
-    <Input className={styles.input} name="email" placeholder="Primary Email Address" />
+    <Input className={styles.input} name="name" placeholder="Full Name *" />
+    <Input className={styles.input} name="email" placeholder="Primary Email Address *" />
     <Select
       className={styles.select}
       name="location"
