@@ -14,6 +14,9 @@ const Welcome = (): JSX.Element => (
       Held on Discord, we hope to create an immersive hub through which you can experience the Hackathon as a community, working with your team as well as alongside all other participants, staff, and mentors—all virtually.
     </p>
     <p className={styles.text}>
+      <b>Note:</b> We use your GitHub to authenticate across various parts of the event, and your browser may have auto-signed you in. Stay tuned for the release of our mobile apps, as you&apos;ll use your GitHub accout to log into them!
+    </p>
+    <p className={styles.text}>
       Please fill out the following form to register for HackIllinois. We will use your email to send you additional information about our event in the coming weeks!
     </p>
     <p className={styles.text}>

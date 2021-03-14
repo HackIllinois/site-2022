@@ -33,7 +33,6 @@
     top: min(max(75px, 50vh - 350px), 100px);
     left: 50%;
     transform: translateX(-40%);
-    // overflow: hidden;
     
     @media (max-width: 1150px) {
       transform: translateX(-50%);
