@@ -21,7 +21,7 @@ export type RegistrationType = {
   major: string;
   programmingYears: number;
   programmingAbility: number;
-  hasInternship: boolean;
+  hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
 };
 

@@ -13,7 +13,7 @@ export const registrationSchema = z.object({
   major: z.string().nonempty(),
   programmingYears: z.number().int().min(0).max(10),
   programmingAbility: z.number().int().min(1).max(5),
-  hasInternship: z.boolean(),
+  hasInternship: z.enum(['YES', 'NO']).optional(),
   resumeFilename: z.string().optional(),
   // terms: z.boolean().refine((val: boolean) => val),
 });

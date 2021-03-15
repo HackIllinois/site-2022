@@ -21,8 +21,8 @@ const abilityOptions = [
 ];
 
 const internshipOptions = [
-  { value: true, label: 'Yes' },
-  { value: false, label: 'No' },
+  { value: 'YES', label: 'Yes' },
+  { value: 'NO', label: 'No' },
 ];
 
 const Experience = (): JSX.Element => (
@@ -30,7 +30,7 @@ const Experience = (): JSX.Element => (
     <h1 className={styles.title}>Experience</h1>
     <Select name="programmingYears" options={programmingYearsOptions} placeholder="How many years have you been programming? *" />
     <Select name="programmingAbility" options={abilityOptions} placeholder="On a scale from 1 to 5, how do you rate your programming ability? *" />
-    <Select name="hasInternship" options={internshipOptions} placeholder="Do you have an internship or full-time position this summer? *" />
+    <Select name="hasInternship" options={internshipOptions} placeholder="Do you have an internship or full-time position this summer?" />
     <FileUpload
       className={styles['resume-upload']}
       name="resumeFilename"
