@@ -24,7 +24,7 @@ const EventInfo: React.FC = () => (
       <p className={styles.one}>As a result, HackIllinois 2021 will not be limited to only Open Source contributions! People of any skill level, experience, and major with an interest in building a tech project are encouraged to apply and participate. Held virtually from April 9-12, HackIllinois 2021 will feature workshops, mentorship, challenges, and fun mini-events—all hosted on one discord server. Our goal is to provide participants with the same immersive hackathon experience as an in-person event through a virtual hub, with attendees working together synchronously from anywhere in the world.</p>
 
       <h2>JOIN US</h2>
-      <p className={styles.two}>Follow us on Twitter (@HackIllinois) and Instagram (@HackIllinois) to be notified of our event updates!</p>
+      <p className={styles.two}>Follow us on Twitter (<a href="https://twitter.com/hackillinois/" target="_blank" rel="noreferrer">@HackIllinois</a>) and Instagram (<a href="https://www.instagram.com/hackillinois/" target="_blank" rel="noreferrer">@HackIllinois</a>) to be notified of our event updates!</p>
       <p className={styles.two}>As mentioned above, we’ll connect mentors and attendees on <b>Discord</b>! As we approach the event, we’ll post a link on our social media to the discord server so that you can join and begin engaging with the community.</p>
 
       <h2><img src={DISCORD_LOGO} alt="" /> Discord</h2>
