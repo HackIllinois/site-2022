@@ -2,7 +2,7 @@ import React from 'react';
 
 import Hero from './Hero';
 import EventInfo from './EventInfo';
-// import FAQ from './FAQ';
+import FAQ from './FAQ';
 
 import styles from './styles.module.scss';
 
@@ -12,7 +12,7 @@ const Home: React.FC = () => (
     {/* Make sure all following sections have position: relative to ensure gradient goes under them */}
     <Hero />
     <EventInfo />
-    {/* <FAQ /> */}
+    <FAQ />
   </div>
 );
 
