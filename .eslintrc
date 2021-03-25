@@ -19,6 +19,7 @@
       "assert": "either"
     }],
     "react/jsx-one-expression-per-line": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "no-bitwise": "off"
   }
 }
