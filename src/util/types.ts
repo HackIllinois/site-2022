@@ -1,3 +1,5 @@
+export type WithId<Type> = Type & { id: string; };
+
 export type MethodType = 'GET' | 'POST' | 'PUT' | 'DELETE';
 export type FileType = 'resume' | 'photo' | 'blobstore';
 
@@ -24,10 +26,6 @@ export type RegistrationType = {
   hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
 };
-
-export interface RegistrationTypeWithId extends RegistrationType {
-  id: string;
-}
 
 export type RegistrationRole = 'attendee' | 'mentor';
 
@@ -72,3 +70,20 @@ export type MentorTimeslotType = {
   start_date: string;
   end_date: string;
 };
+
+export type RSVPType = {
+  isAttending: boolean;
+};
+
+export type ProfileType = Partial<{
+  firstName: string;
+  lastName: string;
+  timezone: string;
+  discord: string;
+  avatarUrl: string;
+  teamStatus: 'LOOKING_FOR_TEAM' | 'LOOKING_FOR_MEMBERS' | 'NOT_LOOKING';
+  interests: string[];
+  description: string;
+}>;
+
+export type ProfileResponseType = WithId<Required<ProfileType>> & { points: number };

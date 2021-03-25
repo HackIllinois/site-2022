@@ -3,18 +3,29 @@ import { useFormContext } from 'react-hook-form';
 
 import ErrorMessage from '../ErrorMessage';
 import StyledInput from './StyledInput';
+import HelpIcon from './HelpIcon';
+import styles from './styles.module.scss';
 
 type PropTypes = {
   name: string,
+  multiline?: boolean;
+  helpLink?: string;
   [key: string]: unknown;
 };
 
-const Input = ({ name, ...props }: PropTypes): JSX.Element => {
+const Input = ({ name, multiline, helpLink, ...props }: PropTypes): JSX.Element => {
   const { register } = useFormContext();
 
   return (
     <>
-      <StyledInput type="text" name={name} {...props} ref={register} />
+      <div className={styles.inputContainer}>
+        <StyledInput type="text" name={name} multiline={multiline} {...props} ref={register} />
+        {helpLink && (
+          <a className={styles.helpLink} href={helpLink} target="_blank" rel="noreferrer" title="Where can I find my Discord username?">
+            <HelpIcon color="#3C519C" />
+          </a>
+        )}
+      </div>
       <ErrorMessage name={name} />
     </>
   );
