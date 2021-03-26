@@ -11,7 +11,7 @@ import Select from 'components/form/Select';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
 import Random from 'components/form/Random';
-import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile } from 'util/api';
+import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile, APIError } from 'util/api';
 import { RegistrationType, WithId } from 'util/types';
 import DISCORD_HELP from 'assets/discord_username_how_to.png';
 
@@ -73,8 +73,8 @@ const Form = (): JSX.Element => {
       ]);
       setFinished(true);
     } catch (e) {
-      console.log(e);
-      alert('There was an error while submitting. If this error persists, please email contact@hackillinois.org');
+      const err: APIError = e;
+      alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
     } finally {
       setIsLoading(false);
     }

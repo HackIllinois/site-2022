@@ -2,21 +2,33 @@ import { WithId, MethodType, FileType, RegistrationType, PrizeType, MentorTimesl
 
 const API = 'https://api.hackillinois.org';
 
-function request(method: MethodType, endpoint: string, body?: unknown) {
-  return fetch(API + endpoint, {
+export class APIError extends Error {
+  status: number;
+  type: string;
+
+  constructor({ message, status, type }: { message: string, status: number, type: string }) {
+    super(message);
+    this.status = status;
+    this.type = type;
+    this.name = 'APIError';
+  }
+}
+
+async function request(method: MethodType, endpoint: string, body?: unknown) {
+  const response = await fetch(API + endpoint, {
     method,
     headers: {
       Authorization: sessionStorage.getItem('token') || '',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body),
-  })
-    .then((res: Response) => {
-      if (res.status === 200) {
-        return res.json();
-      }
-      throw new Error('response status code not 200');
-    });
+  });
+
+  if (response.status !== 200) {
+    throw new APIError(await response.json());
+  }
+
+  return response.json();
 }
 
 export const isAuthenticated = (): string|null => sessionStorage.getItem('token');
