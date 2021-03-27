@@ -13,7 +13,7 @@ const AuthenticatedRoute = ({ path, ...props }: AuthenticatedRoutePropTypes): JS
     return <div>Loading</div>;
   }
 
-  return <Route {...props} />;
+  return <Route path={path} {...props} />;
 };
 
 export default AuthenticatedRoute;
