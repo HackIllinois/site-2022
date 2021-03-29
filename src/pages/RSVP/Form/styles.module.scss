@@ -75,6 +75,8 @@
   }
 
   .finish {
+    flex: 1;
+    font-size: 0.85em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -94,6 +96,15 @@
   
     .text {
       text-align: center;
+      font-size: 1.25em;
+      line-height: 1.5em;
+      margin-top: 15px;
+
+      a {
+        font-weight: 600;
+        color: #46959F;
+        text-decoration: none;
+      }
     }
   }
 }
