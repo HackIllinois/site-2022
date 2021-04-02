@@ -32,6 +32,14 @@ function App(): JSX.Element {
           <StaticFileRedirect to="/documents/sponsorship.pdf" />
         </Route>
 
+        <Route path="/terms-of-service" exact>
+          <StaticFileRedirect to="/documents/terms-of-service.pdf" />
+        </Route>
+
+        <Route path="/discord-terms-of-service" exact>
+          <StaticFileRedirect to="/documents/discord-terms-of-service.pdf" />
+        </Route>
+
         <Route path="/">
           <Redirect to="/" />
         </Route>
