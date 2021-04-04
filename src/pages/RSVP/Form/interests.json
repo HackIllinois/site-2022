@@ -5,7 +5,7 @@
   "hardware": ["Arduino", "Raspberry Pi"],
   "gameDevelopment": ["Godot", "Unity", "Unreal"],
   "design": ["Adobe Illustrator", "Adobe InDesign", "Adobe Photoshop", "Adobe XD", "Blender", "Canva", "Figma"],
-  "versionControl": ["git", "GitHub"],
+  "versionControl": ["Git", "GitHub"],
   "databases": ["MongoDB", "MySQL", "Neo4J", "PostgreSQL"]
 }
 
