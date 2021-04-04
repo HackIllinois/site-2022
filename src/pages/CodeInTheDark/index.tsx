@@ -27,7 +27,7 @@ const CodeInTheDark = (): JSX.Element => {
   const [problem, setProblem] = useState('');
   const [codeValue, setCodeValue] = useState(starterCode);
   const [changeSinceSubmit, setChangeSinceSubmit] = useState(true);
-  const [successfulSubmit, setSuccessfulSubmit] = useState(true);
+  const [successfulSubmit] = useState(true); // TODO: remove?
   const [statusMessage, setStatusMessage] = useState('');
 
   const handleEditorChange = (newCode: string) => {
