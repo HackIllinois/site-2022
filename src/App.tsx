@@ -7,6 +7,7 @@ import Registration from 'pages/Registration';
 import RSVP from 'pages/RSVP';
 import StaticFileRedirect from 'components/StaticFileRedirect';
 import AuthenticatedRoute from 'components/AuthenticatedRoute';
+import CodeInTheDark from 'pages/CodeInTheDark';
 
 function App(): JSX.Element {
   return (
@@ -18,6 +19,10 @@ function App(): JSX.Element {
 
         <Route path="/auth" exact>
           <Auth />
+        </Route>
+
+        <Route path="/codeinthedark" exact>
+          <CodeInTheDark />
         </Route>
 
         <AuthenticatedRoute path="/register" exact>
