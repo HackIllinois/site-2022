@@ -20,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "ace-builds": "^1.4.12",
+    "array-flat-polyfill": "^1.0.1",
     "clsx": "^1.1.1",
     "emailjs-com": "^2.6.4",
     "eslint-config-airbnb-typescript": "^12.0.0",
