@@ -90,7 +90,7 @@ const Select = ({ name, options = [], creatable, isMulti = false, className, ...
         className={clsx(styles.select, className)}
         options={options}
         isMulti={isMulti}
-        blurInputOnSelect
+        blurInputOnSelect={!isMulti}
         closeMenuOnSelect={!isMulti}
         menuPlacement="auto"
         menuPortalTarget={document.body}
