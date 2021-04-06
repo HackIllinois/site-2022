@@ -32,6 +32,12 @@ const interestOptions = Object.values(interests)
   .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
   .map((value) => ({ label: value, value }));
 
+const preProcessData = (data: RSVPSchema) => {
+  if (data.description) {
+    data.description = data.description.trim().replace(/\n+/g, ' ');
+  }
+};
+
 const Form = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
@@ -65,6 +71,7 @@ const Form = (): JSX.Element => {
   }, []); // deliberately not including `methods`
 
   const onSubmit: SubmitHandler<RSVPSchema> = async (data) => {
+    preProcessData(data);
     setIsLoading(true);
     try {
       await Promise.all([
