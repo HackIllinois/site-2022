@@ -33,6 +33,12 @@ const interestOptions = Object.values(interests)
   .map((value) => ({ label: value, value }));
 
 const preProcessData = (data: RSVPSchema) => {
+  if (data.firstName) {
+    data.firstName = data.firstName.trim();
+  }
+  if (data.lastName) {
+    data.lastName = data.lastName.trim();
+  }
   if (data.description) {
     data.description = data.description.trim().replace(/\n+/g, ' ');
   }
