@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import Home from 'pages/Home';
 import Auth from 'pages/Auth';
 import Registration from 'pages/Registration';
+import Schedule from 'pages/Schedule';
 import RSVP from 'pages/RSVP';
 import StaticFileRedirect from 'components/StaticFileRedirect';
 import AuthenticatedRoute from 'components/AuthenticatedRoute';
@@ -35,6 +36,10 @@ function App(): JSX.Element {
 
         <Route path="/sponsor" exact>
           <StaticFileRedirect to="/documents/sponsorship.pdf" />
+        </Route>
+
+        <Route path="/schedule" exact>
+          <Schedule />
         </Route>
 
         <Route path="/terms-of-service" exact>

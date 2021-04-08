@@ -1,0 +1,136 @@
+.eventDisplay {
+  color: #fff;
+
+  @media (max-width: 550px) {
+    font-size: .8em;
+  }
+
+  h1.dayHeading {
+    display: inline-block;
+    position: relative;
+    left: 150px;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-bottom: 40px;
+
+    @media (max-width: 950px) {
+      left: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .timezoneText {
+      font-weight: 300;
+      margin-left: 7px;
+      @media (max-width: 950px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .events {
+    position: relative;
+
+    .eventWrapper {
+      margin-bottom: 10px;
+      display: flex;
+
+      .times {
+        box-sizing: border-box;
+        padding-right: 20px;
+        width: 150px;
+        text-align: right;
+
+        @media (max-width: 950px) {
+          width: 120px;
+        }
+
+        @media (max-width: 550px) {
+          width: 95px;
+          padding-right: 10px;
+        }
+
+        h1 {
+          font-size: 1.25em;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+
+        h3 {
+          font-size: .9375em;
+          opacity: 0.5;
+          font-weight: 500;
+          margin: 0;
+        }
+      }
+
+      .body {
+        flex: 1;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 2px;
+        width: 45vw;
+        height: fit-content;
+        display: flex;
+
+        .lineContainer {
+          margin-left: 10px;
+          width: 20px;
+          text-align: center;
+
+          .line {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            display: inline-block;
+            width: 7px;
+            height: 80%;
+            background: #ccc; // this color should never actually be used (one of the following event type styles should always apply)
+            border-radius: 7px;
+          }
+
+          .line[data-type='other'] { background: #FBB63B; }
+          .line[data-type='minievent'] { background: #6F8CC1; }
+          .line[data-type='qna'] { background: #EE6C72; }
+          .line[data-type='workshop'] { background: #2C9C98; }
+
+          .megaphone {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        .text {
+          flex: 1;
+          padding: 0 30px 0 15px;
+          @media (max-width: 550px) {
+            padding: 0 10px 0 10px;
+          }
+
+
+          h2 {
+            font-weight: 600;
+            font-size: 1.125em;
+            margin-bottom: 0;
+          }
+
+          h2.announcement {
+            margin: 1.0em 0;
+          }
+
+          p {
+            font-size: 1em;
+          }
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
