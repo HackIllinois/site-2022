@@ -7,15 +7,17 @@ import LEFT_TREES from 'assets/home/hero/left_trees.svg';
 import RIGHT_TREES from 'assets/home/hero/right_trees.svg';
 import WIND from 'assets/home/hero/wind.svg';
 import CAMPERS from 'assets/home/hero/campers.svg';
-import LOGO from 'assets/home/hero/logo.svg';
 import MOON_REFLECTION from 'assets/home/hero/moon_reflection.svg';
 import MOBILE_TREES from 'assets/home/hero/mobile_trees.svg';
+import LOGO from 'assets/logo.svg';
 import LOGO_MOBILE from 'assets/home/hero/logo_mobile.svg';
 
+import NavBar from 'components/NavBar';
 import styles from './styles.module.scss';
 
 const Section1: React.FC = () => (
   <div className={styles.hero}>
+    <NavBar hideLogo />
     <div className={styles.stars} style={{ backgroundImage: `url(${STARS})` }} />
     <div className={styles.moon} />
     <div className={styles.bottomLandscape} style={{ backgroundImage: `url(${BOTTOM_LANDSCAPE})` }} />

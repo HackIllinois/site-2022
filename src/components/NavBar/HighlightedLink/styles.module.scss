@@ -1,0 +1,26 @@
+.highlightedLink {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  font-size: 1.25em;
+  margin: 30px 0;
+  font-weight: 600;
+  padding: 12px 0;
+  position: relative;
+
+  .highlight {
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    opacity: 0;
+  }
+
+  &.active .highlight {
+    opacity: 1;
+  }
+}
