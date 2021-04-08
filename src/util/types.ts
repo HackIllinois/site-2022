@@ -30,6 +30,7 @@ export type RegistrationType = {
 export type RegistrationRole = 'attendee' | 'mentor';
 
 export interface EventType {
+  id: string;
   name: string;
   description: string;
   startTime: number;

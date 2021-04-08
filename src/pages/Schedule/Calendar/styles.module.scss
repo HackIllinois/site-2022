@@ -1,0 +1,57 @@
+.calendar {
+  text-align: center;
+  user-select: none;
+  width: fit-content;
+
+  @media (min-width: 950px) {
+    margin-top: 40px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    text-align: left;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 5px 10px;
+
+    .calendarDay {
+      color: #fff;
+      opacity: 0.6;
+      font-size: 18px;
+      border-radius: 50%;
+  
+      .dayButton {
+        display: block;
+        box-sizing: content-box;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+        text-align: center;
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        cursor: inherit;
+      }
+    }
+  
+    .calendarDay[data-active='yes']:hover {
+      background-color: rgba(44, 156, 152, 0.5);
+    }
+  
+    .selectedDay {
+      opacity: 1;
+      background-color: #2C9C98;
+    }
+  
+    .activeDay {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
