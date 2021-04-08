@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const eventTypes = [
-  ['#FBB63B', 'General'],
-  ['#2C9C98', 'Workshops'],
+  ['#2C9C98', 'Workshop'],
+  ['#6F8CC1', 'Mini Event'],
   ['#EE6C72', 'Company Q&A'],
-  ['#6F8CC1', 'Mini Events'],
+  ['#FBB63B', 'Other'],
 ];
 
 const Guide: React.FC = () => (
