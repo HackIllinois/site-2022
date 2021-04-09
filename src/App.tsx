@@ -15,6 +15,7 @@ import RSVP from 'pages/RSVP';
 import StaticFileRedirect from 'components/StaticFileRedirect';
 import AuthenticatedRoute from 'components/AuthenticatedRoute';
 import CodeInTheDark from 'pages/CodeInTheDark';
+import ZoomRedirect from 'pages/ZoomRedirect';
 
 function App(): JSX.Element {
   return (
@@ -40,16 +41,20 @@ function App(): JSX.Element {
           <RSVP />
         </AuthenticatedRoute>
 
-        <Route path="/sponsor" exact>
-          <StaticFileRedirect to="/documents/sponsorship.pdf" />
-        </Route>
-
         <Route path="/mentors">
           <Mentors />
         </Route>
 
         <Route path="/schedule" exact>
           <Schedule />
+        </Route>
+
+        <AuthenticatedRoute path="/zoom/:id" exact>
+          <ZoomRedirect />
+        </AuthenticatedRoute>
+
+        <Route path="/sponsor" exact>
+          <StaticFileRedirect to="/documents/sponsorship.pdf" />
         </Route>
 
         <Route path="/terms-of-service" exact>

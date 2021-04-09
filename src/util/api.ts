@@ -1,4 +1,4 @@
-import { WithId, MethodType, FileType, RegistrationType, PrizeType, MentorTimeslotType, EventType, RegistrationRole, ProfileType, RSVPType, ProfileResponseType } from 'util/types';
+import { WithId, MethodType, FileType, RegistrationType, PrizeType, MentorTimeslotType, EventType, RegistrationRole, ProfileType, RSVPType, ProfileResponseType, ZoomLinks } from 'util/types';
 
 const API = 'https://api.hackillinois.org';
 
@@ -139,4 +139,8 @@ export function getProfile(): Promise<ProfileResponseType> {
 export function createProfile(isEditing: boolean, profile: ProfileType): Promise<ProfileResponseType> {
   const method = isEditing ? 'PUT' : 'POST';
   return request(method, '/profile/', profile);
+}
+
+export function getZoomLinks(): Promise<ZoomLinks> {
+  return request('GET', '/upload/blobstore/zoomlinks/').then((res) => res.data);
 }
