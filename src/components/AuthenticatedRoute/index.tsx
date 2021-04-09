@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useLocation } from 'react-router-dom';
 import { isAuthenticated, authenticate } from 'util/api';
 
 type AuthenticatedRoutePropTypes = {
@@ -8,8 +8,10 @@ type AuthenticatedRoutePropTypes = {
 };
 
 const AuthenticatedRoute = ({ path, ...props }: AuthenticatedRoutePropTypes): JSX.Element => {
+  const { pathname } = useLocation();
+
   if (!isAuthenticated()) {
-    authenticate(path);
+    authenticate(pathname);
     return <div>Loading</div>;
   }
 
