@@ -43,6 +43,7 @@ export interface EventType {
   }[];
   sponsor?: string;
   eventType: string;
+  points: number;
 }
 
 export type DayType = {

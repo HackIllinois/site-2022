@@ -134,6 +134,19 @@
           a {
             color: white;
           }
+
+          .points {
+            border-radius: 20px;
+            display: inline-block;
+            padding: 1px 10px;
+            margin-top: 5px;
+            margin-left: -2px;
+            font-weight: 500;
+            &[data-type='other'] { background: #FBB63B; color: black; }
+            &[data-type='minievent'] { background: #6F8CC1; }
+            &[data-type='qna'] { background: #EE6C72; }
+            &[data-type='workshop'] { background: #2C9C98; }
+          }
         }
       }
     }
