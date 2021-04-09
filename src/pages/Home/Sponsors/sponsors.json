@@ -12,9 +12,7 @@
     { "name": "Google", "image": "google.svg", "link": "https://www.google.com/" },
     { "name": "Grainger", "image": "grainger.svg", "link": "https://www.grainger.com/" },
     { "name": "IMC", "image": "imc.svg", "link": "https://www.imc.com/us/" },
-    { "name": "Optum", "image": "optum.svg", "link": "https://www.optum.com/" }
-  ],
-  [
+    { "name": "Optum", "image": "optum.svg", "link": "https://www.optum.com/" },
     { "name": "BP", "image": "bp.png", "link": "https://www.bp.com/" },
     { "name": "Schlumberger", "image": "schlumberger.svg", "link": "https://www.slb.com/" },
     { "name": "Silicon Labs", "image": "silicon_labs.svg", "link": "https://www.silabs.com/" },
