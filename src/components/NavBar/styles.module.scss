@@ -10,7 +10,13 @@
   justify-content: space-between;
 
   .logo {
+    width: 135px;
     margin: 15px;
+
+    &.mobile {
+      width: 105px;
+      margin: 25px;
+    }
 
     &.hidden {
       visibility: hidden;
@@ -34,6 +40,7 @@
     .menuIcon {
       width: 40px;
       height: auto;
+      margin-right: 15px;
     }
   }
 }

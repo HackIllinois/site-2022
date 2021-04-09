@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import useWindowSize from 'util/useWindowSize';
+import NavBar from 'components/NavBar';
 import Background from './Background';
 import Calendar from './Calendar';
 import Guide from './Guide';
@@ -14,6 +15,7 @@ const Schedule: React.FC = () => {
 
   return (
     <div className={styles.schedule}>
+      <NavBar showHome />
       <Background />
       <div className={styles.flexRow}>
         <div className={styles.left}>

@@ -21,6 +21,7 @@ const HighlightedLink = ({ to, children, color = 'white', highlightColor = '#EE6
     style={{ color, ...style }}
     {...props}
     activeClassName={styles.active}
+    exact
   >
     {children}
     <div className={styles.highlight} style={{ backgroundColor: highlightColor }} />
