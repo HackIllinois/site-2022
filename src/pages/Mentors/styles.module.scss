@@ -1,0 +1,285 @@
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #2b2f71;
+  overflow: hidden;
+}
+
+.mobile {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.shade {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(0deg, #2b2f71 0.31%, #219b96 99.5%);
+  opacity: 0.38;
+}
+
+.right_bush {
+  position: absolute;
+  width: 400px;
+  right: 0;
+
+  z-index: 20;
+  pointer-events: none;
+  bottom: -25px;
+}
+
+.left_bush {
+  position: absolute;
+  width: 450px;
+  bottom: 10%;
+  left: 0;
+  z-index: 2;
+}
+
+.foreground_tree {
+  position: absolute;
+  height: 120%;
+  bottom: -5%;
+  left: -3%;
+  z-index: 10;
+}
+
+.right_tree {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.left_tree {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.ground {
+  position: absolute;
+  min-width: 110%;
+  min-height: 300px;
+  bottom: -2%;
+  left: -5%;
+  z-index: 5;
+}
+
+.bug {
+  position: absolute;
+  width: 7vh;
+  bottom: 30px;
+  left: 11.5vh;
+  z-index: 13;
+}
+
+.dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%; 
+  z-index: 12;
+  background-position: 75px top;
+}
+
+.container {
+  @media (max-width: 768px) {
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 25px;
+  }
+  position: absolute;
+  top: max(140px, 15%);
+  bottom: 15%;
+  left: 20vh;
+  right: 10%;
+
+  z-index: 15;
+
+  padding: 0px 5px 0px 50px;
+}
+
+.shader {
+  position: absolute;
+  background: #ffffff;
+  opacity: 0.2;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.mentor_image {
+  height: 150px;
+  width: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.mentor_list {
+  @media (max-width: 768px) {
+    padding: 0 20px 0 0;
+  }
+  position: relative;
+  padding: 0 80px 0 0;
+  height: 100%;
+  z-index: 10;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: #ADD8CD transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #00000000;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #add8cd;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 20px;
+  }
+
+  &::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 20px;
+  }
+}
+
+.mentor {
+  margin: 20px 0;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.mentor_text {
+  color: white;
+  @media (max-width: 768px) {
+    margin: 5px 0 0 0;
+  }
+}
+
+.mentor_name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.mentor_description {
+  font-size: 1em;
+  line-height: 1.5em;
+  @media (max-width: 900px) {
+    font-size: .9em;
+  }
+  @media (max-width: 500px) {
+    font-size: .8em;
+  }
+}
+
+.mentor_type_list {
+  position: absolute;
+  top: 35%;
+  left: calc(5vh);
+  color: white;
+  z-index: 20;
+  font-weight: 600;
+}
+
+.category {
+  margin: 60px 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.category_select {
+  color: #fbb63b;
+}
+
+.category_title {
+  color: white;
+  font-size: 1.6em;
+  font-weight: 600;
+  position: absolute;
+  top: -45px;
+  left: 24px;
+  @media (max-width: 500px) {
+    font-size: 1.35em;
+    top: -38px;
+  }
+}
+
+.select_wrapper {
+  box-sizing: border-box;
+  color: black;
+  font-weight: 600;
+  padding: 15px 20px;
+  position: absolute;
+  min-height: 45px;
+  top: 50px;
+  left: 25px;
+  right: 25px;
+  background: #e5edfd80;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 42;
+  transition: .25s ease-in-out;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.drop_arrow {
+  float: right;
+  height: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.drop_list {
+  margin: 10px 0 0 0;
+}
+
+.drop_category {
+  margin: 0 0 5px 0;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}

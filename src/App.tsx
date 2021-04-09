@@ -1,8 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 import Home from 'pages/Home';
 import Auth from 'pages/Auth';
+import Mentors from 'pages/Mentors';
 import Registration from 'pages/Registration';
 import Schedule from 'pages/Schedule';
 import RSVP from 'pages/RSVP';
@@ -36,6 +42,10 @@ function App(): JSX.Element {
 
         <Route path="/sponsor" exact>
           <StaticFileRedirect to="/documents/sponsorship.pdf" />
+        </Route>
+
+        <Route path="/mentors">
+          <Mentors />
         </Route>
 
         <Route path="/schedule" exact>
