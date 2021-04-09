@@ -1,0 +1,99 @@
+.sponsors {
+  position: relative;
+  padding-bottom: 200px;
+
+  .leftTrees {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    @media (max-width: 767px) {
+      top: -25px;
+    }
+  }
+
+  .rightTrees {
+    position: absolute;
+    right: 0;
+    top: -250px;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .bottomTrees {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (min-width: 2250px) {
+      display: none;
+    }
+  }
+
+  .title {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    margin-top: 50px;
+    @media (max-width: 767px) {
+      font-size: 1.5em;
+      margin-bottom: 35px;
+    }
+  }
+
+  .sponsorSection {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.88);
+    width: 70%;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 35px;
+    padding: 20px min(10%, 150px);
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 40px;
+    
+    &.first {
+      grid-template-columns: 1fr 1fr;
+      padding: 40px min(10%, 150px);
+    }
+
+    @media (max-width: 767px) {
+      gap: 5px 20px;
+      width: 90%;
+      margin: 30px auto;
+    }
+
+    .sponsor {
+      height: min(10vw, 140px);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    @media (max-width: 767px) {
+      &.first {
+        padding: 30px 10%;
+        .sponsor {
+          height: 13vw;
+        }
+      }
+    }
+  }
+}
+
+// From https://css-tricks.com/inclusively-hidden/ (hides content visually, but still accessible to screen readers)
+.srOnly:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}

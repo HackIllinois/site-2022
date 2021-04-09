@@ -1,0 +1,23 @@
+[
+  [
+    { "name": "Cargill", "image": "cargill2.svg", "link": "https://www.cargill.com/" },
+    { "name": "Caterpillar", "image": "caterpillar_black.svg", "link": "https://www.caterpillar.com/" }
+  ],
+  [
+    { "name": "AbbVie", "image": "abbvie.svg", "link": "https://www.abbvie.com/"  },
+    { "name": "Bloomberg", "image": "bloomberg.png", "link": "https://www.bloomberg.com/" },
+    { "name": "Research Park", "image": "reseach_park.svg", "link": "https://researchpark.illinois.edu/" },
+    { "name": "Capital One", "image": "capital_one.svg", "link": "https://www.capitalone.com/" },
+    { "name": "Facebook", "image": "facebook.svg", "link": "https://www.facebook.com/" },
+    { "name": "Google", "image": "google.svg", "link": "https://www.google.com/" },
+    { "name": "Grainger", "image": "grainger.svg", "link": "https://www.grainger.com/" },
+    { "name": "IMC", "image": "imc.svg", "link": "https://www.imc.com/us/" },
+    { "name": "Optum", "image": "optum.svg", "link": "https://www.optum.com/" }
+  ],
+  [
+    { "name": "BP", "image": "bp.png", "link": "https://www.bp.com/" },
+    { "name": "Schlumberger", "image": "schlumberger.svg", "link": "https://www.slb.com/" },
+    { "name": "Silicon Labs", "image": "silicon_labs.svg", "link": "https://www.silabs.com/" },
+    { "name": "Epsilon", "image": "epsilon.jpg", "link": "https://www.epsilon.com/us"}
+  ]
+]

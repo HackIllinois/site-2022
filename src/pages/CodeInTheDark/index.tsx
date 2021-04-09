@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-import caterpillar from 'assets/sponsors/caterpillar_white.svg';
 import styles from './styles.module.scss';
 
 const starterCode = `<html>
@@ -63,7 +62,7 @@ const CodeInTheDark = (): JSX.Element => {
         <h1>CODE IN THE DARK</h1>
         <div>
           <h3>Sponsored by</h3>
-          <img src={caterpillar} alt="Caterpillar logo" />
+          <img src="/assets/sponsor_logos/caterpillar_white.svg" alt="Caterpillar logo" />
         </div>
       </div>
 
