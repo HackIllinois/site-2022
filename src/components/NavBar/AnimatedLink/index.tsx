@@ -20,6 +20,7 @@ const AnimatedLink = ({ to, children, color = 'white', className, style = {}, ..
     style={{ color, ...style }}
     {...props}
     activeClassName={styles.active}
+    exact
   >
     {children}
     <div className={styles.line} style={{ backgroundColor: color }} />

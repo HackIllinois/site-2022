@@ -37,6 +37,12 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
         setIsSideBarOpen(false);
       }
     };
+
+    if (!mql.addEventListener) { // support old browsers
+      mql.addListener(listener);
+      return () => mql.removeListener(listener);
+    }
+
     mql.addEventListener('change', listener);
     return () => mql.removeEventListener('change', listener);
   }, [mobileBreakpoint]);
@@ -47,7 +53,7 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
     <header>
       <nav className={clsx(styles.navBar, className)}>
         <Link to="/">
-          <img className={clsx(styles.logo, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
+          <img className={clsx(styles.logo, isMobile && styles.mobile, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
         </Link>
 
         <div className={styles.spacer} />
