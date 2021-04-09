@@ -18,7 +18,7 @@ import mentors from './mentorData';
 // const [dropped, setDropped] = useState(false);
 const Mentors: React.FC = () => (
   <div className={styles.background}>
-    <NavBar />
+    <NavBar showHome />
     {/* <div
       className={styles.select_wrapper}
       style={{ maxHeight: dropped ? '150px' : '45px' }}
