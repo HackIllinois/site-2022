@@ -88,3 +88,7 @@ export type ProfileType = Partial<{
 }>;
 
 export type ProfileResponseType = WithId<Required<ProfileType>> & { points: number };
+
+export type ZoomLinks = {
+  [id: string]: string;
+};
