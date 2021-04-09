@@ -81,7 +81,10 @@ const Events = ({ date }: Props): JSX.Element => {
                     </svg>
                   </div>
                   <div className={styles.text}>
-                    <h2 className={styles.announcement}>{event.name}</h2>
+                    <h2 className={styles.announcement}>
+                      {event.name}
+                    </h2>
+                    <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
                 </>
               )}
