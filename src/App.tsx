@@ -10,6 +10,7 @@ import Home from 'pages/Home';
 import Auth from 'pages/Auth';
 import Mentors from 'pages/Mentors';
 import Registration from 'pages/Registration';
+import Prizes from 'pages/Prizes';
 import Schedule from 'pages/Schedule';
 import RSVP from 'pages/RSVP';
 import StaticFileRedirect from 'components/StaticFileRedirect';
@@ -40,6 +41,10 @@ function App(): JSX.Element {
         <AuthenticatedRoute path="/rsvp" exact>
           <RSVP />
         </AuthenticatedRoute>
+
+        <Route path="/prizes" exact>
+          <Prizes />
+        </Route>
 
         <Route path="/mentors">
           <Mentors />
