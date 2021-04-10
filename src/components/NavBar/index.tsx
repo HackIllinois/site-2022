@@ -11,7 +11,7 @@ import MenuIcon from './MenuIcon';
 type LinkType = { text: string, to: string };
 const links: LinkType[] = [
   { text: 'Mentors', to: '/mentors' },
-  // { text: 'Prizes', to: '/prizes' },
+  { text: 'Prizes', to: '/prizes' },
   { text: 'Schedule', to: '/schedule' },
   // { text: 'Resources', to: '/resources' },
 ];

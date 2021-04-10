@@ -1,0 +1,267 @@
+.prizes {
+  background-color: #1E2E55;
+  position: relative;
+  min-height: 100%;
+
+  .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+    }
+
+    .topSection {
+      height: 600px;
+      position: relative;
+    }
+
+    .stars {
+    }
+
+    .moon {
+      left: 160px;
+      top: 110px;
+      @media (max-width: 767px) {
+        left: auto;
+        right: 0px;
+        top: 80px
+      }
+    }
+
+    .mountains {
+      width: 80%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-45%);
+    }
+
+    .leftTrees {
+      left: 0;
+      height: calc(100% - 50px); // 100% - top
+      bottom: 0;
+      z-index: 2;
+      @media (max-width: 767px) {
+        bottom: -100px;
+      }
+    }
+
+    .leftBushes {
+      left: 0;
+      height: calc(100% - 353px); // 100% - top
+      bottom: 0;
+      z-index: 2;
+    }
+
+    .centerBushes {
+      left: 50%;
+      transform: translateX(-30%);
+      bottom: 0;
+      width: 40%;
+    }
+
+    .rightTrees {
+      right: 0;
+      top: 70px;
+      height: calc(100% - 50px - 200px); // 100% - top - bottom
+      bottom: 200px;
+      @media (max-width: 767px) {
+        bottom: auto;
+        top: 750px;
+      }
+    }
+
+    .hills {
+      bottom: 0;
+      right: 0;
+      width: 60%;
+    }
+
+    .hills2 {
+      right: 0;
+      bottom: 0;
+      width: 45%;
+    }
+
+    .car {
+      z-index: 1;
+      left: 10%;
+      width: 65%;
+      bottom: -25.5vw;
+      @media screen and (min-width: 1700px) {
+        bottom: -26vw;
+        left: 7%
+      }
+      @media screen and (max-width: 1400px) {
+        bottom: -25vw;
+      }
+      @media screen and (max-width: 1100px) {
+        bottom: -24.5vw;
+      }
+      @media screen and (max-width: 975px) {
+        left: 18%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .car, .hills, .hills2, .centerBushes, .mountains, .solid, .leftBushes {
+        display: none;
+      }
+    }
+
+    .solid {
+      position: absolute;
+      top: 600px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #161654;
+    }
+    
+    .gradient {
+      position: absolute;
+      top: 680px;
+      bottom:0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, #0B1132 17.43%, #151C44 82.24%, rgba(21, 28, 68, 0) 98.39%);
+      z-index: 2;
+
+      @media (max-width: 767px) {
+        background: linear-gradient(360deg, #0C1132 5.86%, rgba(12, 17, 50, 0) 92.71%);
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 100px;
+    z-index: 10;
+    font-size: .8em;
+    @media (max-width: 767px) {
+      font-size: .7em;
+    }
+
+    .prize {
+      flex: 1;
+      margin: 0 15px;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+
+      &.dummy {
+        visibility: hidden;
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      
+      .prizeIcon {
+        margin: 0 auto;
+
+        &.dark {
+          display: none;
+        }
+      }
+
+      .name {
+        font-size: 1.5em;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 1.125em;
+        line-height: 1.5em;
+        margin-top: 0;
+        a {
+          color: white;
+        }
+      }
+
+      .spacer {
+        flex: 1;
+      }
+
+      .value {
+        color: #FBB63B;
+        font-size: 3em;
+        font-weight: 600;
+        margin: 0;
+        margin-top: 10px;
+      }
+
+      .valueDetails {
+        font-size: 1.125em;
+        line-height: 1.5em;
+      }
+    }
+
+    .mainPrizes {
+      width: 53%;
+      align-self: flex-end;
+      display: flex;
+
+      margin-top: 205px;
+      margin-right: 5%;
+      margin-bottom: 45px;
+    }
+
+    .category {
+      flex: 1;
+      width: 90%;
+      max-width: 1300px;
+      margin-top: 200px;
+      &:first-child {
+        margin-top: 150px;
+      }
+
+      @media (max-width: 767px) {
+        margin-top: 0;
+        &:first-child {
+          margin-top: 100px;
+        }
+      }
+
+      .title {
+        color: white;
+        font-weight: 600;
+        font-size: 1.875em;
+        &.hide {
+          visibility: hidden;
+        }
+      }
+
+      .prizesContainer {
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: 767px) {
+          flex-direction: column;
+          .prize {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        &:last-child .prizesContainer {
+          flex-wrap: wrap;
+          .prize {
+            min-width: 35%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
