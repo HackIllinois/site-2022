@@ -87,7 +87,6 @@ const CodeInTheDark = (): JSX.Element => {
           <h3>Rules</h3>
           <ul>
             <li>Wait until the timer starts and the image link has been provided to begin editing your code.</li>
-            <li>You will be able to view the reference image for the whole time.</li>
             <li>You are allowed to use all tools available. This includes a text editor to preview your website.</li>
             <li>Submit your code in a single file.</li>
           </ul>
