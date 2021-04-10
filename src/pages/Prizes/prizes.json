@@ -33,7 +33,8 @@
       {
         "name": "CAT’s Choice",
         "description": "Check out the video prompt <a href=\"https://www.youtube.com/watch?v=OduuktvDM6w\" target=\"_blank\" rel=\"noopener noreferrer\">here</a> and associated slides <a href=\"https://drive.google.com/file/d/1Oyo6jqllSpKuYumRlItJ3dKwJpS2LrC3/view\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>!",
-        "value": 1000
+        "value": 1000,
+        "valueDetails": "worth of Amazon gift cards"
       },
       {
         "name": "Cargill’s Choice: Best Food Related Hack",
@@ -45,7 +46,7 @@
         "name": "Capital One: Best Financial Hack",
         "description": "This will be awarded to the most novel project pertaining to a field related to finance! Whether it be about managing business accounts or personal budgets or spending, the project must creatively incorporate some fiscal theme.",
         "value": 250,
-        "valueDetails": "per team member"
+        "valueDetails": "Amazon gift card per team member"
       },
       {
         "name": "Staff Pick",
