@@ -9,8 +9,15 @@ import EventDisplay from './EventDisplay';
 
 import styles from './styles.module.scss';
 
+const eventDates = [9, 10, 11, 12];
+let defaultDate = 9;
+const today = new Date();
+if (today.getFullYear() === 2021 && today.getMonth() === 3 && eventDates.includes(today.getDate())) {
+  defaultDate = today.getDate();
+}
+
 const Schedule: React.FC = () => {
-  const [date, setDate] = useState(9);
+  const [date, setDate] = useState(defaultDate);
   const { width } = useWindowSize();
 
   return (
