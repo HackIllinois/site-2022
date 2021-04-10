@@ -86,23 +86,23 @@ const CodeInTheDark = (): JSX.Element => {
         <div className={styles.rules}>
           <h3>Rules</h3>
           <ul>
-            <li>Wait until the timer starts to begin editing your code</li>
-            <li>You are limited only to HTML/CSS (No libraries, Javascript, etc.)</li>
-            <li>Do not leave this tab to access any external websites or resources</li>
-            <li>Do not preview the result of your code!</li>
+            <li>Wait until the timer starts and the image link has been provided to begin editing your code.</li>
+            <li>You will be able to view the reference image for the whole time.</li>
+            <li>You are allowed to use all tools available. This includes a text editor to preview your website.</li>
+            <li>Submit your code in a single file.</li>
           </ul>
 
           <h3>Tips</h3>
           <ul>
             <li>Write your CSS inline, or inside the provided style tags</li>
-            <li>The HackIllinois logo can be found at <b>assets/logo.png</b></li>
+            <li>The images can be found at <b>assets/dig.png</b> and <b>assets/dump.png</b></li>
           </ul>
 
           <h3>Submit</h3>
           <div className={styles.submit}>
-            <p>Team Name:</p>
+            <p>Name:</p>
             <input type="text" id="name-input" name="name" onChange={({ target: { value } }) => setName(value)} />
-            <p>Problem Number:</p>
+            <p>Discord Username (e.g. Pat#6154):</p>
             <input type="text" id="problem-input" name="problem" onChange={({ target: { value } }) => setProblem(value)} />
             <button type="button" onClick={handleSubmit}>Submit</button>
             <p className={clsx(styles.status, !displayStatus && styles.inactive)}>
