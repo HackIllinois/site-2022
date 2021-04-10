@@ -70,7 +70,7 @@ const Events = ({ date }: Props): JSX.Element => {
                   </div>
                   <div className={styles.text}>
                     <h2>{event.name}</h2>
-                    {event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>}
+                    {!!event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>}
                     <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
                 </>
