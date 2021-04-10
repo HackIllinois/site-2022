@@ -60,7 +60,7 @@ const Prizes = (): JSX.Element => (
                 {description && <p className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />}
                 <div className={styles.spacer} />
                 <h4 className={styles.value}>${value}</h4>
-                {valueDetails && <span className={styles.valueDetails}>{valueDetails}</span>}
+                {valueDetails && <span className={styles.valueDetails} dangerouslySetInnerHTML={{ __html: valueDetails }} />}
               </div>
             ))}
           </div>

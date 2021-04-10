@@ -34,13 +34,13 @@
         "name": "CAT’s Choice",
         "description": "Check out the video prompt <a href=\"https://www.youtube.com/watch?v=OduuktvDM6w\" target=\"_blank\" rel=\"noopener noreferrer\">here</a> and associated slides <a href=\"https://drive.google.com/file/d/1Oyo6jqllSpKuYumRlItJ3dKwJpS2LrC3/view\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>!",
         "value": 1000,
-        "valueDetails": "worth of Amazon gift cards"
+        "valueDetails": "worth of Amazon gift cards\n+ <b>$300</b> cash"
       },
       {
         "name": "Cargill’s Choice: Best Food Related Hack",
         "description": "This will be awarded to the project that incorporates the theme of food in its usage in the most novel and practical way.",
         "value": 300,
-        "valueDetails": "+ $50 GrubHub gift card per team member"
+        "valueDetails": "+ <b>$50</b> GrubHub gift card per team member"
       },
       {
         "name": "Capital One: Best Financial Hack",

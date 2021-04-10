@@ -204,6 +204,12 @@
       .valueDetails {
         font-size: 1.125em;
         line-height: 1.5em;
+        white-space: pre-line;
+
+        b {
+          font-weight: 600;
+          color: #FBB63B;
+        }
       }
     }
 
