@@ -5,9 +5,6 @@
     "darkColor": "#2C9C98",
     "prizes": [
       {
-        "dummy": true
-      },
-      {
         "name": "First Place",
         "description": "",
         "value": 1500

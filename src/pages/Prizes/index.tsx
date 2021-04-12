@@ -11,10 +11,12 @@ import HILLS2 from 'assets/prizes/hills2.svg';
 import STARS from 'assets/prizes/stars.svg';
 import MOON from 'assets/prizes/moon.svg';
 import CAR from 'assets/prizes/car.svg';
+import APP_LOGO from 'assets/app_logo.png';
 import NavBar from 'components/NavBar';
 
 import styles from './styles.module.scss';
 import categories from './prizes.json';
+import winners from './winners.json';
 import PrizeIcon from './PrizeIcon';
 
 type Prize = Partial<{
@@ -46,6 +48,23 @@ const Prizes = (): JSX.Element => (
     </div>
 
     <div className={styles.content}>
+      <div className={styles.winners}>
+        <div className={styles.container}>
+          <h2>Congratulations!</h2>
+          <div className={styles.winnerGrid}>
+            {winners.map(({ image, prizeName, projectName, teamName, dummy }) => (
+              <div className={clsx(styles.winner, dummy && styles.dummy)}>
+                <img className={styles.projectPreview} src={image || APP_LOGO} alt="" />
+                <div className={styles.text}>
+                  <h3 className={styles.prizeName}>{prizeName || 'Prize Name'}</h3>
+                  <h4 className={styles.team}>{teamName || 'Team Name'}</h4>
+                  <p className={styles.project}>{projectName || 'Project Name'}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {categories.map(({ title, prizes, lightColor, darkColor, hideTitle }) => (
         <div className={styles.category}>

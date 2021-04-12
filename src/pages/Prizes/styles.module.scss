@@ -26,8 +26,8 @@
       top: 110px;
       @media (max-width: 767px) {
         left: auto;
-        right: 0px;
-        top: 80px
+        right: -10px;
+        top: 50px
       }
     }
 
@@ -133,6 +133,9 @@
         top: 600px;
       }
 
+      @media (max-width: 1100px) {
+        top: 500px;
+      }
 
       @media (max-width: 767px) {
         top: 680px;
@@ -153,6 +156,104 @@
       font-size: .7em;
     }
 
+    .winners {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 0 15px;
+      box-sizing: border-box;
+      align-self: flex-end;
+      margin-right: 5%;
+      border-radius: 20px;
+      max-width: 50%;
+      margin-top: 90px;
+      margin-bottom: 50px;
+      @media (max-width: 767px) {
+        max-width: 90%;
+        width: 90%;
+        margin-bottom: 25px;
+        margin-top: 100px;
+      }
+
+      .container {
+        padding: 15px 10px;
+        max-height: 600px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-color: #ADD8CD transparent;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+          width: 10px;
+          height: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          border: 5px solid #add8cd;
+        }
+
+        @media (max-width: 767px) {
+          max-height: none;
+        }
+      }
+
+      h2 {
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.75em;
+        margin-bottom: 20px;
+      }
+
+      .winnerGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+
+        @media (max-width: 1300px) {
+          grid-template-columns: 1fr;
+        }
+
+        .winner {
+          display: flex;
+
+          &.dummy {
+            visibility: hidden;
+            @media (max-width: 1300px) {
+              display: none;
+            }
+          }
+
+          .projectPreview {
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 10px;
+          }
+
+          .text {
+            font-size: 1.15em;
+            line-height: 1.5em;
+
+            .prizeName {
+              color: #FBB63B;
+              font-weight: 600;
+              margin: 5px 0;
+              text-transform: uppercase;
+            }
+            
+            .team {
+              margin: 5px 0;
+              color: white;
+              font-weight: 600;
+            }
+            
+            .project {
+              margin: 5px 0;
+              color: white;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
     .prize {
       flex: 1;
       margin: 0 15px;
@@ -163,6 +264,9 @@
       border-radius: 25px;
       display: flex;
       flex-direction: column;
+      @media (max-width: 767px) {
+        margin: 0;
+      }
 
       &.dummy {
         visibility: hidden;
@@ -233,10 +337,6 @@
       flex: 1;
       width: 90%;
       max-width: 1300px;
-      margin-top: 200px;
-      &:first-child {
-        margin-top: 150px;
-      }
 
       @media (max-width: 767px) {
         margin-top: 0;
@@ -251,6 +351,9 @@
         font-size: 1.875em;
         &.hide {
           visibility: hidden;
+          @media (max-width: 767px) {
+            display: none;
+          }
         }
       }
 
