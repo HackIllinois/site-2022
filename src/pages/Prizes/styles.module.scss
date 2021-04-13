@@ -231,6 +231,7 @@
 
           .projectPreview {
             width: 100px;
+            align-self: center;
             margin-right: 10px;
             border-radius: 10px;
             @media (max-width: 767px) {
