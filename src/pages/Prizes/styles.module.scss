@@ -198,14 +198,21 @@
         color: white;
         font-weight: 600;
         text-transform: uppercase;
-        font-size: 1.75em;
+        font-size: 1.9em;
         margin-bottom: 20px;
+        margin-left: 10px;
+        @media (max-width: 767px) {
+          margin-left: 0;
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
       }
 
       .winnerGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 25px;
+        margin-bottom: 20px;
 
         @media (max-width: 1300px) {
           grid-template-columns: 1fr;
@@ -222,32 +229,30 @@
           }
 
           .projectPreview {
-            height: 100px;
+            width: 100px;
             margin-right: 10px;
             border-radius: 10px;
+            @media (max-width: 767px) {
+              width: 80px;
+            }
           }
 
           .text {
-            font-size: 1.15em;
-            line-height: 1.5em;
-
             .prizeName {
               color: #FBB63B;
               font-weight: 600;
               margin: 5px 0;
               text-transform: uppercase;
+              font-size: 1.25em;
+              line-height: 1.5em;
             }
             
             .team {
               margin: 5px 0;
               color: white;
               font-weight: 600;
-            }
-            
-            .project {
-              margin: 5px 0;
-              color: white;
-              font-weight: 400;
+              font-size: 1.35em;
+              line-height: 1.5em;
             }
           }
         }
