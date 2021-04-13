@@ -1,0 +1,47 @@
+[
+  {
+    "image": "/assets/prize_winners/actually_colab.png",
+    "prizeName": "First Place",
+    "teamName": "Actually Colab",
+    "link": "https://devpost.com/software/actually-colab-real-time-collaborative-jupyter-editor"
+  },
+  {
+    "image": "/assets/prize_winners/breadbox.png",
+    "prizeName": "Second Place",
+    "teamName": "Breadbox",
+    "link": "https://devpost.com/software/breadbox-d1tflk"
+  },
+  {
+    "image": "/assets/prize_winners/merry_dining.png",
+    "prizeName": "Third Place",
+    "teamName": "MerryDining",
+    "link": "https://devpost.com/software/merrydining"
+  },
+  {
+    "dummy": true
+  },
+  {
+    "image": "/assets/prize_winners/trackify.png",
+    "prizeName": "CAT’s Choice",
+    "teamName": "Trackify",
+    "link": "https://devpost.com/software/trackify-gsal28"
+  },
+  {
+    "image": "",
+    "prizeName": "Cargill’s Choice: Best Food Related Hack",
+    "teamName": "Foods Carbonation",
+    "link": "https://devpost.com/software/application1"
+  },
+  {
+    "image": "",
+    "prizeName": "Capital One: Best Financial Hack",
+    "teamName": "Crypto Tracker",
+    "link": "https://devpost.com/software/crypto-tracker-qwuk0m"
+  },
+  {
+    "image": "/assets/prize_winners/drift.png",
+    "prizeName": "Staff Pick",
+    "teamName": "drift",
+    "link": "https://devpost.com/software/drift-thf0rj"
+  }
+]
