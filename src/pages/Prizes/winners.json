@@ -13,6 +13,9 @@
   },
   {
     "image": "/assets/prize_winners/merry_dining.png",
+    "imageStyle": {
+      "borderRadius": "0"
+    },
     "prizeName": "Third Place",
     "teamName": "MerryDining",
     "link": "https://devpost.com/software/merrydining"

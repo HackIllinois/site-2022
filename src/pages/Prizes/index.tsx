@@ -52,9 +52,9 @@ const Prizes = (): JSX.Element => (
         <div className={styles.container}>
           <h2>Congratulations!</h2>
           <div className={styles.winnerGrid}>
-            {winners.map(({ image, prizeName, teamName, dummy, link }) => (
+            {winners.map(({ image, prizeName, teamName, dummy, link, imageStyle }) => (
               <div className={clsx(styles.winner, dummy && styles.dummy)}>
-                <img className={styles.projectPreview} src={image || APP_LOGO} alt="" />
+                <img className={styles.projectPreview} src={image || APP_LOGO} alt="" style={imageStyle} />
                 <div className={styles.text}>
                   <h3 className={styles.prizeName}>{prizeName}</h3>
                   <a className={styles.team} href={link} target="_blank" rel="noreferrer">{teamName}</a>
