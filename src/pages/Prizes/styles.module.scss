@@ -212,10 +212,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 25px;
-        margin-bottom: 20px;
-
+        margin-bottom: 5px;
+        
         @media (max-width: 1300px) {
           grid-template-columns: 1fr;
+          margin-bottom: 20px;
         }
 
         .winner {
