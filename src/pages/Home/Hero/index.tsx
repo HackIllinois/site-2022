@@ -31,7 +31,7 @@ const Section1: React.FC = () => (
     <div className={styles.landingText}>
       <div className={styles.title}>REKINDLING CONNECTIONS</div>
       <div className={styles.date}>April 9 - April 12</div>
-      <a className={styles.registerButton} href="/">Register Now</a>
+      {/* <a className={styles.registerButton} href="/register">Register Now</a> */}
     </div>
     <div className={styles.moonReflection} style={{ backgroundImage: `url(${MOON_REFLECTION})` }} />
     <div className={styles.mobileTrees} style={{ backgroundImage: `url(${MOBILE_TREES})` }} />
