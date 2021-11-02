@@ -9,6 +9,7 @@ import React from 'react';
 // import LEFT_BUSH from 'assets/mentor/left_bush.svg';
 // import RIGHT_BUSH from 'assets/mentor/right_bush.svg';
 // import DROP_ARROW from 'assets/mentor/drop_arrow.svg';
+import KITCHEN from 'assets/mentor/kitchen.svg';
 import NavBar from 'components/NavBar';
 
 import styles from './styles.module.scss';
@@ -61,6 +62,7 @@ const Mentors: React.FC = () => (
     </div> */}
     <div className={styles.shade} />
     <div className={styles.mobile}>
+      <img src={KITCHEN} alt="Kitchen design background" className={styles.kitchen} />
       {/* <img src={RIGHT_BUSH} alt="" className={styles.right_bush} />
       <img src={LEFT_BUSH} alt="" className={styles.left_bush} />
       <img src={FOREGROUND_TREE} alt="" className={styles.foreground_tree} />
