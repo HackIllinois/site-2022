@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: #2b2f71;
+  background: #D8ECD8;
   overflow: hidden;
 }
 
@@ -18,7 +18,7 @@
 
   width: 100%;
   height: 80%;
-  background: linear-gradient(0deg, #2b2f71 0.31%, #219b96 99.5%);
+  // background: linear-gradient(0deg, #2b2f71 0.31%, #219b96 99.5%);
   opacity: 0.38;
 }
 
@@ -111,13 +111,14 @@
 }
 
 .shader {
+  // padding-top: 200px;
   position: absolute;
   background: #ffffff;
   opacity: 0.2;
   border-radius: 20px;
-  height: 100%;
+  height: calc(100% + 60px);
   width: 100%;
-  top: 0;
+  top: -60px;
   left: 0;
   z-index: 1;
 }
@@ -183,7 +184,7 @@
 }
 
 .mentor_text {
-  color: white;
+  color: black;
   @media (max-width: 768px) {
     margin: 5px 0 0 0;
   }
@@ -227,7 +228,7 @@
 }
 
 .category_title {
-  color: white;
+  color: black;
   font-size: 1.6em;
   font-weight: 600;
   position: absolute;
