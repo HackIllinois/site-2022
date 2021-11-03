@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import LOGO from 'assets/logo.svg';
 import styles from './styles.module.scss';
-import AnimatedLink from './AnimatedLink';
+// import AnimatedLink from './AnimatedLink';
 import HighlightedLink from './HighlightedLink';
 import MenuIcon from './MenuIcon';
 
@@ -13,7 +13,6 @@ const links: LinkType[] = [
   { text: 'Mentors', to: '/mentors' },
   { text: 'Prizes', to: '/prizes' },
   { text: 'Schedule', to: '/schedule' },
-  // { text: 'Resources', to: '/resources' },
 ];
 
 const linksWithHome = [{ text: 'Home', to: '/' }].concat(links);
@@ -49,6 +48,46 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
 
   const linksToUse = showHome ? linksWithHome : links;
 
+  const mobileMenu = (
+    <div className={clsx(styles.sideBar, isSideBarOpen && styles.open)}>
+      {!isSideBarOpen ? (
+        <button
+          type="button"
+          className={styles.sideBarToggle}
+          onClick={() => setIsSideBarOpen(true)}
+          aria-label="Open Side Bar"
+        >
+          <MenuIcon color="black" className={styles.menuIcon} />
+        </button>
+      ) : (
+        <button
+          type="button"
+          className={styles.sideBarToggle}
+          onClick={() => setIsSideBarOpen(false)}
+          aria-label="Close Side Bar"
+        >
+          <MenuIcon color="black" className={styles.menuIcon} />
+        </button>
+      )}
+      { isSideBarOpen && (
+        <div className={clsx(styles.sideBarLinks)}>
+          <nav>
+            {linksToUse.map(({ to, text }) => (
+              <HighlightedLink
+                className={styles.link}
+                color="black"
+                to={to}
+                key={text}
+              >
+                {text}
+              </HighlightedLink>
+            ))}
+          </nav>
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <header>
       <nav className={clsx(styles.navBar, className)}>
@@ -58,42 +97,11 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
 
         <div className={styles.spacer} />
 
-        {isMobile ? (
-          <button
-            type="button"
-            className={styles.sideBarToggle}
-            onClick={() => setIsSideBarOpen(true)}
-            aria-label="Open Side Bar"
-          >
-            <MenuIcon className={styles.menuIcon} />
-          </button>
-        ) : linksToUse.map(({ text, to }) => (
+        { mobileMenu }
+        { /* isMobile ? mobileMenu : linksToUse.map(({ text, to }) => (
           <AnimatedLink className={styles.link} to={to}>{text}</AnimatedLink>
-        ))}
+        )) */ }
       </nav>
-
-      {isMobile && (
-        <div className={clsx(styles.sideBar, isSideBarOpen && styles.open)}>
-          <Link to="/">
-            <img className={styles.logo} src={LOGO} alt="HackThis Logo" />
-          </Link>
-
-          <nav>
-            {linksWithHome.map(({ to, text }) => (
-              <HighlightedLink className={styles.link} to={to}>{text}</HighlightedLink>
-            ))}
-          </nav>
-        </div>
-      )}
-
-      {isSideBarOpen && (
-        <button
-          type="button"
-          className={styles.sideBarBackground}
-          onClick={() => setIsSideBarOpen(false)}
-          aria-label="Close Side Bar"
-        />
-      )}
     </header>
   );
 };
