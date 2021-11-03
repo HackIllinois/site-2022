@@ -94,4 +94,4 @@ export type ZoomLinks = {
   [id: string]: string;
 };
 
-export type Mentor = { profile: string, name: string, description: string };
+export type Mentor = { profile: string, firstName: string, lastName: string, description: string };

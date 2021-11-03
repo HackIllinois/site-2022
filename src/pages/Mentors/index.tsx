@@ -107,7 +107,7 @@ const Mentors: React.FC = () => {
           <br />
           <br />
           {mentors.map((mentor) => (
-            <div key={mentor.name} className={styles.mentor}>
+            <div key={mentor.firstName} className={styles.mentor}>
               <div className={styles.mentor_image} style={{ backgroundImage: `url(${mentor.profile})` }} />
               {/* <img
                 src={mentor.imageURL}
@@ -115,7 +115,7 @@ const Mentors: React.FC = () => {
                 className={styles.mentor_image}
               /> */}
               <div className={styles.mentor_text}>
-                <div className={styles.mentor_name}>{mentor.name}</div>
+                <div className={styles.mentor_name}>{mentor.firstName} {mentor.lastName}</div>
                 <div className={styles.mentor_description}>
                   {mentor.description}
                 </div>
