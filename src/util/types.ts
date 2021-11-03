@@ -93,3 +93,5 @@ export type ProfileResponseType = WithId<Required<ProfileType>> & { points: numb
 export type ZoomLinks = {
   [id: string]: string;
 };
+
+export type Mentor = { profile: string, name: string, description: string };
