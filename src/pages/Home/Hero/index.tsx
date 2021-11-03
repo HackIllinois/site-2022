@@ -8,13 +8,12 @@ import PLANTS from 'assets/home/hero/plants.svg';
 import SCOOTER from 'assets/home/hero/scooter.svg';
 import SUN_RAYS from 'assets/home/hero/sun_rays.svg';
 
-// import NavBar from 'components/NavBar';
+import NavBar from 'components/NavBar';
 import styles from './styles.module.scss';
 
 const Section1: React.FC = () => (
   <div className={styles.hero}>
-    { // <NavBar hideLogo />
-    }
+    <NavBar hideLogo />
     <div className={styles.background} style={{ backgroundImage: `url(${BACKGROUND})` }} />
     <div className={styles.clouds} style={{ backgroundImage: `url(${CLOUDS})` }} />
     <div className={styles.sun_rays} style={{ backgroundImage: `url(${SUN_RAYS})` }} />
