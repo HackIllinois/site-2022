@@ -13,11 +13,10 @@ import styles from './styles.module.scss';
 
 const Section1: React.FC = () => (
   <div className={styles.hero}>
-    <NavBar hideLogo />
+    <NavBar showHome />
     <div className={styles.background} style={{ backgroundImage: `url(${BACKGROUND})` }} />
     <div className={styles.clouds} style={{ backgroundImage: `url(${CLOUDS})` }} />
     <div className={styles.sun_rays} style={{ backgroundImage: `url(${SUN_RAYS})` }} />
-    <div className={styles.logo} style={{ backgroundImage: `url(${LOGO})` }} />
 
     <div className={styles.foreground}>
       <img className={styles.plants} src={PLANTS} alt="Small plants" />
