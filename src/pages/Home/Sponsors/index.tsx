@@ -1,16 +1,19 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import LEFT_TREES from 'assets/home/sponsors/left_trees.svg';
-import RIGHT_TREES from 'assets/home/sponsors/right_trees.svg';
-import BOTTOM_TREES from 'assets/home/sponsors/bottom_trees.svg';
+import MENU from 'assets/home/sponsors/menu.svg';
 
 import styles from './styles.module.scss';
 import sponsors from './sponsors.json';
 
 const Sponsors = (): JSX.Element => (
-  <div className={styles.sponsors}>
-    <img className={styles.leftTrees} src={LEFT_TREES} alt="" />
+  <section className={styles.sponsors}>
+    <div className={styles.menuWrapper}>
+      <img className={styles.menu} src={MENU} alt="" />
+      <h2 className={`${styles.ourSponsors} ${styles.imageText}`}>Our Sponsors</h2>
+      <p className={`${styles.interested} ${styles.imageText}`}>Interested to sponsor HackIllinois 2022,<br />Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a></p>
+    </div>
+    {/* <img className={styles.leftTrees} src={LEFT_TREES} alt="" />
     <img className={styles.rightTrees} src={RIGHT_TREES} alt="" />
     <img className={styles.bottomTrees} src={BOTTOM_TREES} alt="" />
 
@@ -24,8 +27,8 @@ const Sponsors = (): JSX.Element => (
           </a>
         ))}
       </div>
-    ))}
-  </div>
+    ))} */}
+  </section>
 );
 
 export default Sponsors;

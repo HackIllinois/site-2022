@@ -8,12 +8,19 @@ import CAMPFIRE_MOBILE from 'assets/home/event_info/campfire_mobile.svg';
 import DISCORD_LOGO from 'assets/home/event_info/discord_logo.png';
 import TWITTER_LOGO from 'assets/home/event_info/twitter_logo.svg';
 import INSTAGRAM_LOGO from 'assets/home/event_info/instagram_logo.svg';
+import CAKE from 'assets/home/event_info/cake.svg';
 
 import styles from './styles.module.scss';
 
 const EventInfo: React.FC = () => (
-  <div className={styles.eventInfo}>
-    <img className={clsx(styles.campfire, styles.desktop)} src={CAMPFIRE} alt="" />
+  <section className={styles.eventInfo}>
+    <div className={styles.cakeWrapper}>
+      <img className={styles.cake} src={CAKE} alt="" />
+      <h2 className={`${styles.theEvent} ${styles.imageText}`}>The Event</h2>
+      <h2 className={`${styles.joinUs} ${styles.imageText}`}>Join Us</h2>
+      <h2 className={`${styles.generalFaqs} ${styles.imageText}`}>General FAQs</h2>
+    </div>
+    {/* <img className={clsx(styles.campfire, styles.desktop)} src={CAMPFIRE} alt="" />
     <img className={clsx(styles.campfire, styles.tablet)} src={CAMPFIRE_TABLET} alt="" />
     <img className={clsx(styles.campfire, styles.mobile)} src={CAMPFIRE_MOBILE} alt="" />
     <img className={styles.blob} src={BLOB} alt="" />
@@ -35,8 +42,8 @@ const EventInfo: React.FC = () => (
 
       <h2><img src={INSTAGRAM_LOGO} alt="" /> Instagram</h2>
       <p className={styles.two}>This is where we’ll be posting more of the fun, behind-the-scenes aspects of our event! You’ll get an opportunity to see the work that goes into making the event a possibility through insights from teams and profiles of staff members.</p>
-    </div>
-  </div>
+    </div> */}
+  </section>
 );
 
 export default EventInfo;

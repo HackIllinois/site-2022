@@ -1,99 +1,137 @@
-.sponsors {
-  position: relative;
+section.sponsors {
+  padding-top: 400px;
   padding-bottom: 200px;
-
-  .leftTrees {
-    position: absolute;
-    left: 0;
-    top: -50px;
-    @media (max-width: 767px) {
-      top: -25px;
-    }
-  }
-
-  .rightTrees {
-    position: absolute;
-    right: 0;
-    top: -250px;
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-
-  .bottomTrees {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    @media (min-width: 2250px) {
-      display: none;
-    }
-  }
-
-  .title {
+  background-color: #D8ECD8;
+  color: #E8D6A4;
+  
+  .menuWrapper {
     position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .imageText {
+    position: absolute;
+  }
+
+  .ourSponsors.imageText {
     text-align: center;
-    color: white;
+    top: 12.8%;
+    font-size: 3.4vw;
     font-weight: 600;
-    font-size: 1.8em;
-    text-transform: uppercase;
-    margin-top: 50px;
-    @media (max-width: 767px) {
-      font-size: 1.5em;
-      margin-bottom: 35px;
+    width: 100%;
+  }
+
+  .interested.imageText {
+    text-align: center;
+    top: 24%;
+    font-size: 1.7vw;
+    font-weight: 400;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 
-  .sponsorSection {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.88);
-    width: 70%;
-    max-width: 1000px;
-    margin: 40px auto;
-    border-radius: 35px;
-    padding: 20px min(10%, 150px);
-    box-sizing: border-box;
+//   .leftTrees {
+//     position: absolute;
+//     left: 0;
+//     top: -50px;
+//     @media (max-width: 767px) {
+//       top: -25px;
+//     }
+//   }
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0 40px;
+//   .rightTrees {
+//     position: absolute;
+//     right: 0;
+//     top: -250px;
+//     @media (max-width: 767px) {
+//       display: none;
+//     }
+//   }
+
+//   .bottomTrees {
+//     position: absolute;
+//     bottom: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     @media (min-width: 2250px) {
+//       display: none;
+//     }
+//   }
+
+//   .title {
+//     position: relative;
+//     text-align: center;
+//     color: white;
+//     font-weight: 600;
+//     font-size: 1.8em;
+//     text-transform: uppercase;
+//     margin-top: 50px;
+//     @media (max-width: 767px) {
+//       font-size: 1.5em;
+//       margin-bottom: 35px;
+//     }
+//   }
+
+//   .sponsorSection {
+//     position: relative;
+//     background-color: rgba(255, 255, 255, 0.88);
+//     width: 70%;
+//     max-width: 1000px;
+//     margin: 40px auto;
+//     border-radius: 35px;
+//     padding: 20px min(10%, 150px);
+//     box-sizing: border-box;
+
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     gap: 0 40px;
     
-    &.first {
-      grid-template-columns: 1fr 1fr;
-      padding: 40px min(10%, 150px);
-    }
+//     &.first {
+//       grid-template-columns: 1fr 1fr;
+//       padding: 40px min(10%, 150px);
+//     }
 
-    @media (max-width: 767px) {
-      gap: 5px 20px;
-      width: 90%;
-      margin: 30px auto;
-    }
+//     @media (max-width: 767px) {
+//       gap: 5px 20px;
+//       width: 90%;
+//       margin: 30px auto;
+//     }
 
-    .sponsor {
-      height: min(10vw, 140px);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-    }
+//     .sponsor {
+//       height: min(10vw, 140px);
+//       background-repeat: no-repeat;
+//       background-position: center center;
+//       background-size: contain;
+//     }
 
-    @media (max-width: 767px) {
-      &.first {
-        padding: 30px 10%;
-        .sponsor {
-          height: 13vw;
-        }
-      }
-    }
-  }
-}
+//     @media (max-width: 767px) {
+//       &.first {
+//         padding: 30px 10%;
+//         .sponsor {
+//           height: 13vw;
+//         }
+//       }
+//     }
+//   }
+// }
 
-// From https://css-tricks.com/inclusively-hidden/ (hides content visually, but still accessible to screen readers)
-.srOnly:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
+// // From https://css-tricks.com/inclusively-hidden/ (hides content visually, but still accessible to screen readers)
+// .srOnly:not(:focus):not(:active) {
+//   clip: rect(0 0 0 0); 
+//   clip-path: inset(50%);
+//   height: 1px;
+//   overflow: hidden;
+//   position: absolute;
+//   white-space: nowrap; 
+//   width: 1px;
 }

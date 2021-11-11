@@ -1,57 +1,13 @@
 @import '../breakpoints.scss';
 
-section.eventInfo {
-  background-image: linear-gradient(to bottom, #F2F3D4, #C9CF76);
-  position: relative;
-  margin-top: -35px;
-  padding-top: 250px;
-  z-index: 2;
-  color: #E8D7A5;
+section.speakers {
+  background-color: #D8ECD8;
+  padding-top: 400px;
 
-  .cakeWrapper {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .cake {
-    width: 100%;
+  .cupcakeStand {
+    width: 80%;
     margin: auto;
     display: block;
-  }
-
-  .imageText {
-    position: absolute;
-  }
-
-  .theEvent.imageText {
-    font-size: 3.76vw;
-    top: 6.65%;
-    left: 25.75%;
-    font-weight: 600;
-  }
-
-  .joinUs.imageText {
-    font-size: 3.76vw;
-    top: 30.35%;
-    left: 16.5%;
-    font-weight: 600;
-  }
-
-  .generalFaqs.imageText {
-    font-size: 3.76vw;
-    top: 54.45%;
-    left: 6.65%;
-    font-weight: 600;
-  }
-  
-  .generalFaqsAnswer {
-    position: absolute;
-    color: black;
-    width: 80%;
-    top: 61.45%;
-    left: 6.65%;
-    font-size: 1.25vw;
   }
 
   // @media screen and (max-width: $tablet-breakpoint) {

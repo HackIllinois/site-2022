@@ -55,9 +55,16 @@
     z-index: 10;
   }
 
-  .bakery {
+  .bakeryWrapper {
     max-height: 85%;
     max-width: 65%;
+    position: relative;
+  }
+
+  .bakery {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .plants {
@@ -102,7 +109,7 @@
       transform: scaleX(-1);
     }
 
-    .bakery {
+    .bakeryWrapper {
       margin-left: -14%;
       max-width: 80%;
     }
