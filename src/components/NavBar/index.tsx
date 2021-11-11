@@ -66,7 +66,7 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
           onClick={() => setIsSideBarOpen(false)}
           aria-label="Close Side Bar"
         >
-          <MenuIcon color="black" className={styles.menuIcon} />
+          <div className={styles.closeIcon}> &times; </div>
         </button>
       )}
       { isSideBarOpen && (
@@ -78,6 +78,7 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
                 color="black"
                 to={to}
                 key={text}
+                style={{ textAlign: 'right' }}
               >
                 {text}
               </HighlightedLink>
