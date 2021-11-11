@@ -76,6 +76,7 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
               <HighlightedLink
                 className={styles.link}
                 color="black"
+                highlightEnabled={false}
                 to={to}
                 key={text}
                 style={{ textAlign: 'right' }}
