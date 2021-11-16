@@ -17,6 +17,7 @@ import StaticFileRedirect from 'components/StaticFileRedirect';
 import AuthenticatedRoute from 'components/AuthenticatedRoute';
 import CodeInTheDark from 'pages/CodeInTheDark';
 import ZoomRedirect from 'pages/ZoomRedirect';
+import Discover from 'pages/Discover';
 
 function App(): JSX.Element {
   return (
@@ -68,6 +69,10 @@ function App(): JSX.Element {
 
         <Route path="/discord-terms-of-service" exact>
           <StaticFileRedirect to="/documents/discord-terms-of-service.pdf" />
+        </Route>
+
+        <Route path="/discover" exact>
+          <Discover />
         </Route>
 
         <Route path="/">
