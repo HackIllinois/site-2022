@@ -10,8 +10,11 @@ type Props = {
 };
 
 const Navigation = ({ setFormIndex, formIndex }: Props): JSX.Element => (
-  <div className={styles.navigation}>
-    <Fixtures setFormIndex={setFormIndex} formIndex={formIndex} />
+  // <div className={styles.navigation}>
+  //   <Fixtures setFormIndex={setFormIndex} formIndex={formIndex} />
+  // </div>
+  <div>
+    {/* <Fixtures setFormIndex={setFormIndex} formIndex={formIndex} /> */}
   </div>
 );
 

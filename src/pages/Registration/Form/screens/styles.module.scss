@@ -49,6 +49,7 @@
 
 .welcome {
   margin-bottom: 10px;
+  // overflow: auto;
 
   .text {
     margin-right: 15px;
@@ -78,7 +79,8 @@
 }
 
 .personalInfo, .education, .experience {
-  overflow: scroll;
+  overflow: auto;
+
   @media (min-height: 800px) {
     width: 85%;
   }
@@ -90,19 +92,19 @@
 
 .raceDemographics {
   // using !important to override react-custom-scrollbars
-  overflow: visible !important;
-  .scrollbox {
-    overflow: visible !important;
-  }
-  .horizontalScrollbar {
-    display: none;
-  }
-  @include registration-floating-screen {
+  // overflow: visible !important;
+  // .scrollbox {
+  //   overflow: visible !important;
+  // }
+  // .horizontalScrollbar {
+  //   display: none;
+  // }
+  // @include registration-floating-screen {
     overflow: hidden !important;
     .scrollbox {
       overflow: scroll !important;
     }
-  }
+  // }
 
   .title {
     margin-bottom: 20px;
