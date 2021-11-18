@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { RegistrationType } from 'util/types';
 import { getRegistration, getRoles, refreshToken, register } from 'util/api';
-import PROJECTOR from 'assets/registration/projector.svg';
+import OVEN from 'assets/registration/oven.svg';
 import Button from 'components/form/Button';
 import { registrationSchema, RegistrationSchema, errorMap, defaultValues } from '../validation';
 import Welcome from './screens/Welcome';
@@ -109,7 +109,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   const previousPage = () => setFormIndex((current) => current - 1);
 
   return (
-    <div className={styles.container} style={{ backgroundImage: `url("${PROJECTOR}")` }}>
+    <div className={styles.container} style={{ backgroundImage: `url("${OVEN}")` }}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.form}>
           {pages.map((Page, i) => (
@@ -120,7 +120,8 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
 
               {formIndex !== pages.length - 1 && ( // last page does not have any buttons
                 <div className={styles.buttons}>
-                  <Button arrow="left" hidden={formIndex === 0} onClick={previousPage} />
+                  {/* {(formIndex !== 0) && <Button arrow="right" onClick={nextPage}>Previous</Button>} */}
+                  <Button arrow="left" hidden={formIndex === 0} onClick={previousPage}>Back</Button>
                   <div className={styles.spacer} />
                   {isLoading && <Button loading>Loading...</Button>}
                   {(!isLoading && formIndex !== submitPageIndex) && <Button arrow="right" onClick={nextPage}>Next</Button>}

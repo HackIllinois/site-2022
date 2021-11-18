@@ -3,9 +3,9 @@
 .navigation {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   height: 130px;
-  z-index: 2;
+  z-index: 15;
   
   @media (max-height: 700px) {
     height: 115px;
@@ -30,6 +30,8 @@
     max-width: 4800px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 15;
+    overflow: visible;
 
     @media (max-height: 700px) {
       max-width: 4200px;
@@ -47,6 +49,7 @@
       font-size: var(--size);
       font-family: Montserrat, sans-serif;
       transform: translateX(calc((16px - var(--size)) * var(--length) * .3));
+
 
       @media (max-width: 1000px) {
         --size: 17.5px;
