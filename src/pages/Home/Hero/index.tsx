@@ -3,7 +3,6 @@ import React from 'react';
 import BACKGROUND from 'assets/home/hero/background.svg';
 import BAKERY from 'assets/home/hero/bakery.svg';
 import CLOUDS from 'assets/home/hero/clouds.svg';
-import LOGO from 'assets/home/hero/logo.svg';
 import PLANTS from 'assets/home/hero/plants.svg';
 import SCOOTER from 'assets/home/hero/scooter.svg';
 import SUN_RAYS from 'assets/home/hero/sun_rays.svg';
