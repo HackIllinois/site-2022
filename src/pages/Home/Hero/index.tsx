@@ -22,9 +22,7 @@ const Section1: React.FC = () => (
 
     <div className={styles.foreground}>
       <img className={styles.plants} src={PLANTS} alt="Small plants" />
-      <div className={styles.bakeryWrapper}>
-        <img className={styles.bakery} src={BAKERY} alt="Rise to your potential in this bakery" />
-      </div>
+      <img className={styles.bakery} src={BAKERY} alt="Rise to your potential in this bakery" />
       <img className={styles.scooter} src={SCOOTER} alt="Scooter" />
     </div>
   </div>
