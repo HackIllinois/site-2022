@@ -1,15 +1,12 @@
 .navBar {
   position: absolute;
-  top: 15px;
-  left: 20px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
   .logo {
+    margin: 20px;
     width: 10vw;
     height: 4vw;
     min-width: 128px;
@@ -22,17 +19,22 @@
     }
   }
 
-  .spacer {
-    flex: 1;
-  }
-
   .link {
-    margin: 0 4%;
+    margin: 0;
+    text-align: right;
+
+    &.mobile {
+      padding: 3vh 0;
+      text-align: center;
+    }
   }
 }
 
 .sideBar { 
-  padding: 0 10px 0 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
   border-radius: 20px;
   z-index: 100;
 
@@ -43,10 +45,20 @@
   &.open {
     background-color: #FFFEE6;
   }
+
+  &.mobile.open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    border-radius: 0;
+    padding: 20px;
+  }
 }
 
 .sideBarLinks {
-  padding: 0 10px 0 10px;
+  width: 100%;
 }
 
 .sideBarToggle {

@@ -48,8 +48,8 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
 
   const linksToUse = showHome ? linksWithHome : links;
 
-  const mobileMenu = (
-    <div className={clsx(styles.sideBar, isSideBarOpen && styles.open)}>
+  const menuToggle = (
+    <>
       {!isSideBarOpen ? (
         <button
           type="button"
@@ -69,17 +69,22 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
           <div className={styles.closeIcon}> &times; </div>
         </button>
       )}
+    </>
+  );
+
+  const dropdownMenu = (
+    <div className={clsx(styles.sideBar, isSideBarOpen && styles.open, isMobile && styles.mobile)}>
+      { menuToggle }
       { isSideBarOpen && (
         <div className={clsx(styles.sideBarLinks)}>
           <nav>
             {linksToUse.map(({ to, text }) => (
               <HighlightedLink
-                className={styles.link}
+                className={clsx(styles.link, isMobile && styles.mobile)}
                 color="black"
                 highlightEnabled={false}
                 to={to}
                 key={text}
-                style={{ textAlign: 'right' }}
               >
                 {text}
               </HighlightedLink>
@@ -97,12 +102,7 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
           <img className={clsx(styles.logo, isMobile && styles.mobile, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
         </Link>
 
-        <div className={styles.spacer} />
-
-        { mobileMenu }
-        { /* isMobile ? mobileMenu : linksToUse.map(({ text, to }) => (
-          <AnimatedLink className={styles.link} to={to}>{text}</AnimatedLink>
-        )) */ }
+        { dropdownMenu }
       </nav>
     </header>
   );
