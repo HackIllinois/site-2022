@@ -15,8 +15,6 @@ const Home: React.FC = () => (
     <Speakers />
     <OurTeam />
     <Sponsors />
-    {/* <div className={styles.gradient} /> */}
-    <div className={styles.gradient} />
   </div>
 );
 
