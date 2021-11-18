@@ -6,52 +6,69 @@ section.eventInfo {
   margin-top: -35px;
   padding-top: 250px;
   z-index: 2;
-  color: #E8D7A5;
+  margin-bottom: 0;
 
-  .cakeWrapper {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .cake {
-    width: 100%;
+  .cakeLayer1, .cakeLayer2, .cakeLayer3 {
     margin: auto;
     display: block;
   }
 
-  .imageText {
+  .cakeLayer1 {
+    width: 53%;
+  }
+
+  .cakeLayer2 {
+    width: 73.5%;
+  }
+
+  .cakeLayer3 {
+    width: 91.5%;
+  }
+
+  .cakeTop {
+    position: relative;
+    padding-top: 15%;
+    padding-bottom: 5%;
+
+    h1 {
+      padding-left: 5%;
+      font-size: 5vw;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+
+  .cakeFrosting {
     position: absolute;
+    width: 102%;
+    top: 0;
+    transform: translate(-1%, -50%);
   }
 
-  .theEvent.imageText {
-    font-size: 3.76vw;
-    top: 6.65%;
-    left: 25.75%;
-    font-weight: 600;
+  .cakeTop, .cakeBottom {
+    color: #E8D7A5;
+    background-color: #C96928;
   }
 
-  .joinUs.imageText {
-    font-size: 3.76vw;
-    top: 30.35%;
-    left: 16.5%;
-    font-weight: 600;
-  }
-
-  .generalFaqs.imageText {
-    font-size: 3.76vw;
-    top: 54.45%;
-    left: 6.65%;
-    font-weight: 600;
-  }
-  
-  .generalFaqsAnswer {
-    position: absolute;
+  .cakeMiddle {
+    background-color: #F19B79;
     color: black;
-    width: 80%;
-    top: 61.45%;
-    left: 6.65%;
-    font-size: 1.25vw;
+    margin-top: 0;
+
+    p {
+      margin: 0;
+      padding: 5% 5%;
+      font-size: 25px;
+    }
+  }
+
+  .cakeBottom {
+    padding-top: 12.5%;
+  }
+
+  .cakeStand {
+    width: 100%;
+    display: block;
   }
 
   // @media screen and (max-width: $tablet-breakpoint) {
