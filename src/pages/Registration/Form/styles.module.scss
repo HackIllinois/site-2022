@@ -7,7 +7,6 @@
   background-position: center top;
   background-repeat: no-repeat;
   transform: scale(0.95) translateY(50px);
-  z-index: 25;
   // transform: translateY(-20px);
 
 
@@ -51,7 +50,7 @@
     }
 
     @media (max-height: 750px) {
-      height: 60%;
+      height: 55%;
       top: 200px;
     }
     @include registration-floating-screen {
