@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import CUPCAKE_STAND from 'assets/home/speakers/cupcake_stand.svg';
 

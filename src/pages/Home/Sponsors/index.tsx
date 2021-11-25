@@ -1,10 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import MENU from 'assets/home/sponsors/menu.svg';
 
 import styles from './styles.module.scss';
-import sponsors from './sponsors.json';
 
 const Sponsors = (): JSX.Element => (
   <section className={styles.sponsors}>
