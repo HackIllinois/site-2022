@@ -29,6 +29,7 @@ section.eventInfo {
     position: relative;
     padding-top: 15%;
     padding-bottom: 5%;
+    border-radius: 10px 10px 0 0;
 
     h1 {
       padding-left: 5%;
@@ -64,6 +65,7 @@ section.eventInfo {
 
   .cakeBottom {
     padding-top: 12.5%;
+    border-radius: 0 0 10px 10px;
   }
 
   .cakeStand {
