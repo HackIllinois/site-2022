@@ -15,14 +15,26 @@ section.eventInfo {
 
   .cakeLayer1 {
     width: 53%;
+
+    .cakeTop {
+      padding-top: 15%;
+    }
   }
 
   .cakeLayer2 {
     width: 73.5%;
+
+    .cakeTop {
+      padding-top: 10%;
+    }
   }
 
   .cakeLayer3 {
     width: 91.5%;
+
+    .cakeTop {
+      padding-top: 10%;
+    }
 
     .cakeBottom {
       z-index: 10;
@@ -31,13 +43,17 @@ section.eventInfo {
 
   .cakeTop {
     position: relative;
-    padding-top: 15%;
-    padding-bottom: 5%;
+    padding-bottom: 4%;
     border-radius: 10px 10px 0 0;
 
     h1 {
       padding-left: 5%;
-      font-size: 5vw;
+      font-size: 4vw;
+
+      @media (max-width: 1100px) {
+        font-size: 6vw;        
+      }
+
       font-weight: 600;
       margin: 0;
     }
@@ -59,11 +75,41 @@ section.eventInfo {
     background-color: #F19B79;
     color: black;
     margin-top: 0;
+    padding: 30px 5%;
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 5px;
+
+      @media (max-width: 1100px) {
+        font-size: 22px;        
+      }
+    }
+
+    h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+
+      @media (max-width: 1100px) {
+        font-size: 18px;        
+      }
+    }
 
     p {
       margin: 0;
-      padding: 5% 5%;
-      font-size: 25px;
+      font-size: 22px;
+
+      @media (max-width: 1100px) {
+        font-size: 18px;        
+      }
+
+      @media (max-width: 800px) {
+        font-size: 16px;        
+      }
+    }
+
+    p:not(:last-of-type) {
+      margin-bottom: 30px;
     }
   }
 
