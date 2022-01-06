@@ -15,11 +15,12 @@ section.sponsors {
     width: 100%;
   }
 
-  .imageText {
+  .menuContent {
     position: absolute;
   }
 
-  .ourSponsors.imageText {
+  .ourSponsors {
+    position: absolute;
     text-align: center;
     top: 12.8%;
     font-size: 3.4vw;
@@ -27,9 +28,9 @@ section.sponsors {
     width: 100%;
   }
 
-  .interested.imageText {
+  .menuContent {
     text-align: center;
-    top: 24%;
+    top: 28%;
     font-size: 1.7vw;
     font-weight: 400;
     width: 100%;
@@ -40,6 +41,10 @@ section.sponsors {
     }
   }
 
+  .imc {
+    width: 35%;
+    margin-bottom: 50px;
+  }
 //   .leftTrees {
 //     position: absolute;
 //     left: 0;

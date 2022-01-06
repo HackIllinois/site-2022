@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MENU from 'assets/home/sponsors/menu.svg';
+import IMC from 'assets/home/sponsors/IMC.svg';
 
 import styles from './styles.module.scss';
 
@@ -8,8 +9,11 @@ const Sponsors = (): JSX.Element => (
   <section className={styles.sponsors}>
     <div className={styles.menuWrapper}>
       <img className={styles.menu} src={MENU} alt="" />
-      <h2 className={`${styles.ourSponsors} ${styles.imageText}`}>Our Sponsors</h2>
-      <p className={`${styles.interested} ${styles.imageText}`}>Interested to sponsor HackIllinois 2022,<br />Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a></p>
+      <h2 className={styles.ourSponsors}>Our Sponsors</h2>
+      <div className={styles.menuContent}>
+        <img className={styles.imc} src={IMC} alt="" />
+        <p className={`${styles.interested} ${styles.imageText}`}>Interested to sponsor HackIllinois 2022,<br />Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a></p>
+      </div>
     </div>
     {/* <img className={styles.leftTrees} src={LEFT_TREES} alt="" />
     <img className={styles.rightTrees} src={RIGHT_TREES} alt="" />
