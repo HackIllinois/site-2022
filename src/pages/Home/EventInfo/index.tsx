@@ -5,6 +5,10 @@ import CAKE_LAYER_TWO from 'assets/home/event_info/cake_layer_two.svg';
 import CAKE_LAYER_THREE from 'assets/home/event_info/cake_layer_three.svg';
 import CAKE_STAND from 'assets/home/event_info/cake_stand.svg';
 
+import INSTAGRAM_LOGO from 'assets/home/event_info/instagram_logo.svg';
+import DISCORD_LOGO from 'assets/home/event_info/discord_logo.svg';
+import TWITTER_LOGO from 'assets/home/event_info/twitter_logo.svg';
+
 import styles from './styles.module.scss';
 
 const EventInfo: React.FC = () => (
@@ -15,8 +19,8 @@ const EventInfo: React.FC = () => (
         <h1>The Event</h1>
       </div>
       <div className={styles.cakeMiddle}>
-        <p>HackIllinois will be held from February 25-27th in-person at the Siebel Center for Computer Science and Electrical and Computer Engineering Buildings at UIUC Campus. Virtually, the event will be hosted on a Discord Server through which attendees can ask questions and interact with one another.</p>
-        <p>A hackathon is a collaborative event in which teams learn new skills & technologies and create projects. There’s prizes to win, workshops on various fields in Computer Science, and other fun mini-events to take part in! This year, HackIllinois will be a 36 hour hybrid hackathon, meaning that attendees from around the world can attend virtually, but there will be in-person events at UIUC.</p>
+        <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
+        <p>This year, participants can take part either virtually or in-person (UIUC Students only) at HackIllinois 2022. Participants can work individually or in teams to submit projects to a specific track for a chance to win the prize.</p>
       </div>
       <div className={styles.cakeBottom} />
     </div>
@@ -26,13 +30,23 @@ const EventInfo: React.FC = () => (
         <h1>Join Us</h1>
       </div>
       <div className={styles.cakeMiddle}>
-        <p>Follow us on Twitter (@HackIllinois) and Instagram (@HackIllinois) to be notified of our event updates!</p>
-        <p>As mentioned above, we’ll connect mentors and attendees on Discord! As we approach the event, we’ll post a link on our social media to the discord server so that you can join and begin engaging with the community.</p>
-        <h2>Discord</h2>
-        <p>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and mini-events, and get help from mentors—all through one centralized platform.</p>
-        <h2>Twitter</h2>
+        <p>Follow us on Twitter (<a href="https://twitter.com/HackIllinois">@HackIllinois</a>) and Instagram (<a href="https://instagram.com/HackIllinois">@HackIllinois</a>) to be notified of our event updates!</p>
+        <p>For in-person participants, mentors will be available to help out participants in the Electrical and Computer Engineering Building and Siebel Center for Computer Science.</p>
+        <p>For virtual participants, we’ll connect mentors and attendees on Discord!</p>
+        <div className={styles.platformTitle}>
+          <img src={DISCORD_LOGO} alt="Discord Logo" />
+          <h2>Discord</h2>
+        </div>
+        <p>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and company events, and get help from mentors—all through one centralized platform.</p>
+        <div className={styles.platformTitle}>
+          <img src={TWITTER_LOGO} alt="Twitter Logo" />
+          <h2>Twitter</h2>
+        </div>
         <p>This is where we’ll be posting main updates with regards to our schedule, additions to our event, and other things we come up with! We’ll also be using it during the event to make updates with any schedule changes and send out reminders for workshops and other mini-events starting out!</p>
-        <h2>Instagram</h2>
+        <div className={styles.platformTitle}>
+          <img src={INSTAGRAM_LOGO} alt="Instagram Logo" />
+          <h2>Instagram</h2>
+        </div>
         <p>This is where we’ll be posting more of the fun, behind-the-scenes aspects of our event! You’ll get an opportunity to see the work that goes into making the event a possibility through insights from teams and profiles of staff members.</p>
       </div>
       <div className={styles.cakeBottom} />
@@ -43,18 +57,21 @@ const EventInfo: React.FC = () => (
         <h1>General FAQs</h1>
       </div>
       <div className={styles.cakeMiddle}>
+        <h3>What is a hackathon?</h3>
+        <p>A hackathon is a collaborative event in which teams learn new skills & technologies and create projects. There’s prizes to win, workshops on various fields in Computer Science, and other fun mini-events to take part in! This year, HackIllinois will be a 36 hour hybrid hackathon, meaning that attendees from around the world can attend virtually, but there will be in-person events at UIUC.</p>
+        <h3>When and where is HackIllinois?</h3>
+        <p>HackIllinois will be held from February 25-27th in-person at the Siebel Center for Computer Science and Electrical and Computer Engineering Buildings at UIUC Campus. Virtually, the event will be hosted on a Discord Server through which attendees can ask questions and interact with one another.</p>
         <h3>Who can be an in-person attendee?</h3>
         <p>All UIUC students are eligible to be in-person attendees. However, we do have limited capacity, so being an in-person attendee is not a guarantee.</p>
-        <h3>How do I register?</h3>
-        <p>We will be releasing applications on 14th January.</p>
-        {/* <p>(after apps are released) Here is the link to register: https://docs.google.com/forms/d/e/1FAIpQLSddQtnP65bLHhkOHGzJBqUFeMYYj9yPDn4KPzz- geJYMlkY2A/viewform?usp=sf_link</p> */}
-        <h3>When does registration close?</h3>
-        <p>Registration for those who wish to attend in-person will close on 6th February. However, registration for virtual attendees will remain open until the end of the event.</p>
+        {/* <h3>How do I register?</h3> */}
+        {/* <p>(before apps are released) We will be releasing applications on [WHEN APPS DROP]. </p> */}
+        {/* <p>(after apps are released) Here is the link to register: https://docs.google.com/forms/d/e/1FAIpQLSddQtnP65bLHhkOHGzJBqUFeMYYj9yPDn4KPzz-geJYMlkY2A/viewform?usp=sf_link</p> */}
+        {/* <h3>When does registration close?</h3> */}
+        {/* <p>Registration will close on [DATE REGISTRATION CLOSES]</p> */}
         <h3>Who can register?</h3>
         <p>Anyone 18 years or older and enrolled in a high school, college, or university (or left school during the current school year) can register!</p>
         <h3>Do I need a team? How do I find one?</h3>
-        <p>No, you are not required to have a team to participate. With that being said, we strongly encourage you to work with other participants in order to get the full experience at HackIllinois.</p>
-        <p>You can make teams prior to the event or find members through our team matching event or on the event Discord.</p>
+        <p>No, you are not required to have a team to participate. With that being said, we strongly encourage you to work with other participants in order to get the full experience at HackIllinois. You can make teams prior to the event or find members through our team matching event or on the event Discord.</p>
         <h3>What should I bring?</h3>
         <p>In-Person Attendees: You should bring a student ID, a reusable water bottle, a change of clothing, and a laptop & charger. Due to safety considerations, please do not bring desktop computers, extra monitors, weapons, or alcoholic beverages.</p>
         <p>Virtual Attendees: Nothing!</p>
