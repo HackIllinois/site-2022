@@ -11,7 +11,7 @@ const Sponsors = (): JSX.Element => (
       <img className={styles.menu} src={MENU} alt="" />
       <h2 className={styles.ourSponsors}>Our Sponsors</h2>
       <div className={styles.menuContent}>
-        <img className={styles.imc} src={IMC} alt="" />
+        <a href="https://www.imc.com/"><img className={styles.imc} src={IMC} alt="IMC Logo" /></a>
         <p className={`${styles.interested} ${styles.imageText}`}>Interested to sponsor HackIllinois 2022,<br />Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a></p>
       </div>
     </div>
