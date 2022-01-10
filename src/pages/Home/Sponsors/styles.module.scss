@@ -41,10 +41,29 @@ section.sponsors {
     }
   }
 
-  .imc {
-    width: 35%;
-    margin-bottom: 50px;
+  .sponsorCards {
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
   }
+
+  .sponsorCardContainer {
+    position: relative;
+    width: 12vw;
+  }
+
+  .sponsorCard {
+    width: 100%;
+  }
+
+  .sponsorLogo {
+    position: absolute;
+    width: 75%;
+    top: 47.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 //   .leftTrees {
 //     position: absolute;
 //     left: 0;
