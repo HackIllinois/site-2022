@@ -59,13 +59,13 @@ const EventInfo: React.FC = () => (
         <h1>General FAQs</h1>
       </div>
       <div className={styles.cakeMiddle}>
-        {FAQS.map((FAQ) => (
-          <>
+        {FAQS.map((FAQ, i) => (
+          <div key={i}>
             <h3>{FAQ.question}</h3>
             {FAQ.answer.map((answer) => (
               <p>{answer}</p>
             ))}
-          </>
+          </div>
         ))}
       </div>
       <div className={styles.cakeBottom} />
