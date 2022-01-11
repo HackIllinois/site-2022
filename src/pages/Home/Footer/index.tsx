@@ -50,8 +50,8 @@ const Footer: React.FC = () => (
       </div>
       <div className={styles.socialsWrapper}>
         <div className={styles.socials}>
-          {socials.map((social, i) => (
-            <a key={i} href={social.href}>
+          {socials.map((social) => (
+            <a key={social.alt} href={social.href}>
               <div className={styles.social}>
                 <img src={social.src} alt={`${social.alt} Logo`} />
               </div>
