@@ -22,7 +22,7 @@ const EventInfo: React.FC = () => (
       </div>
       <div className={styles.cakeMiddle}>
         <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
-        <p>This year, participants can take part either virtually or in-person (UIUC Students only) at HackIllinois 2022. Participants can work individually or in teams to submit projects to a specific track for a chance to win the prize.</p>
+        <p>This year, participants will take part virtually at HackIllinois. Participants can work individually or in teams to submit projects to a specific track for a chance to win the prize.</p>
       </div>
       <div className={styles.cakeBottom} />
     </div>
@@ -33,8 +33,7 @@ const EventInfo: React.FC = () => (
       </div>
       <div className={styles.cakeMiddle}>
         <p>Follow us on Twitter (<a href="https://twitter.com/HackIllinois">@HackIllinois</a>) and Instagram (<a href="https://instagram.com/HackIllinois">@HackIllinois</a>) to be notified of our event updates!</p>
-        <p>For in-person participants, mentors will be available to help out participants in the Electrical and Computer Engineering Building and Siebel Center for Computer Science.</p>
-        <p>For virtual participants, we’ll connect mentors and attendees on Discord!</p>
+        <p>As the event is fully virtual, we’ll connect mentors and attendees on Discord!</p>
         <div className={styles.platformTitle}>
           <img src={DISCORD_LOGO} alt="Discord Logo" />
           <h2>Discord</h2>
