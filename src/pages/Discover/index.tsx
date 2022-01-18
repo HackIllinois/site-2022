@@ -15,16 +15,10 @@ const Discover: React.FC = () => (
             <img src={SHELF} alt="Pastry shelf" className={styles.wall_pastries} />
             <img src={DISPLAY} alt="Pastry display" className={styles.display} />
             <img src={BLACKBOARD} alt="Blackboard" className={styles.blackboard} />
-            <img src={BLACKBOARD_HOVER} alt="Blackboard hover" className={styles.blackboard_hover}/>
+            <a href="/schedule"><img src={BLACKBOARD_HOVER} alt="Blackboard hover" className={styles.blackboard_hover}/></a>
 
         </div>
     </div>
-//   <div className={styles.discover}>
-//     <div className={styles.background} style={{ backgroundImage: `url("${DISCOVER_BG}")` }}>
-//       {/* <img src={WALL_PASTRIES} alt="Wall pastries" className={styles.wall_pastries} />
-//       <img src={PASTRY_DISPLAY} alt="Pastry display with cashier" className={styles.pastry_display} /> */}
-//     </div>
-//   </div>
 );
 
 export default Discover;
