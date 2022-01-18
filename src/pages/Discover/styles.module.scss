@@ -33,6 +33,10 @@
                 max-height: 25%;
             }
 
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+
             position: absolute;
             left: 5vh;
             top: 20vh;
@@ -58,20 +62,21 @@
             position: absolute;
             right: 5vh;
             top: 15vh;
-
-            .registration {
-                position: absolute;
-                top: 18.46%;
-                right: 40.35%;
-                margin: 0px;
-            }
         }
 
-        // blackboard right 5vh top 15vh filter: drop-shadow(0px 0px 50px #FFF6A7);
-        .container {
-            position: relative;
-            text-align: center;
-            color: #F6F4D2;
+        .blackboard_hover {
+            @media (max-width: 2000px) {
+                max-height: 35%;
+            }
+
+            position: absolute;
+            right: 5vh;
+            top: 15vh;
+            opacity: 0;
+        }
+
+        .blackboard_hover:hover {
+            opacity: 1;
         }
     }
 }
