@@ -14,10 +14,6 @@ section.sponsors {
     width: 100%;
   }
 
-  .menuContent {
-    position: absolute;
-  }
-
   .ourSponsors {
     position: absolute;
     text-align: center;
@@ -28,8 +24,9 @@ section.sponsors {
   }
 
   .menuContent {
+    position: absolute;
     text-align: center;
-    top: 28%;
+    top: 22%;
     font-size: 1.7vw;
     font-weight: 400;
     width: 100%;
@@ -43,12 +40,21 @@ section.sponsors {
   .sponsorCards {
     margin-top: 5vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 0 10%; 
   }
 
   .sponsorCardContainer {
     position: relative;
-    width: 12vw;
+    flex: 0 0 12vw;
+    margin: 0 1vw;
+  }
+
+  .titleSponsorCardContainer {
+    position: relative;
+    flex: 0 0 18vw;
+    margin: 0 100%;
   }
 
   .sponsorCard {

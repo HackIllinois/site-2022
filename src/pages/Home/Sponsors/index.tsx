@@ -2,7 +2,7 @@ import React from 'react';
 
 import MENU from 'assets/home/sponsors/menu.svg';
 import DISPLAY_CARD from 'assets/home/sponsors/display_card.svg';
-import IMC from 'assets/home/sponsors/IMC.svg';
+import { TITLE_SPONSORS, SPONSORS } from './sponsors';
 
 import styles from './styles.module.scss';
 
@@ -14,10 +14,19 @@ const Sponsors = (): JSX.Element => (
       <div className={styles.menuContent}>
         <p>Interested to sponsor HackIllinois 2022,<br />Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a></p>
         <div className={styles.sponsorCards}>
-          <div className={styles.sponsorCardContainer}>
-            <img src={DISPLAY_CARD} alt="" className={styles.sponsorCard} />
-            <a href="https://www.imc.com/"><img className={styles.sponsorLogo} src={IMC} alt="IMC Logo" /></a>
-          </div>
+          { TITLE_SPONSORS.map(({ name, image, link }) => (
+            <div className={styles.titleSponsorCardContainer}>
+              <img src={DISPLAY_CARD} alt="" className={styles.sponsorCard} />
+              <a href={link}><img className={styles.sponsorLogo} src={`${process.env.PUBLIC_URL}/assets/sponsor_logos/${image}`} alt={name} /></a>
+            </div>
+          ))}
+
+          { SPONSORS.map(({ name, image, link }) => (
+            <div className={styles.sponsorCardContainer}>
+              <img src={DISPLAY_CARD} alt="" className={styles.sponsorCard} />
+              <a href={link}><img className={styles.sponsorLogo} src={`${process.env.PUBLIC_URL}/assets/sponsor_logos/${image}`} alt={name} /></a>
+            </div>
+          ))}
         </div>
       </div>
     </div>
