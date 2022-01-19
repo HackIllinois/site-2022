@@ -15,6 +15,9 @@ section.eventInfo {
 
   .cakeLayer1 {
     width: 53%;
+    @media (max-width: $mobile-breakpoint) {
+      width: 77%;
+    }
 
     .cakeTop {
       padding-top: 15%;
@@ -23,6 +26,9 @@ section.eventInfo {
 
   .cakeLayer2 {
     width: 73.5%;
+    @media (max-width: $mobile-breakpoint) {
+      width: 85%;
+    }
 
     .cakeTop {
       padding-top: 10%;
