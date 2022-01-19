@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'Is there anything to do other than code?',
     answer: [
-      'Yes! There will be a variety of mini-events, workshops, and company events for attendees to join; note that certain events will only be available to in-person attendees. You should definitely check out the schedule that will be posted here on the website!',
+      'Yes! There will be a variety of mini-events, workshops, and company events for attendees to join. You should definitely check out the schedule that will be posted here on the website!'
     ],
   },
   {
