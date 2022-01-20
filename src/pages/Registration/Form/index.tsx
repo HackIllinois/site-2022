@@ -27,7 +27,7 @@ const fields: (keyof RegistrationSchema)[][] = [
   [],
   ['name', 'email', 'gender'],
   ['race'],
-  ['graduationYear', 'school', 'major'],
+  ['degreePursued', 'graduationYear', 'school', 'major'],
   ['programmingYears', 'programmingAbility', 'resumeFilename'],
   ['interests', 'learn'],
   [],

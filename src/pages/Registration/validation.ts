@@ -3,11 +3,11 @@ import * as z from 'zod';
 export const registrationSchema = z.object({
   name: z.string().nonempty().regex(/^[^ ]+ +[^ ]+.*$/, 'Please enter your first and last name.'),
   email: z.string().nonempty().email(),
-  // location: z.string().nonempty(),
+  location: z.string().nonempty(),
   // timezone: z.string().nonempty(),
   gender: z.string().optional(),
   race: z.string().array(),
-  // degreePursued: z.enum(['ASSOCIATES', 'BACHELORS', 'MASTERS', 'PHD', 'GRADUATED', 'OTHER']),
+  degreePursued: z.enum(['ASSOCIATES', 'BACHELORS', 'MASTERS', 'PHD', 'GRADUATED', 'OTHER']),
   graduationYear: z.number().int(),
   school: z.string().nonempty(),
   major: z.string().nonempty(),
@@ -16,7 +16,7 @@ export const registrationSchema = z.object({
   // hasInternship: z.enum(['YES', 'NO']).optional(),
   resumeFilename: z.string().optional(),
   interests: z.string().array(),
-  learn: z.string().array(),
+  learn: z.string(),
   // terms: z.boolean().refine((val: boolean) => val),
 });
 
@@ -39,5 +39,4 @@ export const errorMap: z.ZodErrorMap = (error, ctx) => {
 export const defaultValues = {
   race: [],
   interests: [],
-  learn: [],
 };

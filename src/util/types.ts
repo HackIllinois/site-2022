@@ -8,16 +8,16 @@ export type RegistrationType = {
   lastName: string;
   // timezone: string;
   email: string;
-  // location: string;
+  location: string;
   gender?: string;
   race: string[];
-  // degreePursued:
-  // | 'ASSOCIATES'
-  // | 'BACHELORS'
-  // | 'MASTERS'
-  // | 'PHD'
-  // | 'GRADUATED'
-  // | 'OTHER';
+  degreePursued:
+  | 'ASSOCIATES'
+  | 'BACHELORS'
+  | 'MASTERS'
+  | 'PHD'
+  | 'GRADUATED'
+  | 'OTHER';
   graduationYear: number;
   school: string;
   major: string;
@@ -26,7 +26,7 @@ export type RegistrationType = {
   // hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
   interests: string[];
-  learn: string[];
+  learn: string;
 };
 
 export type RegistrationRole = 'attendee' | 'mentor';

@@ -24,7 +24,6 @@ const learnOptions = [
   { label: 'Linkedin', value: 'Linkedin' },
   { label: 'Reddit', value: 'Reddit' },
   { label: 'Word of Mouth', value: 'Word of Mouth' },
-  { label: 'Other', value: 'Other', isOther: true },
 ];
 
 const Event = (): JSX.Element => (
@@ -39,7 +38,7 @@ const Event = (): JSX.Element => (
     <br />
     <br />
     <span>How did you hear of HackIllinois?</span>
-    <Select name="learn" options={learnOptions} placeholder="Where did you hear about us? *" />
+    <Select name="learn" options={learnOptions} menuPlacement="top" placeholder="Where did you hear about us? *" creatable />
     <br />
     <br />
     <br />
