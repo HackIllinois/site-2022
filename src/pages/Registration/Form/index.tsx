@@ -29,7 +29,7 @@ const fields: (keyof RegistrationSchema)[][] = [
   ['race'],
   ['degreePursued', 'graduationYear', 'school', 'major'],
   ['programmingYears', 'programmingAbility', 'resumeFilename'],
-  ['hackathonInterest', 'outreachSurvey'],
+  ['interests', 'outreachSurvey'],
   [],
 ];
 

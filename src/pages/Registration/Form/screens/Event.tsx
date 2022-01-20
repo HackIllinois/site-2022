@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import Checkboxes from 'components/form/Checkboxes';
 import Select from 'components/form/Select';
+import Scrollbars from 'react-custom-scrollbars';
 import styles from './styles.module.scss';
 
 const interestOptions = [
@@ -27,12 +28,12 @@ const learnOptions = [
 ];
 
 const Event = (): JSX.Element => (
-  <div className={clsx(styles.screen, styles.eventQuestions)}>
+  <Scrollbars className={clsx(styles.screen, styles.eventQuestions)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
     <h1 className={styles.title}>Hack-Illinois Specific Questions</h1>
     <span>Which of these aspects of the hackathon would you most be interested in engaging in?</span>
     <Checkboxes
       className={styles.checkboxes}
-      name="hackathonInterest"
+      name="interests"
       options={interestOptions}
     />
     <br />
@@ -42,7 +43,7 @@ const Event = (): JSX.Element => (
     <br />
     <br />
     <br />
-  </div>
+  </Scrollbars>
 );
 
 export default Event;

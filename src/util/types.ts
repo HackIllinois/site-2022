@@ -25,7 +25,7 @@ export type RegistrationType = {
   programmingAbility: number;
   // hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
-  hackathonInterest: string[];
+  interests: string[];
   outreachSurvey: string;
 };
 

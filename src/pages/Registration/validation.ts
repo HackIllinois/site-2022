@@ -15,7 +15,7 @@ export const registrationSchema = z.object({
   programmingAbility: z.number().int().min(1).max(5),
   // hasInternship: z.enum(['YES', 'NO']).optional(),
   resumeFilename: z.string().optional(),
-  hackathonInterest: z.string().array(),
+  interests: z.string().array(),
   outreachSurvey: z.string(),
   // terms: z.boolean().refine((val: boolean) => val),
 });
@@ -38,5 +38,5 @@ export const errorMap: z.ZodErrorMap = (error, ctx) => {
 
 export const defaultValues = {
   race: [],
-  hackathonInterest: [],
+  interests: [],
 };

@@ -157,8 +157,28 @@
   }
 }
 
+.eventQuestions::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+  // background: green;
+  // scrollbar-color: red green;
+  // background: rgba(0,0,0,0);
+  // scrollbar-width: thin;
+}
+
+// .eventQuestions::-webkit-scrollbar-track {
+//   background: transparent !important;
+//   display: none;
+// }
+
 .eventQuestions {
-  overflow: scroll;
+  // overflow: scroll;
+  overflow: hidden !important;
+  // overflow-y: scroll !important;
+  // scrollbar-color: red green !important;
+  .scrollbox {
+    overflow: scroll !important;
+    color: aqua;
+  }
 
   span {
     color: white;
@@ -173,6 +193,14 @@
     //   width: auto;
     // }
   }
+
+  @media (max-height: 860px) {
+    .checkboxes {
+      font-size: .9em;
+      --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
+    }
+  }
+
 }
 
 .finish {
