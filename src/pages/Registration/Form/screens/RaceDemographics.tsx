@@ -25,7 +25,7 @@ const RaceDemographics = (): JSX.Element => (
       options={raceOptions}
     />
     <p className={styles.note}>
-      <i><b>Note:</b> In light of recent events, we are collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity. However, we understand if you prefer not to answer. </i>
+      <i><b>Note:</b> This is a purely optional question! :) In light of recent events, we’re collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity! Don’t forget that it’s purely optional and won’t affect anything! </i>
     </p>
   </Scrollbars>
 );
