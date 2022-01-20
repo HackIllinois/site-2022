@@ -9,7 +9,7 @@ const Welcome = (): JSX.Element => (
   <Scrollbars className={clsx(styles.screen, styles.welcome)} autoHide={false} renderView={(props) => <div className={styles.scrollbox} {...props} />}>
     <h1 className={styles.title}>Welcome!</h1>
     <p className={styles.text}>
-      Apply to participate in <span>HackIllinois 2022</span>, UIUC's premiere annual hackathon! Our event will run fully virtually from <span>February 25th to 27th, 2022</span>. We have selected an online format for our event to remain in compliance with university covid-19 guidelines and for the safety of all participants.
+      Apply to participate in <span>HackIllinois 2022</span>, UIUC's premiere annual hackathon! Our event will run fully virtually from <span>February 25th to 27th, 2022</span>. We have selected an online format for our event to remain in compliance with university COVID-19 guidelines and for the safety of all participants.
     </p>
     <p className={styles.text}>
       Applications will remain open until the end of HackIllinois 2022, <span>February 27</span>. For more details, visit www.hackillinois.org.
