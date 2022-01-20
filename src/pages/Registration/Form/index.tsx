@@ -13,6 +13,7 @@ import PersonalInfo from './screens/PersonalInfo';
 import RaceDemographics from './screens/RaceDemographics';
 import Education from './screens/Education';
 import Experience from './screens/Experience';
+import Event from './screens/Event';
 import Finish from './screens/Finish';
 
 import styles from './styles.module.scss';
@@ -24,14 +25,15 @@ type FormProps = {
 
 const fields: (keyof RegistrationSchema)[][] = [
   [],
-  ['name', 'email', 'location', 'timezone', 'gender'],
+  ['name', 'email', 'gender'],
   ['race'],
-  ['degreePursued', 'graduationYear', 'school', 'major'],
-  ['programmingYears', 'programmingAbility', 'hasInternship', 'resumeFilename'],
+  ['graduationYear', 'school', 'major'],
+  ['programmingYears', 'programmingAbility', 'resumeFilename'],
+  ['interests', 'learn'],
   [],
 ];
 
-const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, Finish];
+const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, Event, Finish];
 const submitPageIndex = pages.length - 2;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
