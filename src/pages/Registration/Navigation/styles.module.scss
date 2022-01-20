@@ -16,7 +16,7 @@
   }
 
   @media (max-height: 850px) {
-    top: 60px;
+    top: 62px;
     left: 42vw;
     transform: scale(0.8) translateX(-50%);
     width: 75vw;
@@ -44,11 +44,15 @@
   p {
     text-align: center;
     margin-top: 5px;
+    font-size: medium;
+    // width: 68px;
+    // height: 25px;
+    
   }
 
 
   .text {
-    --size: 16px;
+    --size: 30px;
     font-size: var(--size);
     font-family: Montserrat, sans-serif;
     transform: translateX(calc((16px - var(--size)) * var(--length) * .3));
