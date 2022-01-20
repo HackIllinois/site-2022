@@ -6,25 +6,27 @@ export type FileType = 'resume' | 'photo' | 'blobstore';
 export type RegistrationType = {
   firstName: string;
   lastName: string;
-  timezone: string;
+  // timezone: string;
   email: string;
-  location: string;
+  // location: string;
   gender?: string;
   race: string[];
-  degreePursued:
-  | 'ASSOCIATES'
-  | 'BACHELORS'
-  | 'MASTERS'
-  | 'PHD'
-  | 'GRADUATED'
-  | 'OTHER';
+  // degreePursued:
+  // | 'ASSOCIATES'
+  // | 'BACHELORS'
+  // | 'MASTERS'
+  // | 'PHD'
+  // | 'GRADUATED'
+  // | 'OTHER';
   graduationYear: number;
   school: string;
   major: string;
   programmingYears: number;
   programmingAbility: number;
-  hasInternship?: 'YES' | 'NO';
+  // hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
+  interests: string[];
+  learn: string[];
 };
 
 export type RegistrationRole = 'attendee' | 'mentor';
