@@ -4,7 +4,7 @@ export const registrationSchema = z.object({
   name: z.string().nonempty().regex(/^[^ ]+ +[^ ]+.*$/, 'Please enter your first and last name.'),
   email: z.string().nonempty().email(),
   location: z.string().nonempty(),
-  // timezone: z.string().nonempty(),
+  timezone: z.string().nonempty(),
   gender: z.string().optional(),
   race: z.string().array(),
   degreePursued: z.enum(['ASSOCIATES', 'BACHELORS', 'MASTERS', 'PHD', 'GRADUATED', 'OTHER']),
@@ -15,8 +15,8 @@ export const registrationSchema = z.object({
   programmingAbility: z.number().int().min(1).max(5),
   // hasInternship: z.enum(['YES', 'NO']).optional(),
   resumeFilename: z.string().optional(),
-  interests: z.string().array(),
-  learn: z.string(),
+  hackathonInterest: z.string().array(),
+  outreachSurvey: z.string(),
   // terms: z.boolean().refine((val: boolean) => val),
 });
 
@@ -38,5 +38,5 @@ export const errorMap: z.ZodErrorMap = (error, ctx) => {
 
 export const defaultValues = {
   race: [],
-  interests: [],
+  hackathonInterest: [],
 };

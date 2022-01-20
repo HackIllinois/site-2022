@@ -32,13 +32,13 @@ const Event = (): JSX.Element => (
     <span>Which of these aspects of the hackathon would you most be interested in engaging in?</span>
     <Checkboxes
       className={styles.checkboxes}
-      name="interests"
+      name="hackathonInterest"
       options={interestOptions}
     />
     <br />
     <br />
     <span>How did you hear of HackIllinois?</span>
-    <Select name="learn" options={learnOptions} menuPlacement="top" placeholder="Where did you hear about us? *" creatable />
+    <Select name="outreachSurvey" options={learnOptions} menuPlacement="top" placeholder="Where did you hear about us? *" creatable />
     <br />
     <br />
     <br />

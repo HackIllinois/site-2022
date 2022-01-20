@@ -6,7 +6,7 @@ export type FileType = 'resume' | 'photo' | 'blobstore';
 export type RegistrationType = {
   firstName: string;
   lastName: string;
-  // timezone: string;
+  timezone: string;
   email: string;
   location: string;
   gender?: string;
@@ -25,8 +25,8 @@ export type RegistrationType = {
   programmingAbility: number;
   // hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
-  interests: string[];
-  learn: string;
+  hackathonInterest: string[];
+  outreachSurvey: string;
 };
 
 export type RegistrationRole = 'attendee' | 'mentor';

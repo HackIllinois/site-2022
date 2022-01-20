@@ -25,11 +25,11 @@ type FormProps = {
 
 const fields: (keyof RegistrationSchema)[][] = [
   [],
-  ['name', 'email', 'gender'],
+  ['name', 'email', 'location', 'timezone', 'gender'],
   ['race'],
   ['degreePursued', 'graduationYear', 'school', 'major'],
   ['programmingYears', 'programmingAbility', 'resumeFilename'],
-  ['interests', 'learn'],
+  ['hackathonInterest', 'outreachSurvey'],
   [],
 ];
 
