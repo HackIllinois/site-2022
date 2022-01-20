@@ -1,21 +1,22 @@
 import React from 'react';
 
 import Hero from './Hero';
-// import EventInfo from './EventInfo';
-// import FAQ from './FAQ';
-// import Sponsors from './Sponsors';
+import EventInfo from './EventInfo';
+import Sponsors from './Sponsors';
+// import Speakers from './Speakers';
+// import OurTeam from './OurTeam';
+import Footer from './Footer';
 
 import styles from './styles.module.scss';
 
 const Home: React.FC = () => (
   <div className={styles.home}>
     <Hero />
-    { /* Temporarily disable until content is ready
     <EventInfo />
-    <FAQ />
+    {/* <Speakers /> */}
+    {/* <OurTeam /> */}
     <Sponsors />
-    */ }
-    <div className={styles.gradient} />
+    <Footer />
   </div>
 );
 
