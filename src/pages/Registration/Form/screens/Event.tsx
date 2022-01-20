@@ -35,6 +35,7 @@ const Event = (): JSX.Element => (
       name="interests"
       options={interestOptions}
     />
+    <br />
     <span>How did you hear of HackIllinois?</span>
     <Checkboxes
       className={styles.checkboxes}
