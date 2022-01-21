@@ -12,7 +12,7 @@ const Welcome = (): JSX.Element => (
       Apply to participate in <span>HackIllinois 2022</span>, UIUC's premiere annual hackathon! Our event will run fully virtually from <span>February 25th to 27th, 2022</span>. We have selected an online format for our event to remain in compliance with university COVID-19 guidelines and for the safety of all participants.
     </p>
     <p className={styles.text}>
-      Applications will remain open until the end of HackIllinois 2022, <span>February 27</span>. For more details, visit <a href="www.hackillinois.org"><span>www.hackillinois.org</span></a>.
+      Applications will remain open until the beginning of HackIllinois 2022, <span>February 25th</span>. For more details, visit <a href="www.hackillinois.org"><span>www.hackillinois.org</span></a>.
     </p>
     <p className={styles.text}>
       Please feel free to reach out to <span>contact@hackillinois.org</span> with any questions or concerns. We look forward to reviewing your application!
