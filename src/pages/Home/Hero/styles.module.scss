@@ -87,6 +87,23 @@
     z-index: 25;
   }
 
+  .registerButton {
+    position: absolute;
+    top: calc(40px - 1em);
+    right: 20px;
+    padding: 0.4em 25px;
+
+    color: black;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-decoration: none;
+    
+    border: 2px solid #08151B;
+    border-radius: 25% / 50%;
+
+    z-index: 25;
+  }
+
   @media (orientation: portrait) {
     height: 80vh;
 
