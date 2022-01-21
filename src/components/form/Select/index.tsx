@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useController, useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
 
-import ReactSelect, { OptionTypeBase } from 'react-select';
+import ReactSelect from 'react-select';
 import ReactSelectCreatable from 'react-select/creatable';
-import { Option as FilterOption } from 'react-select/src/filters';
 
 import styles from './styles.module.scss';
 import customStyles from './styles';
@@ -12,7 +11,9 @@ import ErrorMessage from '../ErrorMessage';
 
 // Modified from https://github.com/JedWatson/react-select/issues/3067
 
-const customFilterOption = (option: FilterOption, rawInput: string) => {
+export type OptionType = { label: string; value: unknown, isDisabled?: boolean };
+
+const customFilterOption = (option: OptionType, rawInput: string) => {
   if (String(option.label).toLowerCase() === 'other') {
     return true;
   }
@@ -23,8 +24,6 @@ const customFilterOption = (option: FilterOption, rawInput: string) => {
     true,
   );
 };
-
-export type OptionType = { label: string; value: unknown, isDisabled?: boolean } & OptionTypeBase;
 
 type PropTypes = {
   name: string;
@@ -94,6 +93,7 @@ const Select = ({ name, options = [], creatable, isMulti = false, className, ...
         closeMenuOnSelect={!isMulti}
         menuPlacement="auto"
         menuPortalTarget={document.body}
+        menuShouldBlockScroll
         filterOption={customFilterOption}
         styles={customStyles}
         isClearable

@@ -1,9 +1,9 @@
-import { Styles } from 'react-select';
+import { StylesConfig } from 'react-select';
 
 const menuBackgroundColor = '#ADD8CD';
 const menuHighlightColor = '#2C9C98';
 
-const customStyles: Styles<Record<string, unknown>, true | false> = {
+const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   control: () => ({
     background: 'transparent',
     borderBottom: '1px solid #B8B8B8',
