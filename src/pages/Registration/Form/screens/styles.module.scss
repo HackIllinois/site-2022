@@ -177,6 +177,10 @@
   // scrollbar-color: red green !important;
   .scrollbox {
     overflow: scroll !important;
+    // background-color: aqua;
+  }
+
+  .scrollbox::-webkit-scrollbar {
     color: aqua;
   }
 
@@ -227,6 +231,13 @@
     a {
       color: greenyellow;
     }
+  }
+
+  .homeButton {
+    display: flex;
+    justify-content: flex-end;
+
+    margin: 10px auto;
   }
 }
 
