@@ -23,8 +23,10 @@ export type RegistrationType = {
   major: string;
   programmingYears: number;
   programmingAbility: number;
-  hasInternship?: 'YES' | 'NO';
+  // hasInternship?: 'YES' | 'NO';
   resumeFilename?: string;
+  interests: string[];
+  outreachSurvey: string;
 };
 
 export type RegistrationRole = 'attendee' | 'mentor';
