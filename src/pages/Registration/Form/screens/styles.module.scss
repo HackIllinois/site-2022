@@ -212,7 +212,11 @@
   flex-direction: column;
   justify-content: space-evenly;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
+
+  // @media (max-height: 800px) {
+  //   transform: translateY(50px);
+  // }
 
   .logo {
     display: block;
