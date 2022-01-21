@@ -12,6 +12,7 @@
     height: 100%;
 
     background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
     
     z-index: 1;
@@ -87,7 +88,7 @@
   }
 
   @media (orientation: portrait) {
-    height: 80%;
+    height: 80vh;
 
     .foreground {
       flex-direction: row-reverse;
