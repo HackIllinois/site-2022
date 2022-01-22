@@ -176,13 +176,13 @@
   // overflow-y: scroll !important;
   // scrollbar-color: red green !important;
   .scrollbox {
-    overflow: scroll !important;
+    // overflow: scroll !important;
     // background-color: aqua;
   }
 
-  .scrollbox::-webkit-scrollbar {
-    color: aqua;
-  }
+  // .scrollbox::-webkit-scrollbar {
+  //   color: aqua;
+  // }
 
   p {
     color: white;
