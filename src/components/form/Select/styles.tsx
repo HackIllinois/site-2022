@@ -6,7 +6,7 @@ const menuHighlightColor = '#2C9C98';
 const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   control: () => ({
     background: 'transparent',
-    borderBottom: '1px solid #B8B8B8',
+    borderBottom: '1px solid #F6F4D4',
     display: 'flex',
     paddingBottom: 5,
   }),
@@ -17,7 +17,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   }),
   placeholder: (base) => ({
     ...base,
-    color: '#525051',
+    color: '#F6F4D4',
     fontWeight: 500,
     bottom: 0,
     top: 'unset',
@@ -62,7 +62,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     },
   }),
   clearIndicator: () => ({
-    color: '#C9CF76',
+    color: '#F6F4D4',
     cursor: 'pointer',
   }),
   indicatorSeparator: () => ({
@@ -70,7 +70,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     display: 'none',
   }),
   dropdownIndicator: () => ({
-    color: '#C9CF76',
+    color: '#F6F4D4',
     cursor: 'pointer',
   }),
   menuPortal: (base) => ({
