@@ -21,7 +21,7 @@ const EventInfo: React.FC = () => (
         <h1>The Event</h1>
       </div>
       <div className={styles.cakeMiddle}>
-        <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
+        <p><span className={styles.emphasized}>HackIllinois</span> is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
         <p>This year, participants will take part virtually at HackIllinois. Participants can work individually or in teams to submit projects to a specific track for a chance to win the prize.</p>
       </div>
       <div className={styles.cakeBottom} />
@@ -32,7 +32,7 @@ const EventInfo: React.FC = () => (
         <h1>Join Us</h1>
       </div>
       <div className={styles.cakeMiddle}>
-        <p>Follow us on Twitter (<a href="https://twitter.com/HackIllinois">@HackIllinois</a>) and Instagram (<a href="https://instagram.com/HackIllinois">@HackIllinois</a>) to be notified of our event updates!</p>
+        <p>Follow us on <span className={styles.emphasized}>Twitter (<a href="https://twitter.com/HackIllinois">@HackIllinois</a>)</span> and <span className={styles.emphasized}>Instagram (<a href="https://instagram.com/HackIllinois">@HackIllinois</a>)</span> to be notified of our event updates!</p>
         <p>As the event is fully virtual, we’ll connect mentors and attendees on Discord!</p>
         <div className={styles.platformTitle}>
           <img src={DISCORD_LOGO} alt="Discord Logo" />
