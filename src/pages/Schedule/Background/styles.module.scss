@@ -6,16 +6,5 @@
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-
-  .display {
-    @media (max-width: 2000px) {
-        max-height: 20%;
-    }
-
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    bottom: 0;
-  }
   
 }
