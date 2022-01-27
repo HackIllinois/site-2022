@@ -22,9 +22,9 @@ const Schedule: React.FC = () => {
 
   return (
     <div className={styles.schedule}>
-      <NavBar showHome />
+      {/* <NavBar showHome /> */}
       <Background />
-      <div className={styles.flexRow}>
+      {/* <div className={styles.flexRow}>
         <div className={styles.left}>
           <Calendar date={date} setDate={setDate} width={width} />
           <Guide />
@@ -32,7 +32,7 @@ const Schedule: React.FC = () => {
         <div className={styles.right}>
           <EventDisplay date={date} width={width} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
