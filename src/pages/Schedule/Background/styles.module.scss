@@ -2,9 +2,11 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #1E2E55;
   overflow: hidden;
   z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   .stars {
     width: 100%;
