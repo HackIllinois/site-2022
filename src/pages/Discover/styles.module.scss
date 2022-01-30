@@ -4,12 +4,18 @@
         height: 100%;
         position: absolute;
         overflow: hidden;
-        background-position: 50% 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        justify-content: center;
+        background-color: #08151B;
+        display: flex;
+        margin: 0;
 
         .logo { // Taken from homepage
+            @media only screen and (max-width: 912px) {
+                top: 38px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
             position: absolute;
             top: 20px;
             left: 20px;
@@ -25,26 +31,40 @@
             z-index: 25;
         }
 
-        .wall_pastries {
-            @media (max-width: 2000px) {
-                max-height: 25%;
-            }
+        .wall {
+            height: 55%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            background: #E6988E;
+        }
+        
+        .floor_separator {
+            height: 2%;
+            width: 100%;
+            position: absolute;
+            top: 53%;
+            background: #E8D7A8;
+        }
 
-            @media screen and (max-width: 1024px) {
+        .shelf {
+            @media only screen and (max-width: 912px) {
                 display: none;
             }
 
             position: absolute;
+            max-height: 20%;
             left: 5vh;
             top: 20vh;
         }
 
         .display {
-            @media (max-width: 2000px) {
-                max-height: 45%;
+            @media only screen and (max-width: 912px) {
+                bottom: 27%; 
+                max-height: 20%;
             }
 
-            height: 45%;
+            max-height: 42%;
             position: absolute;
             z-index: 2;
             right: 0;
@@ -52,23 +72,37 @@
         }
 
         .blackboard {
-            @media (max-width: 2000px) {
-                max-height: 35%;
+            @media only screen and (max-width: 912px) {
+                top: 20%;
+                left: 0;
+                right: 0;
+                bottom: 60%;
+                margin: auto;
+                max-width: 85%;
+                max-height: 85%;
             }
 
+            max-height: 45%;
+            right: 3vh;
+            top: 7vh;
             position: absolute;
-            right: 5vh;
-            top: 15vh;
         }
 
         .blackboard_hover {
-            @media (max-width: 2000px) {
-                max-height: 35%;
+            @media only screen and (max-width: 912px) {
+                top: 20%;
+                left: 0;
+                right: 0;
+                bottom: 60%;
+                margin: auto;
+                max-width: 85%;
+                max-height: 85%;
             }
 
+            max-height: 45%;
+            right: 3vh;
+            top: 7vh;
             position: absolute;
-            right: 5vh;
-            top: 15vh;
             opacity: 0;
         }
 
