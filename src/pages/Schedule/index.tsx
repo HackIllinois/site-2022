@@ -30,7 +30,7 @@ const Schedule: React.FC = () => {
           <Guide />
         </div>
         <div className={styles.right}>
-          <EventDisplay date={date} width={width} />
+          <EventDisplay date={date} width={width}/>
         </div>
       </div>
     </div>
