@@ -34,21 +34,29 @@ const EventInfo: React.FC = () => (
       <div className={styles.cakeMiddle}>
         <p>Follow us on <span className={styles.emphasized}>Twitter (<a href="https://twitter.com/HackIllinois">@HackIllinois</a>)</span> and <span className={styles.emphasized}>Instagram (<a href="https://instagram.com/HackIllinois">@HackIllinois</a>)</span> to be notified of our event updates!</p>
         <p>As the event is fully virtual, we’ll connect mentors and attendees on Discord!</p>
-        <div className={styles.platformTitle}>
-          <img src={DISCORD_LOGO} alt="Discord Logo" />
-          <h2>Discord</h2>
+        <div className={styles.platforms}>
+          <div className={styles.platform}>
+            <div className={styles.platformTitle}>
+              <img src={DISCORD_LOGO} alt="Discord Logo" />
+              <h2>Discord</h2>
+            </div>
+            <p className={styles.platformDescription}>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and company events, and get help from mentors—all through one centralized platform.</p>
+          </div>
+          <div className={styles.platform}>
+            <div className={styles.platformTitle}>
+              <img src={TWITTER_LOGO} alt="Twitter Logo" />
+              <h2>Twitter</h2>
+            </div>
+            <p className={styles.platformDescription}>This is where we’ll be posting main updates with regards to our schedule, additions to our event, and other things we come up with! We’ll also be using it during the event to make updates with any schedule changes and send out reminders for workshops and other mini-events starting out!</p>
+          </div>
+          <div className={styles.platform}>
+            <div className={styles.platformTitle}>
+              <img src={INSTAGRAM_LOGO} alt="Instagram Logo" />
+              <h2>Instagram</h2>
+            </div>
+            <p className={styles.platformDescription}>This is where we’ll be posting more of the fun, behind-the-scenes aspects of our event! You’ll get an opportunity to see the work that goes into making the event a possibility through insights from teams and profiles of staff members.</p>
+          </div>
         </div>
-        <p>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and company events, and get help from mentors—all through one centralized platform.</p>
-        <div className={styles.platformTitle}>
-          <img src={TWITTER_LOGO} alt="Twitter Logo" />
-          <h2>Twitter</h2>
-        </div>
-        <p>This is where we’ll be posting main updates with regards to our schedule, additions to our event, and other things we come up with! We’ll also be using it during the event to make updates with any schedule changes and send out reminders for workshops and other mini-events starting out!</p>
-        <div className={styles.platformTitle}>
-          <img src={INSTAGRAM_LOGO} alt="Instagram Logo" />
-          <h2>Instagram</h2>
-        </div>
-        <p>This is where we’ll be posting more of the fun, behind-the-scenes aspects of our event! You’ll get an opportunity to see the work that goes into making the event a possibility through insights from teams and profiles of staff members.</p>
       </div>
       <div className={styles.cakeBottom} />
     </div>
