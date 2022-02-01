@@ -109,6 +109,15 @@ section.eventInfo {
 
       .platform:not(:last-child) {
         margin-right: 25px;
+
+        @media (max-width: 1000px) {
+          margin-right: 0;
+          margin-bottom: 25px;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        flex-direction: column;
       }
     }
 
