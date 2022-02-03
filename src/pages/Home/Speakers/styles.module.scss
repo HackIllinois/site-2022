@@ -52,6 +52,25 @@ section.speakers {
     }
   }
 
+  .carouselButtons {
+    position: absolute;
+    bottom: 35%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .carouselButton {
+      display: block;
+      width: 1.75vw;
+      transform: translateY(50%);
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 2.5vw;
+      }
+    }
+  }
+
   // @media screen and (max-width: $tablet-breakpoint) {
   //   margin-top: -1px;
   // }
