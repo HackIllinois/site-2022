@@ -62,7 +62,7 @@ const Form = (): JSX.Element => {
     };
 
     initialize().finally(() => setIsLoading(false));
-  }); // deliberately not including `methods`
+  }, []); // deliberately not including `methods`
 
   const onSubmit: SubmitHandler<RSVPSchema> = async (data) => {
     preProcessData(data);
