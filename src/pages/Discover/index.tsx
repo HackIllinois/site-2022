@@ -15,7 +15,7 @@ const Discover: React.FC = () => (
       <img src={NEW_LOGO} alt="Logo" className={styles.logo} />
       <img src={SHELF} alt="Pastry shelf" className={styles.shelf} />
       <img src={DISPLAY} alt="Pastry display" className={styles.display} />
-      <img src={BLACKBOARD} alt="Blackboard" className={styles.blackboard} />
+      <img src={BLACKBOARD} alt="Blackbnoard" className={styles.blackboard} />
       <a href="/schedule"><img src={BLACKBOARD_HOVER} alt="Blackboard hover" className={styles.blackboard_hover} /></a>
 
     </div>
