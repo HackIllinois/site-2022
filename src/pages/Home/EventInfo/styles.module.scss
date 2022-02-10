@@ -175,7 +175,7 @@ section.eventInfo {
     background-color: #E48A66C7;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     .faqSectionHeaderContainer {
       position: relative;
@@ -197,14 +197,14 @@ section.eventInfo {
     .faqSectionHeaderContainerActivated::before {
       content: '';
       z-index: 100;
-      $ratio: 12;
+      $ratio: 14;
       height: 78vw / $ratio;
       width: 225vw / $ratio;
       background: url('../../../assets/home/event_info/piping.svg');
       background-size: contain;
       display: block;
       position: absolute;
-      left: -8vw;
+      left: -6vw;
       bottom: 1vw;
     }
   }
