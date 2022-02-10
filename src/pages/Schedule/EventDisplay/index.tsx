@@ -31,11 +31,7 @@ const EventDisplay = ({ date, width }: Props): JSX.Element => {
 
   return (
     <div className={styles.eventDisplay}>
-      {width > 950 ? (
-        <p className={styles.dayHeading}>April {date} - {day} {timezoneText}</p>
-      ) : (
-        <h1 className={styles.dayHeading}>April {date}<br />{timezoneText}</h1>
-      )}
+      <p className={styles.dayHeading}>April {date} - {day} {timezoneText}</p>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Calendar date={cal_date} setDate={setDate} width={width} />
