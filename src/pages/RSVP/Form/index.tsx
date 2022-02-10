@@ -13,7 +13,7 @@ import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
 import Random from 'components/form/Random';
 import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile, APIError } from 'util/api';
-import { RegistrationType, WithId } from 'util/types';
+import { ProfileType, RegistrationType, WithId } from 'util/types';
 import DISCORD_HELP from 'assets/discord_username_how_to.png';
 
 import styles from './styles.module.scss';
@@ -37,14 +37,10 @@ const preProcessData = (data: RSVPSchema) => {
 const Form = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [registration, setRegistration] = useState<WithId<RegistrationType> | null>(null);
   const [finished, setFinished] = useState(false);
 
-  const methods = useForm<RSVPSchema>({
-    resolver: zodResolver(rsvpSchema, { errorMap }),
-    defaultValues,
-  });
-  const { handleSubmit } = methods;
+  const [registration, setRegistration] = useState<WithId<RegistrationType> | null>(null);
+  const [profile, setProfile] = useState<WithId<ProfileType> | null>(null);
 
   useEffect(() => {
     const initialize = async () => {
@@ -55,14 +51,26 @@ const Form = (): JSX.Element => {
 
         if (roles.includes('Attendee')) {
           setIsEditing(true);
-          const { id, points, ...profileData } = await getProfile();
-          methods.reset(profileData);
+          const { points, ...profileData } = await getProfile();
+          setProfile(profileData);
         }
       }
     };
 
     initialize().finally(() => setIsLoading(false));
-  }, []); // deliberately not including `methods`
+  }, []);
+
+  const methods = useForm<RSVPSchema>({
+    resolver: zodResolver(rsvpSchema, { errorMap }),
+    defaultValues,
+  });
+  const { handleSubmit, reset } = methods;
+
+  useEffect(() => {
+    if (profile !== null) {
+      reset(profile);
+    }
+  }, [reset, profile]);
 
   const onSubmit: SubmitHandler<RSVPSchema> = async (data) => {
     preProcessData(data);
