@@ -52,7 +52,7 @@ const handler: Handler = async (event) => {
   };
 
   // Check if the file already exists, and if so, add necessary parameter to update it
-  const fileResponse = await axios.get(url).catch(() => null);
+  const fileResponse = await axios.get(url, { headers }).catch(() => null);
   if (fileResponse) {
     body.sha = fileResponse.data.sha;
   }
@@ -74,7 +74,7 @@ const handler: Handler = async (event) => {
         statusCode: 200,
         body: JSON.stringify({
           success: false,
-          message: `Error creating/updating ${filename}, original error: ${e.response.data}`,
+          message: `Error creating/updating ${filename}, original error: ${e.response.data.message}`,
         }),
       };
     }
