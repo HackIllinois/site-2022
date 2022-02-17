@@ -29,7 +29,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     fontWeight: 500,
     fontFamily: 'Montserrat',
     width: '100%',
-    color: 'white',
+    color: '#F6F4D4',
     '& > div, & > div > input': {
       fontWeight: 'inherit',
       fontFamily: 'inherit',
@@ -38,7 +38,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   }),
   singleValue: (base) => ({
     ...base,
-    color: 'white',
+    color: '#F6F4D4',
     fontWeight: 500,
     fontSize: '1.25em',
   }),
@@ -50,11 +50,11 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   }),
   multiValueLabel: (base) => ({
     ...base,
-    color: 'white',
+    color: '#F6F4D4',
   }),
   multiValueRemove: (base) => ({
     ...base,
-    color: 'white',
+    color: '#F6F4D4',
     cursor: 'pointer',
     '&:hover': {
       color: 'white',
