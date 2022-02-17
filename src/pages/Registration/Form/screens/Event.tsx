@@ -42,6 +42,7 @@ const Event = (): JSX.Element => (
       name="interests"
       options={interestOptions}
     />
+    <br />
   </Scrollbars>
 );
 
