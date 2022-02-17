@@ -20,18 +20,21 @@ type FileContentPutBody = {
 
 const handler: Handler = async (event) => {
   const { discord, name, html }: BodyParams = JSON.parse(event.body || '{}');
+  console.log(`Received submission request for name: "${name}", discord: "${discord}"`);
 
   if (!GITHUB_TOKEN || !GITHUB_REPO || !GITHUB_REPO_OWNER) {
+    console.error('Missing environment variables');
     return {
       statusCode: 500,
       body: JSON.stringify({
         success: false,
-        message: 'Environment variables are not set',
+        message: 'Missing environment variables',
       }),
     };
   }
 
   if (!discord || !name || !html) {
+    console.error('Missing required parameters');
     return {
       statusCode: 200,
       body: JSON.stringify({
@@ -54,12 +57,14 @@ const handler: Handler = async (event) => {
   // Check if the file already exists, and if so, add necessary parameter to update it
   const fileResponse = await axios.get(url, { headers }).catch(() => null);
   if (fileResponse) {
+    console.log(`File ${filename} already exists, updating it`);
     body.sha = fileResponse.data.sha;
   }
 
   try {
     // Create file
     await axios.put(url, body, { headers });
+    console.log(`File ${filename} created/updated`);
     return {
       statusCode: 200,
       body: JSON.stringify({
@@ -68,6 +73,7 @@ const handler: Handler = async (event) => {
       }),
     };
   } catch (error) {
+    console.error(error);
     const e: AxiosError = error as AxiosError;
     if (e.response) {
       return {
