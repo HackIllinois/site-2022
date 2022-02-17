@@ -9,8 +9,8 @@ type Props = {
   width: number
 };
 
-const startDate = 9;
-const endDate = 12;
+const startDate = 25;
+const endDate = 27;
 
 const Days = ({ date, setDate, width }: Props): JSX.Element => {
   const [numOfWeeks, setNumOfWeeks] = useState(width > 950 ? 5 : 2);
@@ -22,7 +22,7 @@ const Days = ({ date, setDate, width }: Props): JSX.Element => {
   };
 
   const daysInMonth = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 2; i++) {
     daysInMonth.push(<td className={styles.empty} key={`startblank${i}`} />);
   }
   for (let d = 1; d < 31; d++) {

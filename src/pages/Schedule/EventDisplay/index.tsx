@@ -7,7 +7,7 @@ import Calendar from '../Calendar';
 import styles from './styles.module.scss';
 
 type Props = {
-  date: number,
+  defaultDate: number,
   width: number
 };
 
@@ -16,28 +16,18 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const timezone = DateTime.local().toFormat('ZZZZ', { locale: 'en-US' });
 const timezoneText = <span className={styles.timezoneText} title="automagically set to your timezone :)">(All times are in {timezone})</span>;
 
-// Calendar
-const eventDates = [9, 10, 11, 12];
-let defaultDate = 9;
-const today = new Date();
-if (today.getFullYear() === 2021 && today.getMonth() === 3 && eventDates.includes(today.getDate())) {
-  defaultDate = today.getDate();
-}
-
-const EventDisplay = ({ date, width }: Props): JSX.Element => {
-  const [cal_date, setDate] = useState(defaultDate);
-  const d = new Date(`April ${date}, 2021`);
+const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
+  const [date, setDate] = useState(defaultDate);
+  const d = new Date(`February ${date}, 2022`);
   const day = days[d.getDay()];
 
   return (
     <div className={styles.eventDisplay}>
-      <p className={styles.dayHeading}>April {date} - {day} {timezoneText}</p>
+      <p className={styles.dayHeading}>February {date} - {day} {timezoneText}</p>
       <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <Calendar date={cal_date} setDate={setDate} width={width} />
-        </div>
+        <Calendar date={date} setDate={setDate} width={width} />
+        <Events date={date} />
       </div>
-      <Events date={date} />
     </div>
   );
 };

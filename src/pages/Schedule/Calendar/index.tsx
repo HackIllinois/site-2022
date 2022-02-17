@@ -11,7 +11,7 @@ type Props = {
 
 const Calendar = (props: Props): JSX.Element => (
   <div className={styles.calendar}>
-    <p>April</p>
+    <p>February</p>
     <table>
       <Days {...props} />
     </table>
