@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import useWindowSize from 'util/useWindowSize';
 import NavBar from 'components/NavBar';
 import Background from './Background';
-import Guide from './Guide';
+// import Guide from './Guide';
 import EventDisplay from './EventDisplay';
 
 import styles from './styles.module.scss';

@@ -6,9 +6,10 @@
   user-select: none;
   width: fit-content;
   padding: 10px;
-  left: 5%;
-  top: 25%;
-  right: 60%;
+
+  position: absolute;
+  left: 5vh;
+  top: 5vh;
 
   @media (min-width: 950px) {
     margin-top: 20px;
