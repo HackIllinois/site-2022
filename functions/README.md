@@ -1,0 +1,3 @@
+# Serverless Functions
+
+This folder contains serverless functions that work with [Netlify](https://docs.netlify.com/functions/overview/), but should be easily adaptable to any other serverless framework. To test these functions locally, you can use [Netlify Dev](https://docs.netlify.com/cli/get-started/#run-a-local-development-environment). Netlify Dev will also automatically use any necessary environment variables configured on Netlify.
