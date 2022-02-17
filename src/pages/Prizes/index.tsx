@@ -9,6 +9,7 @@ const Prizes = (): JSX.Element => (
   <div className={styles.prizes}>
     <div className={styles.backgroundImage} />
     <img className={styles.logo} src={LOGO} alt="HackIllinois Logo" />
+    <h1>Track Prizes</h1>
     <div className={styles.prizeList}>
       {trackPrizes.map((trackPrize) => (
         <div key={trackPrize.title} className={styles.prize}>
