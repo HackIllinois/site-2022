@@ -7,18 +7,21 @@
   top: 10vh;
   right: 9vh;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @media (max-width: 550px) {
     font-size: .8em;
   }
 
   p.dayHeading {
     color: #F6F4D2;
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     font-weight: 600;
-    font-size: 36px;
-
+    font-size: 30px;
 
     @media (max-width: 950px) {
       left: 20px;
@@ -37,15 +40,8 @@
   }
 
   .container {
-    position: relative;
-    width: 50%;
-    height: 50%;
-
-    .wrapper {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
+    margin: 20px;
+    flex-grow: 1;
   }
 
   .events {
@@ -55,7 +51,9 @@
     right: 5vh;
     bottom: 5vh;
     max-height: 70%;
-    max-width: 60%;    
+    max-width: 60%;
+    
+    overflow: scroll;
 
     .eventWrapper {
       margin-bottom: 10px;

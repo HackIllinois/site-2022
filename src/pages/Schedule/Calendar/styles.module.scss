@@ -6,13 +6,12 @@
   user-select: none;
   width: fit-content;
   padding: 10px;
-  position: absolute;
   left: 5%;
   top: 25%;
   right: 60%;
 
   @media (min-width: 950px) {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   p {
