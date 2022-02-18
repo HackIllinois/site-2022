@@ -1,41 +1,79 @@
 .eventDisplay {
-  color: #fff;
+  background: #08151B;
+  border: 9px solid #C76931;
+
+  position: absolute;
+  height: 60%;
+  top: 10vh;
+  right: 7vh;
+  left: 200px;
+
+  @media (max-width: 912px) {
+    left: 7vh;
+    bottom: 10vh;
+    height: auto;
+  }
 
   @media (max-width: 550px) {
     font-size: .8em;
+    left: 4vh;
+    right: 4vh;
+    bottom: 5vh;
+    height: auto;
   }
 
-  h1.dayHeading {
-    display: inline-block;
-    position: relative;
-    left: 150px;
-    font-weight: 500;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    margin-bottom: 40px;
+  p.dayHeading {
+    color: #F6F4D2;
+    padding: 20px 20px 0 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
 
-    @media (max-width: 950px) {
-      left: 20px;
-      margin-top: 0;
-      margin-bottom: 20px;
+    @media (max-width: 912px) {
+      display: none;
     }
 
     .timezoneText {
       font-weight: 300;
       margin-left: 7px;
-      @media (max-width: 950px) {
-        margin-left: 0;
-        font-size: .85em;
-      }
+    }
+  }
+
+  .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+
+    @media (max-width: 912px) {
+      top: 10px;
     }
   }
 
   .events {
-    position: relative;
+    position: absolute;
+    background-color: rgba(246, 244, 212, 0.92);
+    border-radius: 10px;
+    top: 3vh;
+    bottom: 3vh;
+    right: 3vh;
+    left: 320px;
+    
+    overflow: scroll;
+
+    @media (max-width: 912px) {
+      top: 150px;
+      bottom: 2vh;
+      right: 2vh;
+      left: 2vh;
+    }
 
     .eventWrapper {
       margin-bottom: 10px;
       display: flex;
+      overflow: auto;
 
       .times {
         box-sizing: border-box;
