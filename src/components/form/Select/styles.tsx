@@ -1,9 +1,9 @@
-import { Styles } from 'react-select';
+import { StylesConfig } from 'react-select';
 
 const menuBackgroundColor = '#ADD8CD';
 const menuHighlightColor = '#2C9C98';
 
-const customStyles: Styles<Record<string, unknown>, true | false> = {
+const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   control: () => ({
     background: 'transparent',
     borderBottom: '1px solid #B8B8B8',
@@ -29,6 +29,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     fontWeight: 500,
     fontFamily: 'Montserrat',
     width: '100%',
+    color: 'white',
     '& > div, & > div > input': {
       fontWeight: 'inherit',
       fontFamily: 'inherit',
@@ -37,13 +38,13 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
   }),
   singleValue: (base) => ({
     ...base,
-    color: 'black',
+    color: 'white',
     fontWeight: 500,
     fontSize: '1.25em',
   }),
   multiValue: (base) => ({
     ...base,
-    backgroundColor: '#3C519C',
+    backgroundColor: '#C9CF76',
     borderRadius: 100,
     padding: '0 2px',
   }),
@@ -61,7 +62,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     },
   }),
   clearIndicator: () => ({
-    color: '#3C519C',
+    color: '#C9CF76',
     cursor: 'pointer',
   }),
   indicatorSeparator: () => ({
@@ -69,7 +70,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     display: 'none',
   }),
   dropdownIndicator: () => ({
-    color: '#3C519C',
+    color: '#C9CF76',
     cursor: 'pointer',
   }),
   menuPortal: (base) => ({

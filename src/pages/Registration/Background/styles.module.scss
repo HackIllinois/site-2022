@@ -1,16 +1,19 @@
 .background {
-  background: linear-gradient(180deg, #2A3170 19.44%, #2B6776 59.7%);
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   overflow: hidden;
+  
 
-  .stars {
+  .kitchen {
     width: 100%;
-    height: calc(100% - 28vw); // ensure that the stars don't overlap with the translucent mountains
-    max-height: 425px;
-    background-position: center top;
-    background-size: 1500px;
+    // height: calc(100% - 28vw); // ensure that the stars don't overlap with the translucent mountains
+    height: 100vh;
+    // max-height: 425px;
+    // background-position: center top;
+    // background-size: 1500px;
+    background-position: center;
+    background-size: cover;
   }
 
   .mountains {
