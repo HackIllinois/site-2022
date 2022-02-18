@@ -5,18 +5,21 @@
   text-align: center;
   user-select: none;
   width: fit-content;
-  padding: 10px;
+  padding: 0 10px;
 
   position: absolute;
   left: 5vh;
   top: 5vh;
 
-  @media (min-width: 912px) {
-    margin-top: 20px;
+  @media (max-width: 912px) {
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   p {
-    padding-top: 5px;
+    padding-top: 10px;
     margin: auto;
     font-weight: 600;
     font-size: 24px;
