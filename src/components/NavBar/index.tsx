@@ -10,6 +10,7 @@ import MenuIcon from './MenuIcon';
 
 type LinkType = { text: string, to: string };
 const links: LinkType[] = [
+  { text: 'Interactive Journey', to: '/discover' },
   { text: 'Mentors', to: '/mentors' },
   { text: 'Prizes', to: '/prizes' },
   { text: 'Schedule', to: '/schedule' },
