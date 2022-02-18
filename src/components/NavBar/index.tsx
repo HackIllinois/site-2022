@@ -20,11 +20,12 @@ const linksWithHome = [{ text: 'Home', to: '/' }].concat(links);
 type PropTypes = {
   hideLogo?: boolean;
   showHome?: boolean;
+  showRegister?: boolean;
   mobileBreakpoint?: number;
   className?: string;
 };
 
-const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropTypes): JSX.Element => {
+const NavBar = ({ hideLogo, showHome, showRegister, mobileBreakpoint = 768, className }: PropTypes): JSX.Element => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < mobileBreakpoint);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
@@ -101,6 +102,8 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
         <Link to="/">
           <img className={clsx(styles.logo, isMobile && styles.mobile, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
         </Link>
+
+        { showRegister && <Link className={styles.registerButton} to="/register">Register</Link> }
 
         { dropdownMenu }
       </nav>
