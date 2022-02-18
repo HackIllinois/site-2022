@@ -1,3 +1,5 @@
+@import '../colors.module.scss';
+
 .eventDisplay {
   background: #08151B;
   border: 9px solid #C76931;
@@ -131,10 +133,10 @@
             border-radius: 7px;
           }
 
-          .line[data-type='other'] { background: #FBB63B; }
-          .line[data-type='minievent'] { background: #6F8CC1; }
-          .line[data-type='qna'] { background: #EE6C72; }
-          .line[data-type='workshop'] { background: #2C9C98; }
+          .line[data-type='other'] { background: $other-event-color; }
+          .line[data-type='minievent'] { background: $minievent-color; }
+          .line[data-type='qna'] { background: $qna-color; }
+          .line[data-type='workshop'] { background: $workshop-color; }
 
           .megaphone {
             position: relative;
@@ -180,10 +182,10 @@
             margin-top: 5px;
             margin-left: -2px;
             font-weight: 500;
-            &[data-type='other'] { background: #FBB63B; color: black; }
-            &[data-type='minievent'] { background: #6F8CC1; }
-            &[data-type='qna'] { background: #EE6C72; }
-            &[data-type='workshop'] { background: #2C9C98; }
+            &[data-type='other'] { background: $other-event-color; color: black; }
+            &[data-type='minievent'] { background: $minievent-color; }
+            &[data-type='qna'] { background: $qna-color; }
+            &[data-type='workshop'] { background: $workshop-color; }
           }
         }
       }
