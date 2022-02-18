@@ -18,6 +18,7 @@
   .title {
     font-size: 2em;
     font-weight: 500;
+    color: white;
 
     @media screen and (max-height: 700px) {
       margin-bottom: -20px;
@@ -32,6 +33,7 @@
     font-size: 1.25em;
     line-height: 1.5em;
     margin-top: 25px;
+    color: white;
 
     a {
       font-weight: 600;
@@ -47,9 +49,14 @@
 
 .welcome {
   margin-bottom: 10px;
+  // overflow: auto;
 
   .text {
     margin-right: 15px;
+
+    span {
+      color: greenyellow !important;
+    }
   }
 
   .text {
@@ -76,6 +83,8 @@
 }
 
 .personalInfo, .education, .experience {
+  overflow: auto;
+
   @media (min-height: 800px) {
     width: 85%;
   }
@@ -87,19 +96,19 @@
 
 .raceDemographics {
   // using !important to override react-custom-scrollbars
-  overflow: visible !important;
-  .scrollbox {
-    overflow: visible !important;
-  }
-  .horizontalScrollbar {
-    display: none;
-  }
-  @include registration-floating-screen {
+  // overflow: visible !important;
+  // .scrollbox {
+  //   overflow: visible !important;
+  // }
+  // .horizontalScrollbar {
+  //   display: none;
+  // }
+  // @include registration-floating-screen {
     overflow: hidden !important;
     .scrollbox {
       overflow: scroll !important;
     }
-  }
+  // }
 
   .title {
     margin-bottom: 20px;
@@ -107,6 +116,7 @@
 
   .checkboxes {
     width: 60%;
+    color: white;
     @include registration-floating-screen {
       width: auto;
     }
@@ -118,6 +128,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    color: white;
 
     b{
       font-weight: 600;
@@ -146,12 +157,66 @@
   }
 }
 
+.eventQuestions::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+  // background: green;
+  // scrollbar-color: red green;
+  // background: rgba(0,0,0,0);
+  // scrollbar-width: thin;
+}
+
+// .eventQuestions::-webkit-scrollbar-track {
+//   background: transparent !important;
+//   display: none;
+// }
+
+.eventQuestions {
+  // overflow: scroll;
+  overflow: hidden !important;
+  // overflow-y: scroll !important;
+  // scrollbar-color: red green !important;
+  .scrollbox {
+    overflow: scroll !important;
+    // background-color: aqua;
+  }
+
+  .scrollbox::-webkit-scrollbar {
+    color: aqua;
+  }
+
+  p {
+    color: white;
+    font-size: large;
+  }
+
+  .checkboxes {
+    width: 60%;
+    color: white;
+    font-size: small;
+    // @include registration-floating-screen {
+    //   width: auto;
+    // }
+  }
+
+  @media (max-height: 860px) {
+    .checkboxes {
+      font-size: .9em;
+      --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
+    }
+  }
+
+}
+
 .finish {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
+
+  // @media (max-height: 800px) {
+  //   transform: translateY(50px);
+  // }
 
   .logo {
     display: block;
@@ -166,5 +231,20 @@
 
   .text {
     text-align: center;
+
+    a {
+      color: greenyellow;
+    }
   }
+
+  .homeButton {
+    display: flex;
+    justify-content: flex-end;
+
+    margin: 10px auto;
+  }
+}
+
+.resume-upload {
+  color: white;
 }

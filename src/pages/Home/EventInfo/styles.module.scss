@@ -1,155 +1,297 @@
 @import '../breakpoints.scss';
 
-.eventInfo {
+section.eventInfo {
+  background-image: linear-gradient(to bottom, #F2F3D4, #C9CF76);
   position: relative;
-  margin-top: -23px;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  margin-top: -35px;
+  padding-top: 30vw;
+  z-index: 2;
+  margin-bottom: 0;
 
-  @media screen and (max-width: $tablet-breakpoint) {
-    margin-top: -1px;
+  .cakeLayer1, .cakeLayer2, .cakeLayer3 {
+    margin: auto;
+    display: block;
   }
 
-  @media (max-width: $mobile-breakpoint) {
-    background-color: #2C9C98;
-  }
-
-  .campfire {
-    -webkit-user-drag: none;
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-
-    width: 90%;
-    max-width: 1500px;
-
-    &.desktop {
-      display: initial;
-    }
-    
-    @media screen and (max-width: $tablet-breakpoint) {
-      &.tablet {
-        display: initial;
-      }
-      &.desktop, &.mobile {
-        display: none;
-      }
-    }
-
+  .cakeLayer1 {
+    width: 53%;
     @media (max-width: $mobile-breakpoint) {
-      &.mobile {
-        display: initial;
-      }
-      &.tablet, &.desktop {
-        display: none;
-      }
+      width: 77%;
+    }
+
+    .cakeTop {
+      padding-top: 15%;
     }
   }
 
-  .blob {
-    --space: 60px; // extra space above and below the blob
-    display: none;
-    position: absolute;
-    top: var(--space);
-    height: calc(100% - 2*var(--space));
-    width: 100%;
-    max-width: 1260px;
-
-    @media (max-width: $tablet-breakpoint) {
-      display: initial;
-    }
-
+  .cakeLayer2 {
+    width: 73.5%;
     @media (max-width: $mobile-breakpoint) {
-      display: none;
+      width: 85%;
+    }
+
+    .cakeTop {
+      padding-top: 10%;
     }
   }
 
-  .textContainer {
+  .cakeLayer3 {
+    width: 91.5%;
+
+    .cakeTop {
+      padding-top: 10%;
+    }
+
+    .cakeBottom {
+      z-index: 10;
+    }
+  }
+
+  .cakeTop {
     position: relative;
-    z-index: 1;
+    padding-bottom: 4%;
+    border-radius: 10px 10px 0 0;
 
-    color: white;
-    font-size: 0.85em;
+    h1 {
+      padding-left: 5%;
+      font-size: 4vw;
 
-    margin: 200px 0 100px 7%; // min(10%, 180px);
-    padding-bottom: 1px;
-    width: 55%;
-    max-width: 800px;
+      @media (max-width: 1100px) {
+        font-size: 6vw;        
+      }
 
-    @media (max-width: $tablet-breakpoint) {
-      margin-top: 130px;
-      width: 86%;
-      max-width: none;
-      margin-bottom: 135px;
+      font-weight: 600;
+      margin: 0;
     }
-    
-    @media (max-width: 900px) {
-      font-size: .8em;
+  }
+
+  .cakeFrosting {
+    position: absolute;
+    width: 101%;
+    top: 0;
+    transform: translate(-0.5%, -50%);
+  }
+
+  .cakeTop, .cakeBottom {
+    color: #E8D7A5;
+    background-color: #C96928;
+  }
+
+  .cakeMiddle {
+    background-color: #F19B79;
+    color: black;
+    margin-top: 0;
+    padding: 30px 5%;
+
+    a {
+      color: inherit;
     }
 
-    @media (max-width: $mobile-breakpoint) {
-      margin-top: 55vw;
-    }
+    .platformTitle {
+      display: flex;
+      margin-bottom: 5px;
 
-    @media (max-width: 500px) {
-      font-size: .75em;
-    }
-
-    @media (min-width: 1700px) {
-      max-width: 900px;
-      margin-left: 0;
-      left: 50%;
-      transform: translateX(-80%);
+      img {
+        width: 30px;
+        align-self: center;
+        margin-right: 10px;
+      }
     }
 
     h2 {
-      display: flex;
-      align-items: center;
-      font-weight: 600;
-      font-size: 1.5em;
-      margin-bottom: 0;
-      margin-top: 20px;
+      font-size: 30px;
+      margin: 0;
 
-      img {
-        width: 28px;
-        margin-right: 5px;
+      @media (max-width: 1100px) {
+        font-size: 22px;        
+      }
+    }
+
+    h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+
+      @media (max-width: 1100px) {
+        font-size: 18px;        
       }
     }
 
     p {
-      font-size: 1.125em;
-      line-height: 1.5em;
-      margin-top: 10px;
+      margin: 0;
+      font-size: 22px;
 
-      a {
-        color: inherit;
-
-        &.noUnderline {
-          text-decoration: none;
-        }
+      @media (max-width: 1100px) {
+        font-size: 18px;        
       }
 
-      @media (max-width: $tablet-breakpoint) {
-        &.one {
-          width: 70%;
-        }
-
-        &.two {
-          width: 80%;
-        }
-
-        &.three {
-          width: 92%;
-        }
-      }
-
-      @media (max-width: $mobile-breakpoint) {
-        &.one, &.two, &.three {
-          width: 100%;
-        }
+      @media (max-width: 800px) {
+        font-size: 16px;        
       }
     }
+
+    p:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
   }
+
+  .cakeBottom {
+    padding-top: 12.5%;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+  }
+
+  .cakeStand {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-top: -2%;
+    z-index: 0px;
+  }
+
+  // @media screen and (max-width: $tablet-breakpoint) {
+  //   margin-top: -1px;
+  // }
+
+  // @media (max-width: $mobile-breakpoint) {
+  //   background-color: #2C9C98;
+  // }
+
+  // .campfire {
+  //   -webkit-user-drag: none;
+  //   display: none;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   z-index: 1;
+
+  //   width: 90%;
+  //   max-width: 1500px;
+
+  //   &.desktop {
+  //     display: initial;
+  //   }
+    
+  //   @media screen and (max-width: $tablet-breakpoint) {
+  //     &.tablet {
+  //       display: initial;
+  //     }
+  //     &.desktop, &.mobile {
+  //       display: none;
+  //     }
+  //   }
+
+  //   @media (max-width: $mobile-breakpoint) {
+  //     &.mobile {
+  //       display: initial;
+  //     }
+  //     &.tablet, &.desktop {
+  //       display: none;
+  //     }
+  //   }
+  // }
+
+  // .blob {
+  //   --space: 60px; // extra space above and below the blob
+  //   display: none;
+  //   position: absolute;
+  //   top: var(--space);
+  //   height: calc(100% - 2*var(--space));
+  //   width: 100%;
+  //   max-width: 1260px;
+
+  //   @media (max-width: $tablet-breakpoint) {
+  //     display: initial;
+  //   }
+
+  //   @media (max-width: $mobile-breakpoint) {
+  //     display: none;
+  //   }
+  // }
+
+  // .textContainer {
+  //   position: relative;
+  //   z-index: 1;
+
+  //   color: white;
+  //   font-size: 0.85em;
+
+  //   margin: 200px 0 100px 7%; // min(10%, 180px);
+  //   padding-bottom: 1px;
+  //   width: 55%;
+  //   max-width: 800px;
+
+  //   @media (max-width: $tablet-breakpoint) {
+  //     margin-top: 130px;
+  //     width: 86%;
+  //     max-width: none;
+  //     margin-bottom: 135px;
+  //   }
+    
+  //   @media (max-width: 900px) {
+  //     font-size: .8em;
+  //   }
+
+  //   @media (max-width: $mobile-breakpoint) {
+  //     margin-top: 55vw;
+  //   }
+
+  //   @media (max-width: 500px) {
+  //     font-size: .75em;
+  //   }
+
+  //   @media (min-width: 1700px) {
+  //     max-width: 900px;
+  //     margin-left: 0;
+  //     left: 50%;
+  //     transform: translateX(-80%);
+  //   }
+
+  //   h2 {
+  //     display: flex;
+  //     align-items: center;
+  //     font-weight: 600;
+  //     font-size: 1.5em;
+  //     margin-bottom: 0;
+  //     margin-top: 20px;
+
+  //     img {
+  //       width: 28px;
+  //       margin-right: 5px;
+  //     }
+  //   }
+
+  //   p {
+  //     font-size: 1.125em;
+  //     line-height: 1.5em;
+  //     margin-top: 10px;
+
+  //     a {
+  //       color: inherit;
+
+  //       &.noUnderline {
+  //         text-decoration: none;
+  //       }
+  //     }
+
+  //     @media (max-width: $tablet-breakpoint) {
+  //       &.one {
+  //         width: 70%;
+  //       }
+
+  //       &.two {
+  //         width: 80%;
+  //       }
+
+  //       &.three {
+  //         width: 92%;
+  //       }
+  //     }
+
+  //     @media (max-width: $mobile-breakpoint) {
+  //       &.one, &.two, &.three {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
 }

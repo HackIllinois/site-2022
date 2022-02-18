@@ -1,99 +1,201 @@
-.sponsors {
-  position: relative;
-  padding-bottom: 200px;
+@import '../breakpoints.scss';
 
-  .leftTrees {
-    position: absolute;
-    left: 0;
-    top: -50px;
-    @media (max-width: 767px) {
-      top: -25px;
-    }
-  }
-
-  .rightTrees {
-    position: absolute;
-    right: 0;
-    top: -250px;
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-
-  .bottomTrees {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    @media (min-width: 2250px) {
-      display: none;
-    }
-  }
-
-  .title {
+section.sponsors {
+  padding: 20vw 0;
+  background-color: #D8ECD8;
+  color: #E8D6A4;
+  
+  .menuWrapper {
     position: relative;
-    text-align: center;
-    color: white;
-    font-weight: 600;
-    font-size: 1.8em;
-    text-transform: uppercase;
-    margin-top: 50px;
-    @media (max-width: 767px) {
-      font-size: 1.5em;
-      margin-bottom: 35px;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+
+    > img {
+      width: 100%;
     }
   }
 
-  .sponsorSection {
+  .menuContent {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.88);
-    width: 70%;
-    max-width: 1000px;
-    margin: 40px auto;
-    border-radius: 35px;
-    padding: 20px min(10%, 150px);
-    box-sizing: border-box;
+    margin: -8px 0 -4px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0 40px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     
-    &.first {
-      grid-template-columns: 1fr 1fr;
-      padding: 40px min(10%, 150px);
+    > p {
+      text-align: center;
+      font-size: 1em;
+      font-weight: 400;
+      overflow-wrap: break-word;
+      padding: 0 10%;
     }
 
-    @media (max-width: 767px) {
-      gap: 5px 20px;
-      width: 90%;
-      margin: 30px auto;
-    }
-
-    .sponsor {
-      height: min(10vw, 140px);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-    }
-
-    @media (max-width: 767px) {
-      &.first {
-        padding: 30px 10%;
-        .sponsor {
-          height: 13vw;
-        }
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
-}
 
-// From https://css-tricks.com/inclusively-hidden/ (hides content visually, but still accessible to screen readers)
-.srOnly:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
+  .title {  
+    position: relative;
+    margin-top: 3vw;
+    width: 45%;
+    @media (max-width: $mobile-breakpoint) {
+      width: 60%;
+    }
+
+    > img {
+      width: 100%;
+    }
+
+    .titleTextContainer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 3.4vw;
+      font-weight: 600;
+    }
+  }
+
+  .sponsorCards {
+    margin: 2vw 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10%; 
+  }
+
+  .sponsorCardContainer {
+    position: relative;
+    flex: 0 0 max(100px, 12vw);
+    margin: 0 1vw;
+  }
+
+  .titleSponsorCardContainer {
+    position: relative;
+    flex: 0 0 max(120px, 18vw);
+    margin: 0 100%;
+  }
+
+  .sponsorCard {
+    width: 100%;
+  }
+
+  .sponsorLogo {
+    position: absolute;
+    width: 75%;
+    top: 47.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+//   .leftTrees {
+//     position: absolute;
+//     left: 0;
+//     top: -50px;
+//     @media (max-width: 767px) {
+//       top: -25px;
+//     }
+//   }
+
+//   .rightTrees {
+//     position: absolute;
+//     right: 0;
+//     top: -250px;
+//     @media (max-width: 767px) {
+//       display: none;
+//     }
+//   }
+
+//   .bottomTrees {
+//     position: absolute;
+//     bottom: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     @media (min-width: 2250px) {
+//       display: none;
+//     }
+//   }
+
+//   .title {
+//     position: relative;
+//     text-align: center;
+//     color: white;
+//     font-weight: 600;
+//     font-size: 1.8em;
+//     text-transform: uppercase;
+//     margin-top: 50px;
+//     @media (max-width: 767px) {
+//       font-size: 1.5em;
+//       margin-bottom: 35px;
+//     }
+//   }
+
+//   .sponsorSection {
+//     position: relative;
+//     background-color: rgba(255, 255, 255, 0.88);
+//     width: 70%;
+//     max-width: 1000px;
+//     margin: 40px auto;
+//     border-radius: 35px;
+//     padding: 20px min(10%, 150px);
+//     box-sizing: border-box;
+
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     gap: 0 40px;
+    
+//     &.first {
+//       grid-template-columns: 1fr 1fr;
+//       padding: 40px min(10%, 150px);
+//     }
+
+//     @media (max-width: 767px) {
+//       gap: 5px 20px;
+//       width: 90%;
+//       margin: 30px auto;
+//     }
+
+//     .sponsor {
+//       height: min(10vw, 140px);
+//       background-repeat: no-repeat;
+//       background-position: center center;
+//       background-size: contain;
+//     }
+
+//     @media (max-width: 767px) {
+//       &.first {
+//         padding: 30px 10%;
+//         .sponsor {
+//           height: 13vw;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // From https://css-tricks.com/inclusively-hidden/ (hides content visually, but still accessible to screen readers)
+// .srOnly:not(:focus):not(:active) {
+//   clip: rect(0 0 0 0); 
+//   clip-path: inset(50%);
+//   height: 1px;
+//   overflow: hidden;
+//   position: absolute;
+//   white-space: nowrap; 
+//   width: 1px;
 }

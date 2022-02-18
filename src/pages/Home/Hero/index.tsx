@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import BACKGROUND from 'assets/home/hero/background.svg';
 import BAKERY from 'assets/home/hero/bakery.svg';
@@ -19,6 +20,8 @@ const Section1: React.FC = () => (
     <div className={styles.clouds} style={{ backgroundImage: `url(${CLOUDS})` }} />
     <div className={styles.sun_rays} style={{ backgroundImage: `url(${SUN_RAYS})` }} />
     <div className={styles.logo} style={{ backgroundImage: `url(${LOGO})` }} />
+
+    <Link className={styles.registerButton} to="/register">Register</Link>
 
     <div className={styles.foreground}>
       <img className={styles.plants} src={PLANTS} alt="Small plants" />
