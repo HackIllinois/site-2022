@@ -5,8 +5,8 @@ const miniEvents = [
     subcategories: [
       {
         title: 'Three Winners',
-        prize: '$20 Amazon Gift Card'
-      }
+        prize: '$20 Amazon Gift Card',
+      },
     ],
   },
   {
