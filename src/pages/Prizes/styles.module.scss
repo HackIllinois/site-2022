@@ -5,13 +5,14 @@
 
   .backgroundImage {
     background-image: url('../../assets/prizes/background.svg');
-    width: 100vw;
     background-color: #9B8356;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
     height: 100%;
     position: absolute;
+    left: 0;
+    right: 0;
     z-index: -1;
     filter: blur(4px);
   }
