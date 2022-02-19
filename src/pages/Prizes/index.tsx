@@ -3,7 +3,7 @@ import React from 'react';
 import LOGO from 'assets/prizes/logo.svg';
 
 import styles from './styles.module.scss';
-import { trackPrizes } from './prizes';
+import trackPrizes from './prizes';
 
 const Prizes = (): JSX.Element => (
   <div className={styles.prizes}>
