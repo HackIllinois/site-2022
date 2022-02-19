@@ -1,3 +1,5 @@
+@import '../colors.module.scss';
+
 .eventDisplay {
   background: #08151B;
   border: 9px solid #C76931;
@@ -23,7 +25,7 @@
   }
 
   p.dayHeading {
-    color: #F6F4D2;
+    color: $background-color;
     padding: 20px 20px 0 20px;
     margin: 0 auto;
     text-align: center;
@@ -86,7 +88,7 @@
         }
 
         @media (max-width: 550px) {
-          width: 95px;
+          width: 75px;
           padding-right: 10px;
         }
 
@@ -94,6 +96,10 @@
           font-size: 1.25em;
           font-weight: 500;
           margin-bottom: 5px;
+
+          @media (max-width: 550px) {
+            font-size: 1.05em;
+          }
         }
 
         h3 {
@@ -119,6 +125,10 @@
           width: 20px;
           text-align: center;
 
+          @media (max-width: 550px) {
+            margin-left: 3px;
+          }
+
           .line {
             position: relative;
             top: 50%;
@@ -126,15 +136,15 @@
 
             display: inline-block;
             width: 7px;
-            height: 80%;
+            height: calc(100% - 40px);
             background: #ccc; // this color should never actually be used (one of the following event type styles should always apply)
             border-radius: 7px;
           }
 
-          .line[data-type='other'] { background: #FBB63B; }
-          .line[data-type='minievent'] { background: #6F8CC1; }
-          .line[data-type='qna'] { background: #EE6C72; }
-          .line[data-type='workshop'] { background: #2C9C98; }
+          .line[data-type='other'] { background: $other-event-color; }
+          .line[data-type='minievent'] { background: $minievent-color; }
+          .line[data-type='qna'] { background: $qna-color; }
+          .line[data-type='workshop'] { background: $workshop-color; }
 
           .megaphone {
             position: relative;
@@ -180,10 +190,10 @@
             margin-top: 5px;
             margin-left: -2px;
             font-weight: 500;
-            &[data-type='other'] { background: #FBB63B; color: black; }
-            &[data-type='minievent'] { background: #6F8CC1; }
-            &[data-type='qna'] { background: #EE6C72; }
-            &[data-type='workshop'] { background: #2C9C98; }
+            &[data-type='other'] { background: $other-event-color; color: black; }
+            &[data-type='minievent'] { background: $minievent-color; }
+            &[data-type='qna'] { background: $qna-color; }
+            &[data-type='workshop'] { background: $workshop-color; }
           }
         }
       }

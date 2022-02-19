@@ -1,12 +1,14 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
+import COLORS from '../colors.module.scss';
 
+const { otherEventColor, minieventColor, qnaColor, workshopColor } = COLORS;
 const eventTypes = [
-  ['#2C9C98', 'Workshop'],
-  ['#6F8CC1', 'Mini Event'],
-  ['#EE6C72', 'Company Q&A'],
-  ['#FBB63B', 'Other'],
+  [otherEventColor, 'Workshop'],
+  [minieventColor, 'Mini Event'],
+  [qnaColor, 'Company Q&A'],
+  [workshopColor, 'Other'],
 ];
 
 const Guide: React.FC = () => (
