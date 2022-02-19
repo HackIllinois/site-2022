@@ -1,7 +1,7 @@
 const miniEvents = [
   {
     logo: 'geoguessr.svg',
-    title: 'Goguessr',
+    title: 'Geoguessr',
     subcategories: [
       {
         title: 'Three Winners',
