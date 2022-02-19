@@ -88,7 +88,7 @@
         }
 
         @media (max-width: 550px) {
-          width: 95px;
+          width: 75px;
           padding-right: 10px;
         }
 
@@ -96,6 +96,10 @@
           font-size: 1.25em;
           font-weight: 500;
           margin-bottom: 5px;
+
+          @media (max-width: 550px) {
+            font-size: 1.05em;
+          }
         }
 
         h3 {
@@ -121,6 +125,10 @@
           width: 20px;
           text-align: center;
 
+          @media (max-width: 550px) {
+            margin-left: 3px;
+          }
+
           .line {
             position: relative;
             top: 50%;
@@ -128,7 +136,7 @@
 
             display: inline-block;
             width: 7px;
-            height: 80%;
+            height: calc(100% - 40px);
             background: #ccc; // this color should never actually be used (one of the following event type styles should always apply)
             border-radius: 7px;
           }
