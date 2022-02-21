@@ -1,7 +1,8 @@
 .prizes {
   color: #542120;
   z-index: 0;
-  position: relative;
+  position: absolute;
+  width: 100%;
 
   .backgroundImage {
     background-image: url('../../assets/prizes/background.svg');
@@ -15,11 +16,6 @@
     right: 0;
     z-index: -1;
     filter: blur(4px);
-  }
-
-  .logo {
-    margin-top: 50px;
-    margin-left: 50px;
   }
 
   .prizeList {

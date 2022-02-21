@@ -11,9 +11,10 @@ import MenuIcon from './MenuIcon';
 type LinkType = { text: string, to: string };
 const links: LinkType[] = [
   { text: 'Interactive Journey', to: '/discover' },
+  { text: 'Schedule', to: '/schedule' },
   { text: 'Mentors', to: '/mentors' },
   { text: 'Prizes', to: '/prizes' },
-  { text: 'Schedule', to: '/schedule' },
+  { text: 'Mini Events', to: '/mini-events' },
 ];
 
 const linksWithHome = [{ text: 'Home', to: '/' }].concat(links);
