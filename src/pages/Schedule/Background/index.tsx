@@ -1,17 +1,17 @@
 import React from 'react';
 
-import STARS from 'assets/schedule/stars.svg';
-import LEFT_TREES from 'assets/schedule/left_trees.svg';
-import RIGHT_TREES from 'assets/schedule/right_trees.svg';
-import FRONT_TREE from 'assets/schedule/front_tree.svg';
+import DISPLAY_HALF from 'assets/schedule/display_half.svg';
+import DISPLAY_FULL from 'assets/schedule/display_full.svg';
+import SHELF from 'assets/schedule/shelf.svg';
 import styles from './styles.module.scss';
 
 const Background: React.FC = () => (
   <div className={styles.background}>
-    <div className={styles.stars} style={{ backgroundImage: `url("${STARS}")` }} />
-    <div className={styles.leftTrees} style={{ backgroundImage: `url("${LEFT_TREES}")` }} />
-    <div className={styles.rightTrees} style={{ backgroundImage: `url("${RIGHT_TREES}")` }} />
-    <div className={styles.frontTree} style={{ backgroundImage: `url("${FRONT_TREE}")` }} />
+    <div className={styles.wall} />
+    <div className={styles.floor_separator} />
+    <img src={DISPLAY_HALF} alt="Pastry display" className={styles.display_half} />
+    <img src={DISPLAY_FULL} alt="Pastry display" className={styles.display_full} />
+    <img src={SHELF} alt="Shelf" className={styles.shelf} />
   </div>
 );
 
