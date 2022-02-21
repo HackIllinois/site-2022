@@ -37,6 +37,7 @@ const trackPrizes = [
     ],
   },
   {
+    logo: 'hackillinois.svg',
     title: 'General Track',
     subcategories: [
       {
@@ -57,7 +58,7 @@ const trackPrizes = [
     ],
   },
   {
-    logo: 'shark-tank.svg',
+    logo: 'hackillinois.svg',
     title: 'Shark Tank',
     subcategories: [
       {
