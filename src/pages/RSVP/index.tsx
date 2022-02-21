@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Background from 'pages/Registration/Background';
 import styles from './styles.module.scss';
+import Background from './Background';
 import Form from './Form';
 
 const RSVP = (): JSX.Element => (
   <div className={styles.rsvp}>
     <Background />
+    <div className={styles.spacer} />
     <Form />
   </div>
 );

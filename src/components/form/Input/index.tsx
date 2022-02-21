@@ -10,11 +10,10 @@ type PropTypes = {
   name: string,
   multiline?: boolean;
   helpLink?: string;
-  linkColor?: string;
   [key: string]: unknown;
 };
 
-const Input = ({ name, multiline, helpLink, linkColor = 'white', ...props }: PropTypes): JSX.Element => {
+const Input = ({ name, multiline, helpLink, ...props }: PropTypes): JSX.Element => {
   const { register } = useFormContext();
 
   return (
@@ -23,7 +22,7 @@ const Input = ({ name, multiline, helpLink, linkColor = 'white', ...props }: Pro
         <StyledInput type="text" name={name} multiline={multiline} {...props} ref={register} />
         {helpLink && (
           <a className={styles.helpLink} href={helpLink} target="_blank" rel="noreferrer" title="Where can I find my Discord username?">
-            <HelpIcon color={linkColor} />
+            <HelpIcon color="#3C519C" />
           </a>
         )}
       </div>

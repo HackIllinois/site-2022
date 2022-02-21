@@ -6,7 +6,7 @@ const menuHighlightColor = '#2C9C98';
 const customStyles: Styles<Record<string, unknown>, true | false> = {
   control: () => ({
     background: 'transparent',
-    borderBottom: '1px solid #F6F4D4',
+    borderBottom: '1px solid #B8B8B8',
     display: 'flex',
     paddingBottom: 5,
   }),
@@ -17,7 +17,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
   }),
   placeholder: (base) => ({
     ...base,
-    color: '#F6F4D4',
+    color: '#525051',
     fontWeight: 500,
     bottom: 0,
     top: 'unset',
@@ -29,10 +29,6 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     fontWeight: 500,
     fontFamily: 'Montserrat',
     width: '100%',
-<<<<<<< HEAD
-=======
-    color: '#F6F4D4',
->>>>>>> dev
     '& > div, & > div > input': {
       fontWeight: 'inherit',
       fontFamily: 'inherit',
@@ -41,7 +37,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
   }),
   singleValue: (base) => ({
     ...base,
-    color: '#F6F4D4',
+    color: 'black',
     fontWeight: 500,
     fontSize: '1.25em',
   }),
@@ -53,11 +49,11 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
   }),
   multiValueLabel: (base) => ({
     ...base,
-    color: '#F6F4D4',
+    color: 'white',
   }),
   multiValueRemove: (base) => ({
     ...base,
-    color: '#F6F4D4',
+    color: 'white',
     cursor: 'pointer',
     '&:hover': {
       color: 'white',
@@ -65,7 +61,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     },
   }),
   clearIndicator: () => ({
-    color: '#F6F4D4',
+    color: '#3C519C',
     cursor: 'pointer',
   }),
   indicatorSeparator: () => ({
@@ -73,7 +69,7 @@ const customStyles: Styles<Record<string, unknown>, true | false> = {
     display: 'none',
   }),
   dropdownIndicator: () => ({
-    color: '#F6F4D4',
+    color: '#3C519C',
     cursor: 'pointer',
   }),
   menuPortal: (base) => ({

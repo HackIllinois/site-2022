@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import useWindowSize from 'util/useWindowSize';
 import NavBar from 'components/NavBar';
 import Background from './Background';
-// import Guide from './Guide';
+import Calendar from './Calendar';
+import Guide from './Guide';
 import EventDisplay from './EventDisplay';
 
 import styles from './styles.module.scss';
 
-const eventDates = [25, 26, 27];
-let defaultDate = 25;
+const eventDates = [9, 10, 11, 12];
+let defaultDate = 9;
 const today = new Date();
-if (today.getFullYear() === 2022 && today.getMonth() === 1 && eventDates.includes(today.getDate())) {
+if (today.getFullYear() === 2021 && today.getMonth() === 3 && eventDates.includes(today.getDate())) {
   defaultDate = today.getDate();
 }
 
 const Schedule: React.FC = () => {
+  const [date, setDate] = useState(defaultDate);
   const { width } = useWindowSize();
 
   return (
@@ -23,11 +25,12 @@ const Schedule: React.FC = () => {
       <NavBar showHome />
       <Background />
       <div className={styles.flexRow}>
-        { /* <div className={styles.left}>
+        <div className={styles.left}>
+          <Calendar date={date} setDate={setDate} width={width} />
           <Guide />
-        </div> */ }
+        </div>
         <div className={styles.right}>
-          <EventDisplay defaultDate={defaultDate} width={width} />
+          <EventDisplay date={date} width={width} />
         </div>
       </div>
     </div>

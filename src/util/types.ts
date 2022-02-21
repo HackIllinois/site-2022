@@ -83,6 +83,9 @@ export type ProfileType = Partial<{
   timezone: string;
   discord: string;
   avatarUrl: string;
+  teamStatus: 'LOOKING_FOR_TEAM' | 'LOOKING_FOR_MEMBERS' | 'NOT_LOOKING';
+  interests: string[];
+  description: string;
 }>;
 
 export type ProfileResponseType = WithId<Required<ProfileType>> & { points: number };
