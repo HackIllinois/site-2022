@@ -35,6 +35,7 @@ export interface EventType {
   id: string;
   name: string;
   description: string;
+  isAsync?: boolean;
   startTime: number;
   endTime: number;
   locations: {

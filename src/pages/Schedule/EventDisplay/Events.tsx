@@ -38,7 +38,7 @@ const Events = ({ date }: Props): JSX.Element => {
     if (eventData?.length) {
       const eventsInDay = eventData.filter((event) => {
         const d = new Date(event.startTime * 1000);
-        return d.getDate() === date;
+        return !event.isAsync && d.getDate() === date;
       });
       eventsInDay.sort((a, b) => ((a.startTime > b.startTime) ? 1 : -1));
       setCurrEvents(eventsInDay);
