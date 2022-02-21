@@ -3,20 +3,28 @@
 .container {
   flex: 1;
   position: relative;
-  background-size: auto 108%;
+  background-size: auto 100%;
   background-position: center top;
   background-repeat: no-repeat;
+  transform: scale(0.95) translateY(50px);
+  // transform: translateY(-20px);
 
 
-  @media (min-height: 900px) {
-    flex: none;
-    height: 750px;
+  // @media (min-height: 900px) {
+  //   flex: none;
+  //   height: 750px;
+  // }
+
+  @media (max-width: 1200px) {
+    // background-position: 78.3% top;
+    // background-position: bottom 0px;
+    transform: scaleY(1.1);
   }
 
-  @media (max-width: 1150px) {
-    background-position: 58.3% top;
-  }
-
+  // @media (max-width: 700px) {
+  //   transform: translateY(5px);
+  // }
+  
   @include registration-floating-screen {
     min-height: max(min(calc(100vh - 100px), 750px), 620px);
     max-height: min(70%, 750px);
@@ -26,17 +34,24 @@
   .form {
     position: absolute;
     z-index: 2;
-    height: 70%;
+    height: 60%;
+    // overflow: scroll;
     width: calc(100vh - 120px);
     min-width: calc(650px - 120px); // 650px is min-height of registration page
     max-width: 780px;
-    top: min(max(75px, 50vh - 350px), 100px);
+    // top: min(max(75px, 50vh - 350px), 100px);
+    top: 240px;
     left: 50%;
-    transform: translateX(-40%);
+    transform: translateX(-50%);
     
     @media (max-width: 1150px) {
       transform: translateX(-50%);
       left: 53%;
+    }
+
+    @media (max-height: 750px) {
+      height: 55%;
+      top: 200px;
     }
     @include registration-floating-screen {
       min-width: 0;
@@ -48,18 +63,21 @@
       height: 100%;
       display: none;
       flex-direction: column;
+      overflow: auto;
+      // overflow-x: visible;
 
       &.visible {
         display: flex;
       }
 
       .buttons {
+        margin-top: 10px;
         display: flex;
         justify-content: flex-end;
         z-index: 5;
 
         .spacer {
-          width: 10px;
+          width: 600px;
         }
       }
     }

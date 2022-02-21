@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import lottie from 'lottie-web';
 
 import CAKE_LAYER_ONE from 'assets/home/event_info/cake_layer_one.svg';
 import CAKE_LAYER_TWO from 'assets/home/event_info/cake_layer_two.svg';
@@ -9,7 +10,7 @@ import INSTAGRAM_LOGO from 'assets/home/event_info/instagram_logo.svg';
 import DISCORD_LOGO from 'assets/home/event_info/discord_logo.svg';
 import TWITTER_LOGO from 'assets/home/event_info/twitter_logo.svg';
 
-import clsx from 'clsx';
+import PIPING_ANIMATION from 'assets/home/event_info/piping.json';
 
 import faqs from './faqs';
 
@@ -17,6 +18,21 @@ import styles from './styles.module.scss';
 
 const EventInfo: React.FC = () => {
   const [faqSectionIndex, setFaqSectionIndex] = useState(0);
+  const piping = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (piping.current) {
+      lottie.destroy();
+      lottie.loadAnimation({
+        container: piping.current,
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        animationData: PIPING_ANIMATION,
+      });
+    }
+  }, [faqSectionIndex]);
+
   return (
     <section className={styles.eventInfo}>
       <div className={styles.cakeLayer1}>
@@ -72,8 +88,9 @@ const EventInfo: React.FC = () => {
         <div className={styles.cakeMiddle}>
           <div className={styles.faqSectionHeaders}>
             {Array(faqs.length).fill(0).map((_, i) => i).map((i) => (
-              <div className={clsx(styles.faqSectionHeaderContainer, i === faqSectionIndex && styles.faqSectionHeaderContainerActivated)}>
+              <div className={styles.faqSectionHeaderContainer}>
                 <button key={i} className={styles.faqSectionHeader} onClick={() => setFaqSectionIndex(i)}>{faqs[i].sectionTitle}</button>
+                {i === faqSectionIndex && <div ref={piping} className={styles.faqSectionPiping} />}
               </div>
             ))}
           </div>
