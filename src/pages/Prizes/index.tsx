@@ -17,6 +17,7 @@ const Prizes = (): JSX.Element => (
           {trackPrize.logo && <img src={`/assets/prizes/${trackPrize.logo}`} alt="Prize Logo" />}
           <h2>{trackPrize.title}</h2>
           {trackPrize.subtitle && <h3>({trackPrize.subtitle})</h3>}
+          <p>{trackPrize.description}</p>
           {trackPrize.subcategories.map((subCategory) => (
             <React.Fragment key={subCategory.title}>
               <h4>{subCategory.title}</h4>
