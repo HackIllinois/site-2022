@@ -48,7 +48,7 @@ const trackPrizes = [
   },
   {
     logo: 'john-deere.svg',
-    title: 'Community Track',
+    title: 'Community & Sustainability Track',
     subtitle: 'Sponsored by John Deere',
     subcategories: [
       {
