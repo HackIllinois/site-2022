@@ -31,13 +31,12 @@ const learnOptions = [
 const Event = (): JSX.Element => (
   <Scrollbars className={clsx(styles.screen, styles.eventQuestions)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
     <h1 className={styles.title}>Hack-Illinois Specific Questions</h1>
-    <br />
-    <p>How did you hear of HackIllinois?</p>
+    <p className={styles.text}>How did you hear of HackIllinois?</p>
     <Select name="outreachSurvey" options={learnOptions} placeholder="Where did you hear about us? *" creatable />
     <br />
     <br />
     <br />
-    <p>Which of these aspects of the hackathon would you most be interested in engaging in?</p>
+    <p className={styles.text}>Which of these aspects of the hackathon would you most be interested in engaging in?</p>
     <Checkboxes
       className={styles.checkboxes}
       name="interests"

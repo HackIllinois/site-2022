@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import AceEditor from 'react-ace';
-import emailjs from 'emailjs-com';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import clsx from 'clsx';
 
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/theme-monokai';
 
 import styles from './styles.module.scss';
+
+type CodeInTheDarkSubmissionResponse = {
+  success: boolean;
+  message: string;
+};
 
 const starterCode = `<html>
   <head>
@@ -23,38 +28,65 @@ const starterCode = `<html>
 
 const CodeInTheDark = (): JSX.Element => {
   const [name, setName] = useState('');
-  const [problem, setProblem] = useState('');
+  const [discord, setDiscord] = useState('');
   const [codeValue, setCodeValue] = useState(starterCode);
   const [changeSinceSubmit, setChangeSinceSubmit] = useState(true);
-  const [successfulSubmit] = useState(true); // TODO: remove?
+  const [successfulSubmit, setSuccessfulSubmit] = useState(true);
   const [statusMessage, setStatusMessage] = useState('');
 
   const handleEditorChange = (newCode: string) => {
     setChangeSinceSubmit(true);
     setCodeValue(newCode);
-  };
 
-  const handleSubmit = () => {
-    if (!changeSinceSubmit && successfulSubmit) {
-      setStatusMessage('No changes since last submit');
-    } else {
-      const params = { name, problem, message_body: codeValue };
-      const templateId = 'template_z0Z6Hki6';
-      const userId = 'user_WBY9ARn5353jWW0nKOxH9';
-
-      emailjs.send('gmail', templateId, params, userId)
-        .then(() => {
-          setChangeSinceSubmit(false);
-          setStatusMessage('✅ Success! Your submission has been sent.');
-        })
-        .catch((err) => {
-          setChangeSinceSubmit(false);
-          setStatusMessage(`🚫 Error: ${err.text}`);
-        });
+    // We only want to display the success messsage until the user edits the code again,
+    // but the error message should always be displayed if one occurred.
+    if (successfulSubmit) {
+      setStatusMessage('');
     }
   };
 
-  const displayStatus = !successfulSubmit || !changeSinceSubmit;
+  const handleSubmit = async () => {
+    setStatusMessage('Loading...');
+    // If we haven't changed since last submit (and the last submit was successful), don't submit again
+    if (!changeSinceSubmit && successfulSubmit) {
+      setStatusMessage('No changes since last submit');
+    } else {
+      const errors = [];
+
+      const params = { name, discord, html: codeValue };
+
+      // First, we email their submission so we have a record of it
+      const templateId = 'template_z0Z6Hki6';
+      const userId = 'user_WBY9ARn5353jWW0nKOxH9';
+      try {
+        await emailjs.send('gmail', templateId, params, userId);
+      } catch (err) {
+        const e = err as EmailJSResponseStatus;
+        errors.push(`🚫 Error (EmailJS): ${e.text}`);
+      }
+
+      // Then, we submit it to the serverless function that will compile and deploy their submissions
+      try {
+        const res = await fetch('/.netlify/functions/code-in-the-dark-submission', { method: 'POST', body: JSON.stringify(params) });
+        const data: CodeInTheDarkSubmissionResponse = await res.json();
+        if (!data.success) {
+          errors.push(`🚫 Error (function): ${data.message}`);
+        }
+      } catch (e) {
+        errors.push('🚫 Error: Unable to send request, please check network connection');
+      }
+
+      if (errors.length > 0) {
+        setStatusMessage(errors.join('\n'));
+        setSuccessfulSubmit(false);
+      } else {
+        setStatusMessage('✅ Success! Your submission has been sent.');
+        setSuccessfulSubmit(true);
+      }
+
+      setChangeSinceSubmit(false);
+    }
+  };
 
   return (
     <div className={styles.codeInTheDark}>
@@ -102,9 +134,9 @@ const CodeInTheDark = (): JSX.Element => {
             <p>Name:</p>
             <input type="text" id="name-input" name="name" onChange={({ target: { value } }) => setName(value)} />
             <p>Discord Username (e.g. Pat#6154):</p>
-            <input type="text" id="problem-input" name="problem" onChange={({ target: { value } }) => setProblem(value)} />
+            <input type="text" id="discord-input" name="discord" onChange={({ target: { value } }) => setDiscord(value)} />
             <button type="button" onClick={handleSubmit}>Submit</button>
-            <p className={clsx(styles.status, !displayStatus && styles.inactive)}>
+            <p className={clsx(styles.status)}>
               {statusMessage}
             </p>
           </div>

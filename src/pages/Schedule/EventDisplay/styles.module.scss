@@ -1,41 +1,81 @@
+@import '../colors.module.scss';
+
 .eventDisplay {
-  color: #fff;
+  background: #08151B;
+  border: 9px solid #C76931;
+
+  position: absolute;
+  height: 60%;
+  top: 10vh;
+  right: 7vh;
+  left: 200px;
+
+  @media (max-width: 912px) {
+    left: 7vh;
+    bottom: 10vh;
+    height: auto;
+  }
 
   @media (max-width: 550px) {
     font-size: .8em;
+    left: 4vh;
+    right: 4vh;
+    bottom: 5vh;
+    height: auto;
   }
 
-  h1.dayHeading {
-    display: inline-block;
-    position: relative;
-    left: 150px;
-    font-weight: 500;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    margin-bottom: 40px;
+  p.dayHeading {
+    color: $background-color;
+    padding: 20px 20px 0 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
 
-    @media (max-width: 950px) {
-      left: 20px;
-      margin-top: 0;
-      margin-bottom: 20px;
+    @media (max-width: 912px) {
+      display: none;
     }
 
     .timezoneText {
       font-weight: 300;
       margin-left: 7px;
-      @media (max-width: 950px) {
-        margin-left: 0;
-        font-size: .85em;
-      }
+    }
+  }
+
+  .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+
+    @media (max-width: 912px) {
+      top: 10px;
     }
   }
 
   .events {
-    position: relative;
+    position: absolute;
+    background-color: rgba(246, 244, 212, 0.92);
+    border-radius: 10px;
+    top: 3vh;
+    bottom: 3vh;
+    right: 3vh;
+    left: 320px;
+    
+    overflow: scroll;
+
+    @media (max-width: 912px) {
+      top: 150px;
+      bottom: 2vh;
+      right: 2vh;
+      left: 2vh;
+    }
 
     .eventWrapper {
       margin-bottom: 10px;
       display: flex;
+      overflow: auto;
 
       .times {
         box-sizing: border-box;
@@ -48,7 +88,7 @@
         }
 
         @media (max-width: 550px) {
-          width: 95px;
+          width: 75px;
           padding-right: 10px;
         }
 
@@ -56,6 +96,10 @@
           font-size: 1.25em;
           font-weight: 500;
           margin-bottom: 5px;
+
+          @media (max-width: 550px) {
+            font-size: 1.05em;
+          }
         }
 
         h3 {
@@ -81,6 +125,10 @@
           width: 20px;
           text-align: center;
 
+          @media (max-width: 550px) {
+            margin-left: 3px;
+          }
+
           .line {
             position: relative;
             top: 50%;
@@ -88,15 +136,15 @@
 
             display: inline-block;
             width: 7px;
-            height: 80%;
+            height: calc(100% - 40px);
             background: #ccc; // this color should never actually be used (one of the following event type styles should always apply)
             border-radius: 7px;
           }
 
-          .line[data-type='other'] { background: #FBB63B; }
-          .line[data-type='minievent'] { background: #6F8CC1; }
-          .line[data-type='qna'] { background: #EE6C72; }
-          .line[data-type='workshop'] { background: #2C9C98; }
+          .line[data-type='other'] { background: $other-event-color; }
+          .line[data-type='minievent'] { background: $minievent-color; }
+          .line[data-type='qna'] { background: $qna-color; }
+          .line[data-type='workshop'] { background: $workshop-color; }
 
           .megaphone {
             position: relative;
@@ -126,13 +174,19 @@
             margin: 1.0em 0;
           }
 
+          h3 {
+            font-weight: 400;
+            font-style: italic;
+            margin: 0 auto;
+          }
+
           p {
             font-size: 1em;
             white-space: pre-line;
           }
 
           a {
-            color: white;
+            color: inherit;
           }
 
           .points {
@@ -142,10 +196,10 @@
             margin-top: 5px;
             margin-left: -2px;
             font-weight: 500;
-            &[data-type='other'] { background: #FBB63B; color: black; }
-            &[data-type='minievent'] { background: #6F8CC1; }
-            &[data-type='qna'] { background: #EE6C72; }
-            &[data-type='workshop'] { background: #2C9C98; }
+            &[data-type='other'] { background: $other-event-color; color: black; }
+            &[data-type='minievent'] { background: $minievent-color; }
+            &[data-type='qna'] { background: $qna-color; }
+            &[data-type='workshop'] { background: $workshop-color; }
           }
         }
       }

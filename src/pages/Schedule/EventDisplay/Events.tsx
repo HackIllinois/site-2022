@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { EventType } from 'util/types';
 import { getEvents } from 'util/api';
 import styles from './styles.module.scss';
+import COLORS from '../colors.module.scss';
+
+const { megaphoneColor } = COLORS;
 
 // replaces any links with actual links using <a> tags
 const urlRegex = /https?:\/\/((www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*))/g;
@@ -35,7 +38,7 @@ const Events = ({ date }: Props): JSX.Element => {
     if (eventData?.length) {
       const eventsInDay = eventData.filter((event) => {
         const d = new Date(event.startTime * 1000);
-        return d.getDate() === date;
+        return !event.isAsync && d.getDate() === date;
       });
       eventsInDay.sort((a, b) => ((a.startTime > b.startTime) ? 1 : -1));
       setCurrEvents(eventsInDay);
@@ -70,6 +73,7 @@ const Events = ({ date }: Props): JSX.Element => {
                   </div>
                   <div className={styles.text}>
                     <h2>{event.name}</h2>
+                    {event.sponsor && <h3>Sponsored by {event.sponsor}</h3>}
                     {!!event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>}
                     <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
@@ -78,7 +82,7 @@ const Events = ({ date }: Props): JSX.Element => {
                 <>
                   <div className={styles.lineContainer}>
                     <svg className={styles.megaphone} width="20" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.664.058 6 4.58v7l.748.267-1.127 2.254a2 2 0 0 0 1.156 2.792l4.084 1.361a2.014 2.014 0 0 0 2.421-1.003l1.303-2.606 4.079 1.457a1 1 0 0 0 1.336-.94V.998a1 1 0 0 0-1.336-.94zm-7.171 16.3L7.41 14.995l1.235-2.47 4.042 1.443-1.194 2.388zM2 11.58h2v-7H2c-1.103 0-2 .897-2 2v3c0 1.103.897 2 2 2z" fill="#fff" />
+                      <path d="M18.664.058 6 4.58v7l.748.267-1.127 2.254a2 2 0 0 0 1.156 2.792l4.084 1.361a2.014 2.014 0 0 0 2.421-1.003l1.303-2.606 4.079 1.457a1 1 0 0 0 1.336-.94V.998a1 1 0 0 0-1.336-.94zm-7.171 16.3L7.41 14.995l1.235-2.47 4.042 1.443-1.194 2.388zM2 11.58h2v-7H2c-1.103 0-2 .897-2 2v3c0 1.103.897 2 2 2z" fill={megaphoneColor} />
                     </svg>
                   </div>
                   <div className={styles.text}>
