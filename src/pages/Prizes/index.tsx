@@ -1,14 +1,15 @@
 import React from 'react';
 
-import LOGO from 'assets/prizes/logo.svg';
+import NavBar from 'components/NavBar';
 
 import styles from './styles.module.scss';
 import trackPrizes from './prizes';
 
 const Prizes = (): JSX.Element => (
   <div className={styles.prizes}>
+    <NavBar showHome />
+
     <div className={styles.backgroundImage} />
-    <img className={styles.logo} src={LOGO} alt="HackIllinois Logo" />
     <h1>Track Prizes</h1>
     <div className={styles.prizeList}>
       {trackPrizes.map((trackPrize) => (
