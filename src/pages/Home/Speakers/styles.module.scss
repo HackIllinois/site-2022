@@ -2,12 +2,73 @@
 
 section.speakers {
   background-color: #D8ECD8;
-  padding-top: 400px;
+  padding-top: 15vw;
 
-  .cupcakeStand {
+  .cupcakeStandContainer {
     width: 80%;
     margin: auto;
     display: block;
+    position: relative;
+  }
+
+  .cupcakeStand {
+    width: 100%;
+  }
+
+  .cupcakeStandContent {
+    position: absolute;
+    bottom: 40.25%;
+    left: 15%;
+    width: 70%;
+    margin: 0;
+    display: flex;
+  }
+
+  .cupcake {
+    width: 20vw;
+    display: block;
+    flex: 0 0 auto;
+    align-self: flex-end;
+  }
+
+  .cupcakeStandText {
+    margin-left: 8%;
+    align-self: flex-start;
+
+    h2 {
+      font-size: 2.5vw;
+      margin: 0 0 1vw 0;
+    }
+
+    h3 {
+      font-size: 1.75vw;
+      margin: 0 0 2vw 0;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 1.125vw;
+      font-weight: 500;
+    }
+  }
+
+  .carouselButtons {
+    position: absolute;
+    bottom: 35%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .carouselButton {
+      display: block;
+      width: 1.75vw;
+      transform: translateY(50%);
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 2.5vw;
+      }
+    }
   }
 
   // @media screen and (max-width: $tablet-breakpoint) {
