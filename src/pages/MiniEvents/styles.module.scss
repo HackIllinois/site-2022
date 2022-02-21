@@ -14,7 +14,6 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
     z-index: -1;
     filter: blur(4px);
   }
@@ -23,15 +22,11 @@
     z-index: 100;
     padding: 50px 100px 100px 100px;
     display: grid;
-    grid-template-columns: repeat(3, 375px);
+    grid-template-columns: repeat(2, 375px);
     grid-auto-rows: 400px;
     column-gap: 32px;
     row-gap: 32px;
     justify-content: center;
-
-    @media (max-width: 1280px) {
-      grid-template-columns: repeat(2, 375px);
-    }
 
     @media (max-width: 820px) {
       grid-template-columns: 375px;
@@ -66,8 +61,8 @@
     font-size: 45px;
 
     @media (max-width: 768px) {
-      font-size: 30px; 
-      margin-top: 80px;
+     font-size: 30px; 
+     margin-top: 80px;
     }
   }
 
