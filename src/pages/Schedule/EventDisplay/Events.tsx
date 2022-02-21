@@ -38,7 +38,7 @@ const Events = ({ date }: Props): JSX.Element => {
     if (eventData?.length) {
       const eventsInDay = eventData.filter((event) => {
         const d = new Date(event.startTime * 1000);
-        return d.getDate() === date;
+        return !event.isAsync && d.getDate() === date;
       });
       eventsInDay.sort((a, b) => ((a.startTime > b.startTime) ? 1 : -1));
       setCurrEvents(eventsInDay);
@@ -73,6 +73,7 @@ const Events = ({ date }: Props): JSX.Element => {
                   </div>
                   <div className={styles.text}>
                     <h2>{event.name}</h2>
+                    {event.sponsor && <h3>Sponsored by {event.sponsor}</h3>}
                     {!!event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>}
                     <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
