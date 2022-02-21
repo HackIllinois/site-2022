@@ -184,7 +184,7 @@ section.eventInfo {
     .faqSectionHeader {
       margin: 0;
       padding: 2.5vw 0;
-      font-size: 2.25vw;
+      font-size: max(2.25vw, 0.8em);
       font-weight: 400;
       border: none;
       background-color: rgba(255, 255, 255, 0);
@@ -197,8 +197,8 @@ section.eventInfo {
     .faqSectionPiping {
       z-index: 100;
       $ratio: 8;
-      height: 78vw / $ratio;
-      width: 225vw / $ratio;
+      height: calc(78vw / #{$ratio});
+      width: calc(225vw / #{$ratio});
       display: block;
       position: absolute;
       left: -12vw;
