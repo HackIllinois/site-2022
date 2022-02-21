@@ -19,12 +19,12 @@
     width: 1.25em;
     height: 1.25em;
     
-    border: 2px solid #286574;
+    border: 2px solid #C9CF76;
     border-radius: .5em;
   }
 
   &:active::before, &.checked::before {
-    background-color: #286574;
+    background-color: #C9CF76;
   }
   
   .checkbox {

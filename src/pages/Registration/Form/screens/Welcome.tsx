@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import clsx from 'clsx';
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -8,19 +9,13 @@ const Welcome = (): JSX.Element => (
   <Scrollbars className={clsx(styles.screen, styles.welcome)} autoHide={false} renderView={(props) => <div className={styles.scrollbox} {...props} />}>
     <h1 className={styles.title}>Welcome!</h1>
     <p className={styles.text}>
-      We’re excited to present HackIllinois 2021, our fully virtual hackathon held from April 9-12. Join us to work on projects, attend workshops on a variety of topics in tech, and participate in exciting challenges and mini-events throughout the duration of the Hackathon.
+      Apply to participate in <span>HackIllinois 2022</span>, UIUC's premiere annual hackathon! Our event will run fully virtually from <span>February 25th to 27th, 2022</span>. We have selected an online format for our event to remain in compliance with university COVID-19 guidelines and for the safety of all participants.
     </p>
     <p className={styles.text}>
-      Held on Discord, we hope to create an immersive hub through which you can experience the Hackathon as a community, working with your team as well as alongside all other participants, staff, and mentors—all virtually.
+      Applications will remain open until the beginning of HackIllinois 2022, <span>February 25th</span>. For more details, visit <a href="www.hackillinois.org"><span>www.hackillinois.org</span></a>.
     </p>
     <p className={styles.text}>
-      <b>Note:</b> We use your GitHub to authenticate across various parts of the event, and your browser may have auto-signed you in. Stay tuned for the release of our mobile apps, as you&apos;ll use your GitHub accout to log into them!
-    </p>
-    <p className={styles.text}>
-      Please fill out the following form to register for HackIllinois. We will use your email to send you additional information about our event in the coming weeks!
-    </p>
-    <p className={styles.text}>
-      For more information, or if you have any questions, please visit our website (<a href="/">https://hackillinois.org</a>) or email us at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a>.
+      Please feel free to reach out to <span>contact@hackillinois.org</span> with any questions or concerns. We look forward to reviewing your application!
     </p>
   </Scrollbars>
 );
