@@ -98,7 +98,7 @@ const EventInfo: React.FC = () => {
             {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }) => (
               <div className={styles.faqContentColumn}>
                 <h3>{question}</h3>
-                {answer.map((a) => (<p>{a}</p>))}
+                {answer}
               </div>
             ))}
           </div>
