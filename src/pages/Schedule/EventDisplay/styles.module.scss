@@ -22,6 +22,42 @@
     height: auto;
   }
 
+  .buttonContainer {
+    position: absolute;
+
+    .selectedButton {
+      font-family: Montserrat;
+      font-style: normal;
+      text-align: center;
+      border: 2px solid #F6F4D2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      width: 93px;
+      height: 38px;
+      background: #F6F4D2;
+      color: #08151B;
+    }
+  
+    .unselectedButton {
+      font-family: Montserrat;
+      font-style: normal;
+      text-align: center;
+      border: 2px solid #F6F4D2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      width: 93px;
+      height: 38px;
+      color: #F6F4D2;
+      background: transparent;
+    }
+  }
+
   p.dayHeading {
     color: #F6F4D2;
     padding: 20px 20px 0 20px;
