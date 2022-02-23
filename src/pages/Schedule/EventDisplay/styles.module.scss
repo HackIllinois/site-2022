@@ -23,9 +23,15 @@
   }
 
   .buttonContainer {
-    position: absolute;
+    @media (max-width: 912px) {
+      display: none;
+    }
+
+    position: relative;
+    left: 5vh;
 
     .selectedButton {
+
       font-family: Montserrat;
       font-style: normal;
       text-align: center;
@@ -39,9 +45,13 @@
       height: 38px;
       background: #F6F4D2;
       color: #08151B;
+      cursor: pointer;
+      margin-right: 27px;
+      margin-top: 31px;
     }
   
     .unselectedButton {
+
       font-family: Montserrat;
       font-style: normal;
       text-align: center;
@@ -55,16 +65,23 @@
       height: 38px;
       color: #F6F4D2;
       background: transparent;
+      cursor: pointer;
+      margin-right: 27px;
+      margin-top: 31px;
     }
   }
 
   p.dayHeading {
+    position: absolute;
     color: #F6F4D2;
     padding: 20px 20px 0 20px;
     margin: 0 auto;
-    text-align: center;
+    // text-align: right;
     font-weight: 600;
     font-size: 30px;
+    text-size-adjust: 80%;
+    left: 320px;
+    top: 15px;
 
     @media (max-width: 912px) {
       display: none;
@@ -106,25 +123,47 @@
       left: 2vh;
     }
 
+    .header {
+      position: relative;
+      display: flex;
+      left: 36px;
+
+      p {
+        color: #08151B;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        display: inline;
+        margin-right: 54px;
+      }
+    }
+
     .eventWrapper {
       margin-bottom: 10px;
       display: flex;
       overflow: auto;
+      border-radius: 10px;
+      background: rgba(219, 203, 155, 0.14);
+      left: 23px;
+      position: relative;
 
       .times {
-        box-sizing: border-box;
-        padding-right: 20px;
-        width: 150px;
-        text-align: right;
+        position: relative;
+        width: 108px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        margin-left: 13px;
 
-        @media (max-width: 950px) {
-          width: 120px;
-        }
+        // @media (max-width: 950px) {
+        //   width: 120px;
+        // }
 
-        @media (max-width: 550px) {
-          width: 95px;
-          padding-right: 10px;
-        }
+        // @media (max-width: 550px) {
+        //   width: 95px;
+        //   padding-right: 10px;
+        // }
 
         h1 {
           font-size: 1.25em;
@@ -143,10 +182,6 @@
       .body {
         flex: 1;
         position: relative;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        padding: 2px;
-        width: 45vw;
         height: fit-content;
         display: flex;
 
@@ -182,22 +217,28 @@
         }
 
         .text {
-          flex: 1;
-          padding: 0 30px 0 15px;
-          line-height: 1.5em;
-          @media (max-width: 550px) {
-            padding: 0 10px 0 10px;
-          }
-
+          display: flex;
+          // padding: 0 30px 0 15px;
+          line-height: 1.25em;
+          // @media (max-width: 550px) {
+          //   padding: 0 10px 0 10px;
+          // }
+          position: relative;
 
           h2 {
-            font-weight: 600;
-            font-size: 1.125em;
+            font-weight: 500;
+            font-size: 1em;
             margin-bottom: 0;
+            width: 60px;
+            margin-right: 54px;
           }
 
           h2.announcement {
             margin: 1.0em 0;
+            font-weight: 500;
+            font-size: 1em;
+            width: 60px;
+            margin-right: 54px;
           }
 
           p {
@@ -207,6 +248,11 @@
 
           a {
             color: white;
+          }
+
+          .description {
+            font-weight: 500;
+            line-height: 15px;
           }
 
           .points {

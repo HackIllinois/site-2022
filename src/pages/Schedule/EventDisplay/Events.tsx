@@ -26,8 +26,10 @@ const formatAMPM = (date: Date) => {
 const Events = ({ date }: Props): JSX.Element => {
   const [eventData, setEventData] = useState<Array<EventType>>();
   const [currEvents, setCurrEvents] = useState<Array<EventType>>();
+  const [seeAsyncEvents, setSeeAsyncEvents] = useState(false);
 
   useEffect(() => {
+    setSeeAsyncEvents(false);
     getEvents().then((events) => setEventData(events));
   }, []);
 
@@ -42,8 +44,24 @@ const Events = ({ date }: Props): JSX.Element => {
     }
   }, [date, eventData]);
 
+  const getAsyncEvents = () => {
+    if (eventData?.length) {
+      const eventsInDay = eventData.filter(() => {
+        const d = new Date('December 31, 1969');
+        return d.getDate() === date;
+      });
+      eventsInDay.sort((a, b) => ((a.startTime > b.startTime) ? 1 : -1));
+      setCurrEvents(eventsInDay);
+    }
+  };
+
   return (
     <div className={styles.events}>
+      <div className={styles.header}>
+        <p>Time</p>
+        <p>Event</p>
+        <p>Details</p>
+      </div>
       {currEvents?.map((event) => {
         const startTime = new Date(event.startTime * 1000);
         const endTime = new Date(event.endTime * 1000);
@@ -56,22 +74,22 @@ const Events = ({ date }: Props): JSX.Element => {
         return (
           <div className={styles.eventWrapper} key={event.id}>
             <div className={styles.times}>
-              <h1 style={{ marginTop: ampmMarginTop }}>{formatAMPM(startTime)}</h1>
-              {!isAnnouncement && <h3>{formatAMPM(endTime)}</h3>}
+              <p style={{ marginTop: ampmMarginTop }}>{formatAMPM(startTime)} - {formatAMPM(endTime)}</p>
+              {/* {!isAnnouncement && <h3></h3>} */}
             </div>
             <div className={styles.body}>
               {!isAnnouncement ? (
                 <>
-                  <div className={styles.lineContainer}>
+                  {/* <div className={styles.lineContainer}>
                     <span
                       className={styles.line}
                       data-type={event.eventType.toLowerCase()}
                     />
-                  </div>
+                  </div> */}
                   <div className={styles.text}>
                     <h2>{event.name}</h2>
-                    {!!event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>}
-                    <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
+                    {/* {!!event.points && <div className={styles.points} data-type={event.eventType.toLowerCase()}>{event.points} points</div>} */}
+                    <p className={styles.description} dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
                 </>
               ) : (
@@ -85,7 +103,7 @@ const Events = ({ date }: Props): JSX.Element => {
                     <h2 className={styles.announcement}>
                       {event.name}
                     </h2>
-                    <p dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
+                    <p className={styles.description} dangerouslySetInnerHTML={{ __html: processDescription(event.description) }} />
                   </div>
                 </>
               )}
