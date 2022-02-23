@@ -64,7 +64,7 @@ const Events = ({ date, setAsync }: Props): JSX.Element => {
         return (
           <div className={styles.eventWrapper} key={event.id}>
             <div className={styles.times}>
-              <h1 style={{ marginTop: ampmMarginTop }}>{!event.isAsync ? formatAMPM(startTime) : '∞'}</h1>
+              <h1 style={{ marginTop: ampmMarginTop }}>{!event.isAsync ? formatAMPM(startTime) : 'All Day'}</h1>
               {!isAnnouncement && <h3>{formatAMPM(endTime)}</h3>}
             </div>
             <div className={styles.body}>

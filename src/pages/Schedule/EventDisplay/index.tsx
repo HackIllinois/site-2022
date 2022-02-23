@@ -41,8 +41,8 @@ const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
   return (
     <div className={styles.eventDisplay}>
       <div className={styles.buttonContainer}>
-        <button className={selectedNormal === true ? styles.selectedButton : styles.unselectedButton} onClick={selectNormal}>Normal</button>
-        <button className={selectedAsync === true ? styles.selectedButton : styles.unselectedButton} onClick={selectAsync}>Async</button>
+        <button className={selectedNormal ? styles.selectedButton : styles.unselectedButton} onClick={selectNormal}>Normal</button>
+        <button className={selectedAsync ? styles.selectedButton : styles.unselectedButton} onClick={selectAsync}>Async</button>
       </div>
       <p className={styles.dayHeading}>February {date} - {day} {timezoneText}</p>
       <div className={styles.container}>
