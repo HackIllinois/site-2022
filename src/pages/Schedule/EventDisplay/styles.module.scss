@@ -25,9 +25,22 @@
   }
 
   .buttonContainer {
+    @media (max-width: 912px) {
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      display: flex;
+      top: 10px;
+      left: 0;
+    }
 
     position: relative;
-    left: 5vh;
+    top: 31px;
+    left: 34px;
+
+    >button:first-child {
+      margin-right: 30px;
+    }
 
     .selectedButton {
 
@@ -45,8 +58,6 @@
       background: #F6F4D2;
       color: #08151B;
       cursor: pointer;
-      margin-right: 27px;
-      margin-top: 31px;
     }
   
     .unselectedButton {
@@ -65,8 +76,6 @@
       color: #F6F4D2;
       background: transparent;
       cursor: pointer;
-      margin-right: 27px;
-      margin-top: 31px;
     }
   }
 
@@ -99,7 +108,8 @@
     top: 60px;
 
     @media (max-width: 912px) {
-      top: 10px;
+      position: absolute;
+      top: 60px;
     }
   }
 
