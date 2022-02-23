@@ -72,13 +72,12 @@
 
   p.dayHeading {
     position: absolute;
-    color: #F6F4D2;
+    color: $background-color;
     padding: 20px 20px 0 20px;
     margin: 0 auto;
-    // text-align: right;
+    text-align: center;
     font-weight: 600;
     font-size: 30px;
-    text-size-adjust: 80%;
     left: 320px;
     top: 15px;
 

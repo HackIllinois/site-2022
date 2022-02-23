@@ -13,6 +13,7 @@ const processDescription = (description: string) => description.replace(urlRegex
 
 type Props = {
   date: number,
+  setAsync: boolean
 };
 
 const formatAMPM = (date: Date) => {
@@ -26,9 +27,10 @@ const formatAMPM = (date: Date) => {
   return strTime;
 };
 
-const Events = ({ date }: Props): JSX.Element => {
+const Events = ({ date, setAsync }: Props): JSX.Element => {
   const [eventData, setEventData] = useState<Array<EventType>>();
   const [currEvents, setCurrEvents] = useState<Array<EventType>>();
+  const showAsyncEvents = setAsync;
 
   useEffect(() => {
     getEvents().then((events) => setEventData(events));
@@ -37,13 +39,16 @@ const Events = ({ date }: Props): JSX.Element => {
   useEffect(() => {
     if (eventData?.length) {
       const eventsInDay = eventData.filter((event) => {
+        if (showAsyncEvents) {
+          return event.isAsync;
+        }
         const d = new Date(event.startTime * 1000);
         return !event.isAsync && d.getDate() === date;
       });
       eventsInDay.sort((a, b) => ((a.startTime > b.startTime) ? 1 : -1));
       setCurrEvents(eventsInDay);
     }
-  }, [date, eventData]);
+  }, [date, eventData, showAsyncEvents]);
 
   return (
     <div className={styles.events}>
