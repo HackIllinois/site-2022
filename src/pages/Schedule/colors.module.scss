@@ -1,0 +1,17 @@
+$background-color: #F6F4D2;
+
+$other-event-color: #C96928;
+$minievent-color: #ED9B21;
+$qna-color: #E6988E;
+$workshop-color: #78AC42;
+
+$megaphone-color: #9A242B;
+
+:export { // allows you to import these variables from javascript
+  background-color: $background-color;
+  otherEventColor: $other-event-color;
+  minieventColor: $minievent-color;
+  qnaColor: $qna-color;
+  workshopColor: $workshop-color;
+  megaphoneColor: $megaphone-color;
+}

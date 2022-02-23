@@ -1,3 +1,5 @@
+@import '../colors.module.scss';
+
 .eventDisplay {
   background: #08151B;
   border: 9px solid #C76931;
@@ -23,9 +25,6 @@
   }
 
   .buttonContainer {
-    @media (max-width: 912px) {
-      display: none;
-    }
 
     position: relative;
     left: 5vh;
@@ -123,52 +122,34 @@
       left: 2vh;
     }
 
-    .header {
-      position: relative;
-      display: flex;
-      left: 36px;
-
-      p {
-        color: #08151B;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 24px;
-        display: inline;
-        margin-right: 54px;
-      }
-    }
-
     .eventWrapper {
       margin-bottom: 10px;
       display: flex;
       overflow: auto;
-      border-radius: 10px;
-      background: rgba(219, 203, 155, 0.14);
-      left: 23px;
-      position: relative;
 
       .times {
-        position: relative;
-        width: 108px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0.02em;
-        margin-left: 13px;
+        box-sizing: border-box;
+        padding-right: 20px;
+        width: 150px;
+        text-align: right;
 
-        // @media (max-width: 950px) {
-        //   width: 120px;
-        // }
+        @media (max-width: 950px) {
+          width: 120px;
+        }
 
-        // @media (max-width: 550px) {
-        //   width: 95px;
-        //   padding-right: 10px;
-        // }
+        @media (max-width: 550px) {
+          width: 75px;
+          padding-right: 10px;
+        }
 
         h1 {
           font-size: 1.25em;
           font-weight: 500;
           margin-bottom: 5px;
+
+          @media (max-width: 550px) {
+            font-size: 1.05em;
+          }
         }
 
         h3 {
@@ -182,6 +163,10 @@
       .body {
         flex: 1;
         position: relative;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 2px;
+        width: 45vw;
         height: fit-content;
         display: flex;
 
@@ -190,6 +175,10 @@
           width: 20px;
           text-align: center;
 
+          @media (max-width: 550px) {
+            margin-left: 3px;
+          }
+
           .line {
             position: relative;
             top: 50%;
@@ -197,15 +186,15 @@
 
             display: inline-block;
             width: 7px;
-            height: 80%;
+            height: calc(100% - 40px);
             background: #ccc; // this color should never actually be used (one of the following event type styles should always apply)
             border-radius: 7px;
           }
 
-          .line[data-type='other'] { background: #FBB63B; }
-          .line[data-type='minievent'] { background: #6F8CC1; }
-          .line[data-type='qna'] { background: #EE6C72; }
-          .line[data-type='workshop'] { background: #2C9C98; }
+          .line[data-type='other'] { background: $other-event-color; }
+          .line[data-type='minievent'] { background: $minievent-color; }
+          .line[data-type='qna'] { background: $qna-color; }
+          .line[data-type='workshop'] { background: $workshop-color; }
 
           .megaphone {
             position: relative;
@@ -217,28 +206,28 @@
         }
 
         .text {
-          display: flex;
-          // padding: 0 30px 0 15px;
-          line-height: 1.25em;
-          // @media (max-width: 550px) {
-          //   padding: 0 10px 0 10px;
-          // }
-          position: relative;
+          flex: 1;
+          padding: 0 30px 0 15px;
+          line-height: 1.5em;
+          @media (max-width: 550px) {
+            padding: 0 10px 0 10px;
+          }
+
 
           h2 {
-            font-weight: 500;
-            font-size: 1em;
+            font-weight: 600;
+            font-size: 1.125em;
             margin-bottom: 0;
-            width: 60px;
-            margin-right: 54px;
           }
 
           h2.announcement {
             margin: 1.0em 0;
-            font-weight: 500;
-            font-size: 1em;
-            width: 60px;
-            margin-right: 54px;
+          }
+
+          h3 {
+            font-weight: 400;
+            font-style: italic;
+            margin: 0 auto;
           }
 
           p {
@@ -247,12 +236,7 @@
           }
 
           a {
-            color: white;
-          }
-
-          .description {
-            font-weight: 500;
-            line-height: 15px;
+            color: inherit;
           }
 
           .points {
@@ -262,10 +246,10 @@
             margin-top: 5px;
             margin-left: -2px;
             font-weight: 500;
-            &[data-type='other'] { background: #FBB63B; color: black; }
-            &[data-type='minievent'] { background: #6F8CC1; }
-            &[data-type='qna'] { background: #EE6C72; }
-            &[data-type='workshop'] { background: #2C9C98; }
+            &[data-type='other'] { background: $other-event-color; color: black; }
+            &[data-type='minievent'] { background: $minievent-color; }
+            &[data-type='qna'] { background: $qna-color; }
+            &[data-type='workshop'] { background: $workshop-color; }
           }
         }
       }

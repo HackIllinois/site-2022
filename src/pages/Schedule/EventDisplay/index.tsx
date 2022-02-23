@@ -47,7 +47,7 @@ const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
       <p className={styles.dayHeading}>February {date} - {day} {timezoneText}</p>
       <div className={styles.container}>
         <Calendar date={date} setDate={setDate} width={width} />
-        <Events date={date} />
+        <Events date={date}/>
       </div>
     </div>
   );
