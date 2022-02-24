@@ -46,7 +46,7 @@ const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
       </div>
       <p className={styles.dayHeading}>February {date} - {day} {timezoneText}</p>
       <div className={styles.container}>
-        <Calendar date={date} setDate={setDate} width={width} />
+        <Calendar date={date} setDate={setDate} width={width} disableAsync={selectedAsync}/>
         <Events date={date} setAsync={selectedAsync} />
       </div>
     </div>

@@ -6,7 +6,8 @@ import styles from './styles.module.scss';
 type Props = {
   date: number,
   setDate: React.Dispatch<React.SetStateAction<number>>,
-  width: number
+  width: number,
+  disableAsync: boolean
 };
 
 const startDate = new Date('February 25, 2022');
@@ -17,7 +18,7 @@ const lastDayOfMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 
 
 const WIDTH_BREAKPOINT = 912;
 
-const Days = ({ date, setDate, width }: Props): JSX.Element => {
+const Days = ({ date, setDate, width, disableAsync }: Props): JSX.Element => {
   const [shouldMinify, setShouldMinify] = useState(width <= WIDTH_BREAKPOINT);
   useEffect(() => setShouldMinify(width <= WIDTH_BREAKPOINT), [width]);
 
@@ -31,15 +32,15 @@ const Days = ({ date, setDate, width }: Props): JSX.Element => {
   }
 
   for (let d = 1; d <= lastDayOfMonth.getDate(); d++) {
-    const currentDay = (d === date);
+    const currentDay = (d === date && !disableAsync);
     const activeDay = (d >= startDate.getDate() && d <= endDate.getDate());
     daysInMonth.push(
       <td
-        className={clsx(styles.calendarDay, currentDay && styles.selectedDay, activeDay && styles.activeDay)}
+        className={clsx(styles.calendarDay, currentDay && styles.selectedDay, !disableAsync && activeDay && styles.activeDay, activeDay && disableAsync && styles.activeDay_disabled)}
         key={`Day ${d}`}
-        data-active={activeDay && !currentDay ? 'yes' : 'no'}
+        data-active={activeDay && !currentDay && !disableAsync ? 'yes' : 'no'}
       >
-        <button className={styles.dayButton} onClick={() => changeDate(d)} disabled={!activeDay}>{d}</button>
+        <button className={styles.dayButton} onClick={() => changeDate(d)} disabled={disableAsync || !activeDay}>{d}</button>
       </td>,
     );
   }
