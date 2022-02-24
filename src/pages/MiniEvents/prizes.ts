@@ -31,11 +31,15 @@ const miniEvents = [
     subcategories: [
       {
         title: 'First Place',
-        prize: '$25 Amazon Giftcard',
+        prize: '$75 Amazon Giftcard',
       },
       {
         title: 'Second Place',
-        prize: '$15 Amazon Giftcard',
+        prize: '$50 Amazon Giftcard',
+      },
+      {
+        title: 'Third Place',
+        prize: '$25 Amazon Giftcard',
       },
     ],
   },
