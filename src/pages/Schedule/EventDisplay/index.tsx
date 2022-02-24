@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
 
 import Events from './Events';
@@ -18,15 +18,36 @@ const timezoneText = <span className={styles.timezoneText} title="automagically 
 
 const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
   const [date, setDate] = useState(defaultDate);
+  const [selectedNormal, setSelectedNormal] = useState(true);
+  const [selectedAsync, setSelectedAsync] = useState(false);
   const d = new Date(`February ${date}, 2022`);
   const day = days[d.getDay()];
 
+  const selectNormal = () => {
+    setSelectedNormal(true);
+    setSelectedAsync(false);
+  };
+
+  const selectAsync = () => {
+    setSelectedNormal(false);
+    setSelectedAsync(true);
+  };
+
+  useEffect(() => {
+    setSelectedNormal(true);
+    setSelectedAsync(false);
+  }, []);
+
   return (
     <div className={styles.eventDisplay}>
-      <p className={styles.dayHeading}>February {date} - {day} {timezoneText}</p>
+      <div className={styles.buttonContainer}>
+        <button className={selectedNormal ? styles.selectedButton : styles.unselectedButton} onClick={selectNormal}>Normal</button>
+        <button className={selectedAsync ? styles.selectedButton : styles.unselectedButton} onClick={selectAsync}>Async</button>
+      </div>
+      <p className={styles.dayHeading}>{selectedNormal ? `February ${date} - ${day}` : 'Asynchronous Events'}{selectedNormal && timezoneText}</p>
       <div className={styles.container}>
-        <Calendar date={date} setDate={setDate} width={width} />
-        <Events date={date} />
+        <Calendar date={date} setDate={setDate} width={width} disableAsync={selectedAsync} />
+        <Events date={date} setAsync={selectedAsync} />
       </div>
     </div>
   );

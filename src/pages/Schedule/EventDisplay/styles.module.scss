@@ -24,16 +24,78 @@
     height: auto;
   }
 
+  .buttonContainer {
+    @media (max-width: 912px) {
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      display: flex;
+      top: 10px;
+      left: 0;
+    }
+
+    position: relative;
+    top: 31px;
+    left: 34px;
+
+    >button:first-child {
+      margin-right: 30px;
+    }
+
+    .selectedButton {
+
+      font-family: Montserrat;
+      font-style: normal;
+      text-align: center;
+      border: 2px solid #F6F4D2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      width: 93px;
+      height: 38px;
+      background: #F6F4D2;
+      color: #08151B;
+      cursor: pointer;
+    }
+  
+    .unselectedButton {
+
+      font-family: Montserrat;
+      font-style: normal;
+      text-align: center;
+      border: 2px solid #F6F4D2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      width: 93px;
+      height: 38px;
+      color: #F6F4D2;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+
   p.dayHeading {
+    position: absolute;
     color: $background-color;
     padding: 20px 20px 0 20px;
     margin: 0 auto;
     text-align: center;
     font-weight: 600;
     font-size: 30px;
+    left: 320px;
+    top: 15px;
 
     @media (max-width: 912px) {
       display: none;
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 20px;
     }
 
     .timezoneText {
@@ -50,7 +112,8 @@
     top: 60px;
 
     @media (max-width: 912px) {
-      top: 10px;
+      position: absolute;
+      top: 60px;
     }
   }
 
@@ -64,6 +127,8 @@
     left: 320px;
     
     overflow: scroll;
+    overflow-x: hidden;
+    // overflow-y: hidden;
 
     @media (max-width: 912px) {
       top: 150px;
@@ -187,6 +252,7 @@
 
           a {
             color: inherit;
+            word-break: break-all;
           }
 
           .points {

@@ -1,4 +1,8 @@
 .background {
+  @media (max-width: 912px) {
+    filter: blur(7px);
+  }
+
   position: fixed;
   width: 100%;
   height: 100%;

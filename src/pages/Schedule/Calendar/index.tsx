@@ -6,7 +6,8 @@ import styles from './styles.module.scss';
 type Props = {
   date: number,
   setDate: React.Dispatch<React.SetStateAction<number>>,
-  width: number
+  width: number,
+  disableAsync: boolean
 };
 
 const Calendar = (props: Props): JSX.Element => (
