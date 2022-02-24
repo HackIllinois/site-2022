@@ -36,11 +36,15 @@ const miniEvents = [
     subcategories: [
       {
         title: 'First Place',
-        prize: '$25 Amazon Giftcard',
+        prize: '$75 Amazon Giftcard',
       },
       {
         title: 'Second Place',
-        prize: '$15 Amazon Giftcard',
+        prize: '$50 Amazon Giftcard',
+      },
+      {
+        title: 'Third Place',
+        prize: '$25 Amazon Giftcard',
       },
     ],
   },
@@ -56,6 +60,21 @@ const miniEvents = [
       {
         title: 'Second Place',
         prize: '$15 Amazon Giftcard',
+      },
+    ],
+  },
+  {
+    logo: 'hackillinois.svg',
+    title: 'League of Legends Tournament',
+    description: <p>Cook up a battle in League of Legends! Play with old and new friends or watch the tournament on Twitch—let the games begin!</p>,
+    subcategories: [
+      {
+        title: 'First Place',
+        prize: '1st Place: $25 Amazon Gift Card per Team Member',
+      },
+      {
+        title: 'Second Place',
+        prize: '2nd Place: $15 Amazon Gift Card per Team Member',
       },
     ],
   },
