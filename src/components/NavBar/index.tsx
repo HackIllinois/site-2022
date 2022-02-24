@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 
 import LOGO from 'assets/logo.svg';
 import styles from './styles.module.scss';
-import AnimatedLink from './AnimatedLink';
+// import AnimatedLink from './AnimatedLink';
 import HighlightedLink from './HighlightedLink';
 import MenuIcon from './MenuIcon';
 
 type LinkType = { text: string, to: string };
 const links: LinkType[] = [
-  { text: 'Mentors', to: '/mentors' },
-  { text: 'Prizes', to: '/prizes' },
+  // { text: 'Interactive Journey', to: '/discover' },
   { text: 'Schedule', to: '/schedule' },
-  // { text: 'Resources', to: '/resources' },
+  // { text: 'Mentors', to: '/mentors' },
+  { text: 'Prizes', to: '/prizes' },
+  { text: 'Mini Events', to: '/mini-events' },
 ];
 
 const linksWithHome = [{ text: 'Home', to: '/' }].concat(links);
@@ -21,11 +22,12 @@ const linksWithHome = [{ text: 'Home', to: '/' }].concat(links);
 type PropTypes = {
   hideLogo?: boolean;
   showHome?: boolean;
+  showRegister?: boolean;
   mobileBreakpoint?: number;
   className?: string;
 };
 
-const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropTypes): JSX.Element => {
+const NavBar = ({ hideLogo, showHome, showRegister, mobileBreakpoint = 768, className }: PropTypes): JSX.Element => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < mobileBreakpoint);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
@@ -49,6 +51,53 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
 
   const linksToUse = showHome ? linksWithHome : links;
 
+  const menuToggle = (
+    <>
+      {!isSideBarOpen ? (
+        <button
+          type="button"
+          className={styles.sideBarToggle}
+          onClick={() => setIsSideBarOpen(true)}
+          aria-label="Open Side Bar"
+        >
+          <MenuIcon color="black" className={styles.menuIcon} />
+        </button>
+      ) : (
+        <button
+          type="button"
+          className={styles.sideBarToggle}
+          onClick={() => setIsSideBarOpen(false)}
+          aria-label="Close Side Bar"
+        >
+          <div className={styles.closeIcon}> &times; </div>
+        </button>
+      )}
+    </>
+  );
+
+  const dropdownMenu = (
+    <div className={clsx(styles.sideBar, isSideBarOpen && styles.open, isMobile && styles.mobile)}>
+      { menuToggle }
+      { isSideBarOpen && (
+        <div className={clsx(styles.sideBarLinks)}>
+          <nav>
+            {linksToUse.map(({ to, text }) => (
+              <HighlightedLink
+                className={clsx(styles.link, isMobile && styles.mobile)}
+                color="black"
+                highlightEnabled={false}
+                to={to}
+                key={text}
+              >
+                {text}
+              </HighlightedLink>
+            ))}
+          </nav>
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <header>
       <nav className={clsx(styles.navBar, className)}>
@@ -56,44 +105,10 @@ const NavBar = ({ hideLogo, showHome, mobileBreakpoint = 768, className }: PropT
           <img className={clsx(styles.logo, isMobile && styles.mobile, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
         </Link>
 
-        <div className={styles.spacer} />
+        { showRegister && <Link className={styles.registerButton} to="/register">Register</Link> }
 
-        {isMobile ? (
-          <button
-            type="button"
-            className={styles.sideBarToggle}
-            onClick={() => setIsSideBarOpen(true)}
-            aria-label="Open Side Bar"
-          >
-            <MenuIcon className={styles.menuIcon} />
-          </button>
-        ) : linksToUse.map(({ text, to }) => (
-          <AnimatedLink className={styles.link} to={to}>{text}</AnimatedLink>
-        ))}
+        { dropdownMenu }
       </nav>
-
-      {isMobile && (
-        <div className={clsx(styles.sideBar, isSideBarOpen && styles.open)}>
-          <Link to="/">
-            <img className={styles.logo} src={LOGO} alt="HackThis Logo" />
-          </Link>
-
-          <nav>
-            {linksWithHome.map(({ to, text }) => (
-              <HighlightedLink className={styles.link} to={to}>{text}</HighlightedLink>
-            ))}
-          </nav>
-        </div>
-      )}
-
-      {isSideBarOpen && (
-        <button
-          type="button"
-          className={styles.sideBarBackground}
-          onClick={() => setIsSideBarOpen(false)}
-          aria-label="Close Side Bar"
-        />
-      )}
     </header>
   );
 };

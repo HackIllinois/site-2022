@@ -127,6 +127,8 @@
     left: 320px;
     
     overflow: scroll;
+    overflow-x: hidden;
+    // overflow-y: hidden;
 
     @media (max-width: 912px) {
       top: 150px;
