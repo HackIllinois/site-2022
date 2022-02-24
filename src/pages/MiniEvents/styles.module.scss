@@ -1,0 +1,90 @@
+.prizes {
+  color: #542120;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+
+  .backgroundImage {
+    background-image: url('../../assets/prizes/background.svg');
+    background-color: #9B8356;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    filter: blur(4px);
+  }
+
+  .prizeList {
+    z-index: 100;
+    padding: 50px 100px 100px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 375px);
+    grid-auto-rows: 400px;
+    column-gap: 32px;
+    row-gap: 32px;
+    justify-content: center;
+
+    @media (max-width: 820px) {
+      grid-template-columns: 375px;
+      column-gap: 0;
+    }
+
+    @media (max-width: 450px) {
+      padding: 50px 25px;
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+
+    .prize {
+      box-sizing: border-box;
+      background-color: #F6F4D2D9;
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+      padding: 7.5%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 45px;
+
+    @media (max-width: 768px) {
+     font-size: 30px; 
+     margin-top: 80px;
+    }
+  }
+
+  h2, h3, h4, p {
+    margin: 10px 0 0 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    margin-top: 2px;
+    font-size: 20px;
+  }
+
+  p {
+    line-height: 1;
+  }
+
+  a {
+    color: inherit;
+  }
+}

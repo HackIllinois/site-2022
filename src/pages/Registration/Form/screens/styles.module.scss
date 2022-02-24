@@ -51,8 +51,13 @@
   margin-bottom: 10px;
   // overflow: auto;
 
+  .title {
+    color: #F6F4D4;
+  }
+
   .text {
     margin-right: 15px;
+    color: #F6F4D4;
 
     span {
       color: greenyellow !important;
@@ -85,6 +90,10 @@
 .personalInfo, .education, .experience {
   overflow: auto;
 
+  .title {
+    color: #F6F4D4;
+  }
+
   @media (min-height: 800px) {
     width: 85%;
   }
@@ -112,11 +121,13 @@
 
   .title {
     margin-bottom: 20px;
+    color: #F6F4D4;
   }
 
   .checkboxes {
     width: 60%;
-    color: white;
+    // color: white;
+    color: #F6F4D4;
     @include registration-floating-screen {
       width: auto;
     }
@@ -128,7 +139,8 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: white;
+    // color: white;
+    color: #F6F4D4;
 
     b{
       font-weight: 600;
@@ -175,23 +187,28 @@
   overflow: hidden !important;
   // overflow-y: scroll !important;
   // scrollbar-color: red green !important;
-  .scrollbox {
-    overflow: scroll !important;
+  // .scrollbox {
+    // overflow: scroll !important;
     // background-color: aqua;
+  // }
+
+  // .scrollbox::-webkit-scrollbar {
+  //   color: aqua;
+  // }
+
+  .title {
+    color: #F6F4D4;
   }
 
-  .scrollbox::-webkit-scrollbar {
-    color: aqua;
-  }
-
-  p {
-    color: white;
+  .text {
+    color: #F6F4D4;
     font-size: large;
+    // margin-top: 50px;
   }
 
   .checkboxes {
     width: 60%;
-    color: white;
+    color: #F6F4D4;
     font-size: small;
     // @include registration-floating-screen {
     //   width: auto;
@@ -231,6 +248,7 @@
 
   .text {
     text-align: center;
+    color: #F6F4D4;
 
     a {
       color: greenyellow;
