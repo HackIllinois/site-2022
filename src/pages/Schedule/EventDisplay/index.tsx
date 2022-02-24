@@ -38,8 +38,6 @@ const EventDisplay = ({ defaultDate, width }: Props): JSX.Element => {
     setSelectedAsync(false);
   }, []);
 
-  // {!event.isAsync ? formatAMPM(startTime) : 'All Day'}
-  // February {date} - {day} {timezoneText}
   return (
     <div className={styles.eventDisplay}>
       <div className={styles.buttonContainer}>
