@@ -62,21 +62,6 @@ const trackPrizes = [
       },
     ],
   },
-  {
-    logo: 'hackillinois.svg',
-    title: 'Shark Tank',
-    description: 'Awarded to the top two pitches at the Shark Tank competition based on the judge panels\' feedback.',
-    subcategories: [
-      {
-        title: 'First Place',
-        prize: '$450',
-      },
-      {
-        title: 'Second Place',
-        prize: '$250',
-      },
-    ],
-  },
 ];
 
 export default trackPrizes;
