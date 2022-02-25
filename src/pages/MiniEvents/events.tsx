@@ -51,7 +51,7 @@ const miniEvents = [
   {
     logo: 'typeracer.svg',
     title: 'Typeracer',
-    description: <p>Awarded to the two fastest typers at the Typeracer event at HackIllinois!</p>,
+    description: <p>Awarded to the three fastest typers at the Typeracer event at HackIllinois!</p>,
     subcategories: [
       {
         title: 'First Place',
@@ -59,6 +59,10 @@ const miniEvents = [
       },
       {
         title: 'Second Place',
+        prize: '$20 Amazon Giftcard',
+      },
+      {
+        title: 'Third Place',
         prize: '$15 Amazon Giftcard',
       },
     ],
