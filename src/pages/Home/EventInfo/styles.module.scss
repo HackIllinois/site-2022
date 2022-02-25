@@ -12,6 +12,10 @@ section.eventInfo {
   z-index: 2;
   margin-bottom: 0;
 
+  @media (max-width: $mobile-breakpoint) {
+    padding-top: 25vh;
+  }
+
   .cakeLayer1, .cakeLayer2, .cakeLayer3 {
     margin: auto;
     display: block;
