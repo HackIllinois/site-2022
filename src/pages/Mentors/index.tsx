@@ -16,7 +16,7 @@ const Mentors: React.FC = () => {
   const { width, height } = useWindowSize();
   const [page, setPage] = useState(0);
   // eslint-disable-next-line no-nested-ternary
-  const numPages = (width < 1000) ? 1 : (height < 700) ? 2 : 4;
+  const numPages = (width < 1000) ? 1 : (height < 740) ? 2 : 4;
   const maxPage = numPages === 1 ? mentors.length - 1 : ~~(mentors.length / numPages);
 
   return (
