@@ -120,13 +120,13 @@ const CodeInTheDark = (): JSX.Element => {
           <h3>Rules</h3>
           <ul>
             <li>You are allowed to use all tools available. This includes a text editor to preview your website.</li>
-            <li>You must submit all your code through this editor (this means all CSS and JS must be included in this HTML file in <style> and <script>)</li>
+            <li>You must submit all your code through this editor (this means all CSS and JS must be included in this HTML file in &lt;style&gt; and &lt;script&gt;)</li>
           </ul>
 
           <h3>Tips</h3>
           <ul>
-            <li>You can use a website like <a href="https://htmledit.squarefree.com/">https://htmledit.squarefree.com/</a> to preview your code</li>
-            <li>The images can be found at <a href="https://code-in-the-dark-submissions-2022.netlify.app/images/">https://code-in-the-dark-submissions-2022.netlify.app/images/</a></li>
+            <li>You can use a website like <a href="https://htmledit.squarefree.com/" target="_blank" rel="noreferrer">https://htmledit.squarefree.com/</a> to preview your code</li>
+            <li>The images can be found at <a href="https://code-in-the-dark-submissions-2022.netlify.app/images/" target="_blank" rel="noreferrer">https://code-in-the-dark-submissions-2022.netlify.app/images/</a></li>
           </ul>
 
           <h3>Submit</h3>
