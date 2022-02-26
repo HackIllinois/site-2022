@@ -22,6 +22,7 @@ const starterCode = `<html>
 
   <body>
 
+    <script></script>
   </body>
 </html>
 `;
@@ -118,15 +119,14 @@ const CodeInTheDark = (): JSX.Element => {
         <div className={styles.rules}>
           <h3>Rules</h3>
           <ul>
-            <li>Wait until the timer starts and the image link has been provided to begin editing your code.</li>
             <li>You are allowed to use all tools available. This includes a text editor to preview your website.</li>
-            <li>Submit your code in a single file.</li>
+            <li>You must submit all your code through this editor (this means all CSS and JS must be included in this HTML file in <style> and <script>)</li>
           </ul>
 
           <h3>Tips</h3>
           <ul>
-            <li>Write your CSS inline, or inside the provided style tags</li>
-            <li>The images can be found at <b>assets/dig.png</b> and <b>assets/dump.png</b></li>
+            <li>You can use a website like <a href="https://htmledit.squarefree.com/">https://htmledit.squarefree.com/</a> to preview your code</li>
+            <li>The images can be found at <a href="https://code-in-the-dark-submissions-2022.netlify.app/images/">https://code-in-the-dark-submissions-2022.netlify.app/images/</a></li>
           </ul>
 
           <h3>Submit</h3>
