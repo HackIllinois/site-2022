@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import KITCHEN from 'assets/mentor/kitchen.svg';
 import TAG from 'assets/mentor/mentorTag.svg';
 import FRAME from 'assets/mentor/frame.svg';
-// import MENTOR_BACKGROUND from 'assets/mentor/mentorBackground.svg';
+import MENTOR_BACKGROUND from 'assets/mentor/mentorBackground.svg';
 import NEXTARROW from 'assets/registration/right_arrow.svg';
 
 import NavBar from 'components/NavBar';
@@ -28,7 +28,7 @@ const Mentors: React.FC = () => {
         { (page > 0) && <button className={styles.backButton} onClick={() => setPage(page - 1)}> <img className={styles.backArrow} src={NEXTARROW} alt="" /></button> }
         <img className={styles.tag} src={TAG} alt="mentor board" />
         <div className={styles.mentors}>
-          {/* <img className={styles.mentorBackground} src={MENTOR_BACKGROUND} alt="" /> */}
+          <img className={styles.mentorBackground} src={MENTOR_BACKGROUND} alt="" />
           {mentors.slice(page * numPages, Math.min((page * numPages) + numPages, mentors.length)).map((mentor) => (
             <div className={styles.mentor} key={mentor.name}>
               <div className={styles.subMentor}>
