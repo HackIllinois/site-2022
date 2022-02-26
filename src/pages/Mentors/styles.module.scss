@@ -98,6 +98,10 @@
     height: 90%;
     // margin: auto;
 
+    scrollbar-color: rgba(173, 216, 175, 0.699) transparent;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+
     p {
       top: 40%;
       transform: translateY(-50%);
