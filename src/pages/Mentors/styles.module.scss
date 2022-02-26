@@ -197,10 +197,14 @@
   }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 740px) {
   .mentor {
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .mentorBackground {
+    display: none;
   }
 }
 
