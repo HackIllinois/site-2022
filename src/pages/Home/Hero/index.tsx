@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 
 const Section1: React.FC = () => (
   <div className={styles.hero}>
-    <NavBar showRegister />
+    <NavBar />
     <div className={styles.background} style={{ backgroundImage: `url(${BACKGROUND})` }} />
     <div className={styles.clouds} style={{ backgroundImage: `url(${CLOUDS})` }} />
     <div className={styles.sun_rays} style={{ backgroundImage: `url(${SUN_RAYS})` }} />
