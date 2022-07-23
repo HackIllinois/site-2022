@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import { useForm, SubmitHandler, SubmitErrorHandler, FormProvider } from 'react-hook-form';
 import { Redirect } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';

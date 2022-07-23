@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 
 import Checkboxes from 'components/form/Checkboxes';
 import styles from './styles.module.scss';

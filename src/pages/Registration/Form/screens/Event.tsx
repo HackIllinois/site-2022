@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import Checkboxes from 'components/form/Checkboxes';
 import Select from 'components/form/Select';
-import Scrollbars from 'react-custom-scrollbars';
+import Scrollbars from 'react-custom-scrollbars-2';
 import styles from './styles.module.scss';
 
 const interestOptions = [

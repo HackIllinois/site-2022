@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import clsx from 'clsx';
 import React from 'react';
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 import styles from './styles.module.scss';
 
